@@ -142,6 +142,26 @@ class Table {
 		$this->addColumn($column);
 	}
 
+	protected $keys = [ ];
+
+	public function addKeyColumn( $keyName, AbstractColumn $column, $index = null, $type = 'NORMAL', $method = '' ) {
+		if( !isset($this->keys[$keyName]) ) {
+			$this->keys[$keyName] = [
+				'columns' => [ ],
+			];
+		}
+
+		$this->keys[$keyName]['type']   = $type;
+		$this->keys[$keyName]['method'] = $method;
+
+
+		if( is_null($index) ) {
+			$this->keys[$keyName]['columns'][] = $column;
+		} else {
+			$this->keys[$keyName]['columns'][$index] = $column;
+		}
+	}
+
 	/**
 	 * @var Columns\AbstractColumn[]
 	 */
@@ -153,29 +173,37 @@ class Table {
 	}
 
 	function toString() {
-		$columns = '';
+		$statements = [ ];
 		foreach( $this->columns as $column ) {
-			$columns .= "\t" . $column->toString($this) . ",\n";
+			$statements[] = "\t" . $column->toString($this);
 		}
-		$columns = rtrim($columns, " \n\t,");
 
-		$primary = '';
 		if( $this->primaryKeys ) {
-			$primary = ",\n\tPRIMARY KEY (";
-			$primary .= '`' . implode("`,`", array_map(function ( AbstractColumn $column ) { return $column->getName(); }, $this->primaryKeys)) . '`';
+			$primary = "\tPRIMARY KEY (";
+			$primary .= implode(",", array_map(function ( AbstractColumn $column ) { return $this->mkString($column->getName()); }, $this->primaryKeys));
 			$primary .= ")";
+			$statements[] = $primary;
+		}
+
+		foreach( $this->keys as $keyName => $key ) {
+			$keys = "\tKEY " . $this->mkString($keyName) . " (";
+			$keys .= implode(",", array_map(function ( AbstractColumn $column ) { return $this->mkString($column->getName()); }, $key['columns']));
+			$keys .= ")";
+			$statements[] = $keys;
 		}
 
 		$comment = '';
-		if($this->comment) {
+		if( $this->comment ) {
 			$comment = ' COMMENT ' . $this->mkString($this->comment, "'");
 		}
 
 		$name = $this->mkString($this->name);
 
+		$stmnts = implode(",\n", $statements);
+
 		return <<<EOT
 CREATE TABLE {$name} (
-{$columns}{$primary}
+{$stmnts}
 ){$comment};
 
 EOT;
