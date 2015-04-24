@@ -1,0 +1,33 @@
+{
+	"name": "donatj/mysql-schema",
+	"type": "library",
+	"description": "GNU-style PHP command line argument parser",
+	"keywords": [
+		"cli",
+		"arguments",
+		"options",
+		"flags",
+		"gnu-style"
+	],
+	"require-dev": {
+		"donatj/drop": "*",
+		"phpunit/phpunit": "3.7.*"
+	},
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Jesse Donat",
+			"email": "donatj@gmail.com",
+			"homepage": "http://donatstudios.com",
+			"role": "Developer"
+		}
+	],
+	"require": {
+		"php": ">=5.3.0"
+	},
+	"autoload": {
+		"psr-4": {
+			"donatj\\MySqlSchema\\": "src/"
+		}
+	}
+}
