@@ -173,6 +173,7 @@ class Table {
 	}
 
 	function toString() {
+		$warnings   = [ ];
 		$statements = [ ];
 		foreach( $this->columns as $column ) {
 			$statements[] = "\t" . $column->toString($this);
@@ -183,6 +184,12 @@ class Table {
 			$primary .= implode(",", array_map(function ( AbstractColumn $column ) { return $this->mkString($column->getName()); }, $this->primaryKeys));
 			$primary .= ")";
 			$statements[] = $primary;
+		}
+
+		foreach( $this->autoIncrements as $ai ) {
+			if( $ai->isSigned() ) {
+				$warnings[] = $this->mkString($ai->getName()) . ' is a signed AUTO_INCREMENT';
+			}
 		}
 
 		foreach( $this->keys as $keyName => $key ) {
@@ -198,13 +205,17 @@ class Table {
 		}
 
 		$name = $this->mkString($this->name);
-
 		$stmnts = implode(",\n", $statements);
+
+		$warn = '';
+		if($warnings) {
+			$warn = "\n# Warning: " . implode("\n# Warning: ", $warnings);
+		}
 
 		return <<<EOT
 CREATE TABLE {$name} (
 {$stmnts}
-){$comment};
+){$comment}{$warn};
 
 EOT;
 	}
