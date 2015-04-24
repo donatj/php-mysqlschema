@@ -4,7 +4,18 @@
 namespace donatj\MySqlSchema\Columns\Numeric;
 
 abstract class AbstractFractionColumn extends AbstractNumberColumn {
+	/**
+	 * @param string $name
+	 * @param int    $decimals
+	 */
+	function __construct( $name, $decimals ) {
+		parent::__construct($name);
+		$this->decimals = $decimals;
+	}
 
+	/**
+	 * @var int
+	 */
 	protected $decimals = 0;
 
 	/**
@@ -20,5 +31,4 @@ abstract class AbstractFractionColumn extends AbstractNumberColumn {
 	public function setDecimals( $decimals ) {
 		$this->decimals = $decimals;
 	}
-
 }
