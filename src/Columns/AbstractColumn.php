@@ -2,12 +2,38 @@
 
 namespace donatj\MySqlSchema\Columns;
 
+use donatj\MySqlSchema\Columns\Interfaces\CharsetColumnInterface;
+use donatj\MySqlSchema\Columns\Interfaces\OptionalLengthInterface;
+use donatj\MySqlSchema\Columns\Interfaces\RequiredLengthInterface;
+use donatj\MySqlSchema\Columns\Interfaces\SignedInterface;
+use donatj\MySqlSchema\Columns\Numeric\AbstractIntegerColumn;
 use donatj\MySqlSchema\Table;
-use donatj\MySqlSchema\Utils\EscapeTrait;
+use donatj\MySqlSchema\Traits\EscapeTrait;
 
 abstract class AbstractColumn {
 
 	use EscapeTrait;
+
+	/**
+	 * @var \donatj\MySqlSchema\Table[]
+	 */
+	protected $tables = [ ];
+	/**
+	 * @var string
+	 */
+	protected $name;
+	/**
+	 * @var string
+	 */
+	protected $comment = '';
+	/**
+	 * @var bool
+	 */
+	protected $nullable = false;
+	/**
+	 * @var mixed
+	 */
+	protected $default;
 
 	/**
 	 * @param string $name
@@ -17,51 +43,12 @@ abstract class AbstractColumn {
 	}
 
 	/**
-	 * @return string
-	 */
-	abstract public function getTypeName();
-
-	/**
-	 * @var \donatj\MySqlSchema\Table[]
-	 */
-	protected $tables = [ ];
-
-	/**
 	 * @access private
 	 * @param \donatj\MySqlSchema\Table $table
 	 */
 	public function addTable( Table $table ) {
 		$this->tables[spl_object_hash($table)] = $table;
 	}
-
-	/**
-	 * @var int
-	 */
-	protected $length = 0;
-
-	/**
-	 * @return int
-	 */
-	public function getLength() {
-		return $this->length;
-	}
-
-	/**
-	 * @param int $length
-	 */
-	public function setLength( $length ) {
-		$this->length = $length;
-	}
-
-	/**
-	 * @var string
-	 */
-	protected $name;
-
-	/**
-	 * @var string
-	 */
-	protected $comment = '';
 
 	/**
 	 * @return string
@@ -76,11 +63,6 @@ abstract class AbstractColumn {
 	public function setComment( $comment ) {
 		$this->comment = $comment;
 	}
-
-	/**
-	 * @var bool
-	 */
-	protected $nullable = false;
 
 	/**
 	 * @return boolean
@@ -114,24 +96,72 @@ abstract class AbstractColumn {
 	 * @param \donatj\MySqlSchema\Table $table
 	 * @return string
 	 */
-	abstract public function toString( Table $table );
+	public function toString( Table $table ) {
+		$type = $this->getTypeName();
 
-	/**
-	 * @var mixed
-	 */
-	protected $default;
+		$nullable = '';
+		if( !$this->nullable ) {
+			$nullable = ' NOT NULL';
+		}
 
-	/**
-	 * @param mixed $default
-	 */
-	public function setDefault( $default ) {
-		$this->default = $default;
+		$length = '';
+		if( $this instanceof RequiredLengthInterface ||
+			($this instanceof OptionalLengthInterface && $this->getLength())
+		) {
+			$l      = intval($this->getLength());
+			$length = "($l)";
+		}
+
+		$signed = '';
+		if( $this instanceof SignedInterface && !$this->isSigned() ) {
+			$signed = " unsigned";
+		}
+
+		$default = '';
+		if( !is_null($this->default) ) {
+			$default = ' DEFAULT ' . $this->mkString($this->default, "'");;
+		}
+
+		$charset   = '';
+		$collation = '';
+		if( $this instanceof CharsetColumnInterface && $this->getCharset() ) {
+			$charset = ' CHARACTER SET ' . $this->getCharset();
+			if( $this->getCollation() ) {
+				$collation = ' COLLATE ' . $this->getCollation();
+			}
+		}
+
+		$comment = '';
+		if( $this->comment ) {
+			$comment = ' COMMENT ' . $this->mkString($this->comment, "'");
+		}
+
+		$autoIncrement = '';
+		if( $this instanceof AbstractIntegerColumn && $table->isAutoIncrement($this) ) {
+			$autoIncrement = ' AUTO_INCREMENT';
+		}
+
+		$name = $this->mkString($this->name);
+
+		return "{$name} {$type}{$length}{$signed}{$charset}{$collation}{$nullable}{$default}{$autoIncrement}{$comment}";
 	}
+
+	/**
+	 * @return string
+	 */
+	abstract public function getTypeName();
 
 	/**
 	 * @return mixed
 	 */
 	public function getDefault() {
 		return $this->default;
+	}
+
+	/**
+	 * @param mixed $default
+	 */
+	public function setDefault( $default ) {
+		$this->default = $default;
 	}
 }

@@ -4,11 +4,12 @@ namespace donatj\MySqlSchema;
 
 use donatj\MySqlSchema\Columns\AbstractColumn;
 use donatj\MySqlSchema\Columns\Numeric\AbstractIntegerColumn;
-use donatj\MySqlSchema\Utils\EscapeTrait;
+use donatj\MySqlSchema\Traits\CharsetAndCollationTrait;
 
 class Table {
 
-	use EscapeTrait;
+	use Traits\EscapeTrait;
+	use CharsetAndCollationTrait;
 
 	/**
 	 * Table constructor.
@@ -34,38 +35,6 @@ class Table {
 	protected $comment = '';
 
 	protected $engine = null;
-
-	protected $charset = null;
-
-	protected $collation = null;
-
-	/**
-	 * @return null
-	 */
-	public function getCharset() {
-		return $this->charset;
-	}
-
-	/**
-	 * @param null $charset
-	 */
-	public function setCharset( $charset ) {
-		$this->charset = $charset;
-	}
-
-	/**
-	 * @return null
-	 */
-	public function getCollation() {
-		return $this->collation;
-	}
-
-	/**
-	 * @param null $collation
-	 */
-	public function setCollation( $collation ) {
-		$this->collation = $collation;
-	}
 
 	/**
 	 * @return Columns\AbstractColumn[]

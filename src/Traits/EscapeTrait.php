@@ -1,6 +1,6 @@
 <?php
 
-namespace donatj\MySqlSchema\Utils;
+namespace donatj\MySqlSchema\Traits;
 
 trait EscapeTrait {
 
