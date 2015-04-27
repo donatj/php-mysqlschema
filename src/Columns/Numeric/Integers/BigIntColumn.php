@@ -9,7 +9,7 @@ class BigIntColumn extends AbstractIntegerColumn {
 	/**
 	 * @return string
 	 */
-	function getTypeName() {
+	public function getTypeName() {
 		return 'bigint';
 	}
 }

@@ -13,7 +13,7 @@ class YearColumn extends AbstractTemporalColumn implements RequiredLengthInterfa
 	 * @param string $name
 	 * @param int    $length 2 or 4
 	 */
-	function __construct( $name, $length = 4 ) {
+	public function __construct( $name, $length = 4 ) {
 		parent::__construct($name);
 		$this->setLength($length);
 	}
@@ -33,7 +33,7 @@ class YearColumn extends AbstractTemporalColumn implements RequiredLengthInterfa
 	/**
 	 * @return string
 	 */
-	function getTypeName() {
+	public function getTypeName() {
 		return 'year';
 	}
 }

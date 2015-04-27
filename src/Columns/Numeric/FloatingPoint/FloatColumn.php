@@ -9,7 +9,7 @@ class FloatColumn extends AbstractFractionColumn {
 	/**
 	 * @return string
 	 */
-	function getTypeName() {
+	public function getTypeName() {
 		return 'float';
 	}
 }

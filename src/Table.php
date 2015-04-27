@@ -141,7 +141,7 @@ class Table {
 		$column->addTable($this);
 	}
 
-	function toString() {
+	public function toString() {
 		$warnings   = [ ];
 		$statements = [ ];
 		foreach( $this->columns as $column ) {

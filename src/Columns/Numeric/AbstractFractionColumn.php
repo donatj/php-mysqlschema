@@ -8,7 +8,7 @@ abstract class AbstractFractionColumn extends AbstractNumberColumn {
 	 * @param string $name
 	 * @param int    $decimals
 	 */
-	function __construct( $name, $decimals ) {
+	public function __construct( $name, $decimals ) {
 		parent::__construct($name);
 		$this->decimals = $decimals;
 	}

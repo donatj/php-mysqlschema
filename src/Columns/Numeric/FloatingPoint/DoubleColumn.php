@@ -9,7 +9,7 @@ class DoubleColumn extends AbstractFractionColumn {
 	/**
 	 * @return string
 	 */
-	function getTypeName() {
+	public function getTypeName() {
 		return 'double';
 	}
 }
