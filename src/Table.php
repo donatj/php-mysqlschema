@@ -150,7 +150,9 @@ class Table {
 
 		if( count($this->primaryKeys) > 0 ) {
 			$primary = "\tPRIMARY KEY (";
-			$primary .= implode(",", array_map(function ( AbstractColumn $column ) { return $this->mkString($column->getName()); }, $this->primaryKeys));
+			$primary .= implode(",", array_map(function ( AbstractColumn $column ) {
+				return $this->mkString($column->getName());
+			}, $this->primaryKeys));
 			$primary .= ")";
 			$statements[] = $primary;
 		}
@@ -162,8 +164,14 @@ class Table {
 		}
 
 		foreach( $this->keys as $keyName => $key ) {
-			$keys = "\tKEY " . $this->mkString($keyName) . " (";
-			$keys .= implode(",", array_map(function ( AbstractColumn $column ) { return $this->mkString($column->getName()); }, $key['columns']));
+			$keys = "\t";
+			if( $key['type'] != 'NORMAL' ) {
+				$keys .= $key['type'] . ' ';
+			}
+			$keys .= "KEY " . $this->mkString($keyName) . " (";
+			$keys .= implode(",", array_map(function ( AbstractColumn $column ) {
+				return $this->mkString($column->getName());
+			}, $key['columns']));
 			$keys .= ")";
 			$statements[] = $keys;
 		}
