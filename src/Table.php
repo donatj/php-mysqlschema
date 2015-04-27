@@ -148,7 +148,7 @@ class Table {
 			$statements[] = "\t" . $column->toString($this);
 		}
 
-		if( $this->primaryKeys ) {
+		if( count($this->primaryKeys) > 0 ) {
 			$primary = "\tPRIMARY KEY (";
 			$primary .= implode(",", array_map(function ( AbstractColumn $column ) { return $this->mkString($column->getName()); }, $this->primaryKeys));
 			$primary .= ")";
@@ -173,11 +173,11 @@ class Table {
 			$comment = ' COMMENT ' . $this->mkString($this->comment, "'");
 		}
 
-		$name = $this->mkString($this->name);
+		$name   = $this->mkString($this->name);
 		$stmnts = implode(",\n", $statements);
 
 		$warn = '';
-		if($warnings) {
+		if( count($warnings) > 0 ) {
 			$warn = "\n# Warning: " . implode("\n# Warning: ", $warnings);
 		}
 
