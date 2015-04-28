@@ -86,18 +86,18 @@ class Table {
 	}
 
 	/**
-	 * @var AbstractIntegerColumn[]
+	 * @var AbstractIntegerColumn|null
 	 */
-	protected $autoIncrements = [ ];
+	protected $autoIncrement = null;
 
 	public function addAutoIncrement( AbstractIntegerColumn $column ) {
-		$this->autoIncrements[spl_object_hash($column)] = $column;
+		$this->autoIncrement = $column;
 
 		$this->addPrimaryKey($column);
 	}
 
 	public function isAutoIncrement( AbstractIntegerColumn $column ) {
-		return isset($this->autoIncrements[spl_object_hash($column)]);
+		return $this->autoIncrement === $column;
 	}
 
 	/**
@@ -157,9 +157,12 @@ class Table {
 			$statements[] = $primary;
 		}
 
-		foreach( $this->autoIncrements as $ai ) {
-			if( $ai->isSigned() ) {
-				$warnings[] = $this->mkString($ai->getName()) . ' is a signed AUTO_INCREMENT';
+		if( !is_null($this->autoIncrement) ) {
+			if( $this->autoIncrement->isSigned() ) {
+				$warnings[] = $this->mkString($this->autoIncrement->getName()) . ' is a signed AUTO_INCREMENT';
+			}
+			if( $this->autoIncrement->isNullable() ) {
+				$warnings[] = $this->mkString($this->autoIncrement->getName()) . ' is a nullable AUTO_INCREMENT';
 			}
 		}
 
