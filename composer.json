@@ -5,7 +5,7 @@
 	"keywords": [
 		"mysql",
 		"schema",
-		"modeling",
+		"modeling"
 	],
 	"require-dev": {
 		"donatj/drop": "*",
