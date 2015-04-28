@@ -111,6 +111,14 @@ class Table {
 		$this->addColumn($column);
 	}
 
+	/**
+	 * @param \donatj\MySqlSchema\Columns\AbstractColumn $column
+	 * @return bool
+	 */
+	public function isPrimaryKey( AbstractColumn $column ) {
+		return isset($this->primaryKeys[spl_object_hash($column)]);
+	}
+
 	protected $keys = [ ];
 
 	public function addKeyColumn( $keyName, AbstractColumn $column, $index = null, $type = 'NORMAL', $method = '' ) {
