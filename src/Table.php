@@ -96,6 +96,10 @@ class Table {
 		$this->addPrimaryKey($column);
 	}
 
+	/**
+	 * @param \donatj\MySqlSchema\Columns\Numeric\AbstractIntegerColumn $column
+	 * @return bool
+	 */
 	public function isAutoIncrement( AbstractIntegerColumn $column ) {
 		return $this->autoIncrement === $column;
 	}
