@@ -143,6 +143,15 @@ class Table {
 		}
 	}
 
+	protected $foreignKeys = [ ];
+
+	public function addForeignKey( AbstractColumn $local, AbstractColumn $remote ) {
+		$this->foreignKeys[spl_object_hash($local)] = [
+			'local'  => $local,
+			'remote' => $remote,
+		];
+	}
+
 	/**
 	 * @var Columns\AbstractColumn[]
 	 */
@@ -189,6 +198,34 @@ class Table {
 			}, $key['columns']));
 			$keys .= ")";
 			$statements[] = $keys;
+		}
+
+		foreach( $this->foreignKeys as $fks ) {
+			/**
+			 * @var $local AbstractColumn
+			 * @var $remote AbstractColumn
+			 */
+			$local  = $fks['local'];
+			$remote = $fks['remote'];
+
+			$tables = $remote->getTables();
+			// @todo doesn't really need to be a PK, just a key
+			$tables = array_filter($tables, function ( Table $a ) use ( $remote ) {
+				return $a->isPrimaryKey($remote);
+			});
+
+			foreach( $tables as $tbl ) {
+				// @todo check length and perhaps other stuff
+				if( $local->getTypeName() != $remote->getTypeName() ) {
+					$warnings[] = $this->mkString($this->autoIncrement->getName()) . ' type does not match defined foreign key type';
+				}
+				$localName     = $this->mkString($local->getName());
+				$remoteName    = $this->mkString($remote->getName());
+				$remoteTblName = $this->mkString($tbl->getName());
+
+				$keys = "\tFOREIGN KEY ({$localName}) REFERENCES {$remoteTblName}({$remoteName})";
+				$statements[] = $keys;
+			}
 		}
 
 		$comment = '';
