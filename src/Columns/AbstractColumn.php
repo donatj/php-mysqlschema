@@ -51,6 +51,13 @@ abstract class AbstractColumn {
 	}
 
 	/**
+	 * @return \donatj\MySqlSchema\Table[]
+	 */
+	public function getTables() {
+		return array_values($this->tables);
+	}
+
+	/**
 	 * @return string
 	 */
 	public function getComment() {
