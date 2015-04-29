@@ -228,6 +228,16 @@ class Table {
 			}
 		}
 
+		$charset   = '';
+		$collation = '';
+		if( $this->getCharset() ) {
+			$charset = ' CHARACTER SET ' . $this->getCharset();
+			if( $this->getCollation() ) {
+				$collation = ' COLLATE ' . $this->getCollation();
+			}
+		}
+
+
 		$comment = '';
 		if( $this->comment ) {
 			$comment = ' COMMENT ' . $this->mkString($this->comment, "'");
@@ -244,7 +254,7 @@ class Table {
 		return <<<EOT
 CREATE TABLE {$name} (
 {$stmnts}
-){$comment}{$warn};
+){$charset}{$collation}{$comment}{$warn};
 
 EOT;
 	}
