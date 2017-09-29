@@ -7,6 +7,18 @@
 
 Simple PHP MySQL Schema Model
 
+## Requirements
+
+- **php**: >=5.4.0
+
+## Installing
+
+Install the latest version with:
+
+```bash
+composer require 'donatj/mysql-schema'
+```
+
 ## Documentation
 
 ### Class: \donatj\MySqlSchema\Columns\AbstractColumn

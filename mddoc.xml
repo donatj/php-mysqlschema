@@ -7,6 +7,12 @@
 			<badge-poser type="license" />
 			<badge-scrutinizer name="donatj/PhpMySqlSchema" type="quality" />
 			<text>Simple PHP MySQL Schema Model</text>
+			<section title="Requirements">
+				<composer-requires/>
+			</section>
+			<section title="Installing">
+				<composer-install/>
+			</section>
 			<section title="Documentation">
 				<recursivedirectory name="src"/>
 			</section>
