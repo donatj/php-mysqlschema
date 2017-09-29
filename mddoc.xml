@@ -1,0 +1,15 @@
+<mddoc>
+
+	<docpage target="README.md" autoloader="psr4" autoloader-root="src" autoloader-root-namespace="donatj\MySqlSchema">
+
+		<section title="Simple PHP MySQL Schema Model">
+			<badge-poser type="version" />
+			<badge-poser type="license" />
+			<badge-scrutinizer name="donatj/PhpMySqlSchema" type="quality" />
+			<text>Simple PHP MySQL Schema Model</text>
+			<section title="Documentation">
+				<recursivedirectory name="src"/>
+			</section>
+		</section>
+	</docpage>
+</mddoc>
