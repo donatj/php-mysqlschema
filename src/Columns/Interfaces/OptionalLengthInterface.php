@@ -7,10 +7,10 @@ interface OptionalLengthInterface {
 	/**
 	 * @return int|null
 	 */
-	public function getLength();
+	public function getLength() : ?int;
 
 	/**
 	 * @param int|null $length
 	 */
-	public function setLength( $length = null );
+	public function setLength( ?int $length = null ) : void;
 }

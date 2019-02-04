@@ -34,7 +34,7 @@ class Table {
 	 */
 	protected $comment = '';
 
-	protected $engine = null;
+	protected $engine;
 
 	/**
 	 * @return Columns\AbstractColumn[]
@@ -57,16 +57,10 @@ class Table {
 		$this->comment = $comment;
 	}
 
-	/**
-	 * @return null
-	 */
 	public function getEngine() {
 		return $this->engine;
 	}
 
-	/**
-	 * @param null $engine
-	 */
 	public function setEngine( $engine ) {
 		$this->engine = $engine;
 	}
@@ -81,16 +75,16 @@ class Table {
 	/**
 	 * @param string $name
 	 */
-	public function setName( $name ) {
+	public function setName( string $name ) : void {
 		$this->name = $name;
 	}
 
 	/**
 	 * @var AbstractIntegerColumn|null
 	 */
-	protected $autoIncrement = null;
+	protected $autoIncrement;
 
-	public function addAutoIncrement( AbstractIntegerColumn $column ) {
+	public function addAutoIncrement( AbstractIntegerColumn $column ) : void {
 		$this->autoIncrement = $column;
 
 		$this->addPrimaryKey($column);
@@ -134,7 +128,6 @@ class Table {
 
 		$this->keys[$keyName]['type']   = $type;
 		$this->keys[$keyName]['method'] = $method;
-
 
 		if( is_null($index) ) {
 			$this->keys[$keyName]['columns'][] = $column;
@@ -236,7 +229,6 @@ class Table {
 				$collation = ' COLLATE ' . $this->getCollation();
 			}
 		}
-
 
 		$comment = '';
 		if( $this->comment ) {

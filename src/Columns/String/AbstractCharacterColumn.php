@@ -13,7 +13,7 @@ abstract class AbstractCharacterColumn extends AbstractStringColumn implements R
 	 * @param string $name
 	 * @param int    $length
 	 */
-	public function __construct( $name, $length ) {
+	public function __construct( string $name, int $length ) {
 		parent::__construct($name);
 		$this->setLength($length);
 	}

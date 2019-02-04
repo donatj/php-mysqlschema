@@ -4,36 +4,29 @@ namespace donatj\MySqlSchema\Traits;
 
 trait CharsetAndCollationTrait {
 
-
-	protected $charset = null;
-
-	protected $collation = null;
+	/**
+	 * @var string|null
+	 */
+	protected $charset;
 
 	/**
-	 * @return null
+	 * @var string|null
 	 */
-	public function getCharset() {
+	protected $collation;
+
+	public function getCharset() : ?string {
 		return $this->charset;
 	}
 
-	/**
-	 * @param null $charset
-	 */
-	public function setCharset( $charset ) {
+	public function setCharset( ?string $charset ) : void {
 		$this->charset = $charset;
 	}
 
-	/**
-	 * @return null
-	 */
-	public function getCollation() {
+	public function getCollation() : ?string {
 		return $this->collation;
 	}
 
-	/**
-	 * @param null $collation
-	 */
-	public function setCollation( $collation ) {
+	public function setCollation( ?string $collation ) : void {
 		$this->collation = $collation;
 	}
 }

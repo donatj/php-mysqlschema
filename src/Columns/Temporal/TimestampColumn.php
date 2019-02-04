@@ -3,10 +3,11 @@
 namespace donatj\MySqlSchema\Columns\Temporal;
 
 class TimestampColumn extends AbstractTemporalColumn {
+
 	/**
 	 * @return string
 	 */
-	public function getTypeName() {
+	public function getTypeName() : string {
 		return 'timestamp';
 	}
 }

@@ -17,7 +17,7 @@ abstract class AbstractColumn {
 	/**
 	 * @var \donatj\MySqlSchema\Table[]
 	 */
-	protected $tables = [ ];
+	protected $tables = [];
 	/**
 	 * @var string
 	 */
@@ -38,7 +38,7 @@ abstract class AbstractColumn {
 	/**
 	 * @param string $name
 	 */
-	public function __construct( $name ) {
+	public function __construct( string $name ) {
 		$this->name = $name;
 	}
 
@@ -46,56 +46,56 @@ abstract class AbstractColumn {
 	 * @access private
 	 * @param \donatj\MySqlSchema\Table $table
 	 */
-	public function addTable( Table $table ) {
+	public function addTable( Table $table ) : void {
 		$this->tables[spl_object_hash($table)] = $table;
 	}
 
 	/**
 	 * @return \donatj\MySqlSchema\Table[]
 	 */
-	public function getTables() {
+	public function getTables() : array {
 		return array_values($this->tables);
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getComment() {
+	public function getComment() : string {
 		return $this->comment;
 	}
 
 	/**
 	 * @param string $comment
 	 */
-	public function setComment( $comment ) {
+	public function setComment( string $comment ) : void {
 		$this->comment = $comment;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
-	public function isNullable() {
+	public function isNullable() : bool {
 		return $this->nullable;
 	}
 
 	/**
-	 * @param boolean $nullable
+	 * @param bool $nullable
 	 */
-	public function setNullable( $nullable ) {
+	public function setNullable( bool $nullable ) : void {
 		$this->nullable = $nullable;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getName() {
+	public function getName() : string {
 		return $this->name;
 	}
 
 	/**
 	 * @param string $name
 	 */
-	public function setName( $name ) {
+	public function setName( string $name ) : void {
 		$this->name = $name;
 	}
 
@@ -103,7 +103,7 @@ abstract class AbstractColumn {
 	 * @param \donatj\MySqlSchema\Table $table
 	 * @return string
 	 */
-	public function toString( Table $table ) {
+	public function toString( Table $table ) : string {
 		$type = $this->getTypeName();
 
 		$nullable = '';
@@ -122,13 +122,13 @@ abstract class AbstractColumn {
 		$signed = '';
 		if( $this instanceof SignedInterface ) {
 			if( !$this->isSigned() ) {
-				$signed = " unsigned";
+				$signed = ' unsigned';
 			}
 		}
 
 		$default = '';
-		if( !is_null($this->default) ) {
-			$default = ' DEFAULT ' . $this->mkString($this->default, "'");;
+		if( $this->default !== null ) {
+			$default = ' DEFAULT ' . $this->mkString($this->default, "'");
 		}
 
 		$charset   = '';
@@ -162,19 +162,19 @@ abstract class AbstractColumn {
 	/**
 	 * @return string
 	 */
-	abstract public function getTypeName();
+	abstract public function getTypeName() : string;
 
 	/**
-	 * @return mixed
+	 * @return mixed varies by column type
 	 */
 	public function getDefault() {
 		return $this->default;
 	}
 
 	/**
-	 * @param mixed $default
+	 * @param mixed $default varies by column type
 	 */
-	public function setDefault( $default ) {
+	public function setDefault( $default ) : void {
 		$this->default = $default;
 	}
 }

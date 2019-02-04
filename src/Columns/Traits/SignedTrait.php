@@ -10,16 +10,16 @@ trait SignedTrait {
 	protected $signed = false;
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
-	public function isSigned() {
+	public function isSigned() : bool {
 		return $this->signed;
 	}
 
 	/**
-	 * @param boolean $signed
+	 * @param bool $signed
 	 */
-	public function setSigned( $signed ) {
+	public function setSigned( bool $signed ) : void {
 		$this->signed = $signed;
 	}
 }

@@ -7,10 +7,10 @@ interface RequiredLengthInterface {
 	/**
 	 * @return int
 	 */
-	public function getLength();
+	public function getLength() : int;
 
 	/**
 	 * @param int $length
 	 */
-	public function setLength( $length );
+	public function setLength( int $length ) : void;
 }

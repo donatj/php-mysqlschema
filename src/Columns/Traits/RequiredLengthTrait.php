@@ -12,14 +12,14 @@ trait RequiredLengthTrait {
 	/**
 	 * @return int
 	 */
-	public function getLength() {
+	public function getLength() : int {
 		return $this->length;
 	}
 
 	/**
 	 * @param int $length
 	 */
-	public function setLength( $length ) {
+	public function setLength( int $length ) : void {
 		$this->length = $length;
 	}
 }

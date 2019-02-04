@@ -7,19 +7,19 @@ trait OptionalLengthTrait {
 	/**
 	 * @var int|null
 	 */
-	protected $length = null;
+	protected $length;
 
 	/**
 	 * @return int|null
 	 */
-	public function getLength() {
+	public function getLength() : ?int {
 		return $this->length;
 	}
 
 	/**
 	 * @param int|null $length
 	 */
-	public function setLength( $length = null ) {
+	public function setLength( ?int $length = null ) : void {
 		$this->length = $length;
 	}
 }

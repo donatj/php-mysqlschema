@@ -4,23 +4,11 @@ namespace donatj\MySqlSchema\Columns\Interfaces;
 
 interface CharsetColumnInterface {
 
-	/**
-	 * @return null
-	 */
-	public function getCharset();
+	public function getCharset() : ?string;
 
-	/**
-	 * @param null $charset
-	 */
-	public function setCharset( $charset );
+	public function setCharset( ?string $charset ) : void;
 
-	/**
-	 * @return null
-	 */
-	public function getCollation();
+	public function getCollation() : ?string;
 
-	/**
-	 * @param null $collation
-	 */
-	public function setCollation( $collation );
+	public function setCollation( ?string $collation ) : void;
 }
