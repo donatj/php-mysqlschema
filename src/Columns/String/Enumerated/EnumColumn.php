@@ -10,6 +10,6 @@ class EnumColumn extends AbstractEnumeratedColumn {
 	 * @return string
 	 */
 	public function getTypeName() : string {
-		return 'varchar';
+		return 'enum';
 	}
 }
