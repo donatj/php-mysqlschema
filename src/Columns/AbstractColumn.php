@@ -3,6 +3,7 @@
 namespace donatj\MySqlSchema\Columns;
 
 use donatj\MySqlSchema\Columns\Interfaces\CharsetColumnInterface;
+use donatj\MySqlSchema\Columns\Interfaces\EnumeratedColumnInterface;
 use donatj\MySqlSchema\Columns\Interfaces\OptionalLengthInterface;
 use donatj\MySqlSchema\Columns\Interfaces\RequiredLengthInterface;
 use donatj\MySqlSchema\Columns\Interfaces\SignedInterface;
@@ -111,6 +112,15 @@ abstract class AbstractColumn {
 			$nullable = ' NOT NULL';
 		}
 
+		$enum = '';
+		if( $this instanceof EnumeratedColumnInterface ) {
+			$values = array_map(function ( string $enum ) {
+				return $this->mkString($enum, "'");
+			}, $this->getEnumeratedValues());
+
+			$enum = '(' . implode(',', $values) . ') ';
+		}
+
 		$length = '';
 		if( $this instanceof RequiredLengthInterface ||
 			($this instanceof OptionalLengthInterface && $this->getLength())
@@ -152,7 +162,7 @@ abstract class AbstractColumn {
 
 		$name = $this->mkString($this->name);
 
-		return "{$name} {$type}{$length}{$signed}{$charset}{$collation}{$nullable}{$default}{$autoIncrement}{$comment}";
+		return "{$name} {$type}{$enum}{$length}{$signed}{$charset}{$collation}{$nullable}{$default}{$autoIncrement}{$comment}";
 	}
 
 	/**
