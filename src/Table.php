@@ -44,6 +44,22 @@ class Table {
 	}
 
 	/**
+	 * Return the first column matching the given name
+	 *
+	 * @param string $columnName
+	 * @return AbstractColumn|null
+	 */
+	public function getColumnFromName( string $columnName ) : ?AbstractColumn {
+		foreach( $this->columns as $column ) {
+			if( $column->getName() === $columnName ) {
+				return $column;
+			}
+		}
+
+		return null;
+	}
+
+	/**
 	 * @return string
 	 */
 	public function getComment() : string {
