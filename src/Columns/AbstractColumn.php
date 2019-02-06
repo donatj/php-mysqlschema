@@ -131,7 +131,9 @@ abstract class AbstractColumn {
 
 		$charset   = '';
 		$collation = '';
-		if( ($this instanceof CharsetColumnInterface) && $this->getCharset() ) {
+		if( ($this instanceof CharsetColumnInterface) && $this->getCharset() &&
+			($this->getCharset() !== $table->getCharset() || $this->getCollation() !== $table->getCollation())
+		) {
 			$charset = ' CHARACTER SET ' . $this->getCharset();
 			if( $this->getCollation() ) {
 				$collation = ' COLLATE ' . $this->getCollation();
