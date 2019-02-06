@@ -117,7 +117,7 @@ class Table {
 	/**
 	 * @var AbstractColumn[]
 	 */
-	protected $primaryKeys = [ ];
+	protected $primaryKeys = [];
 
 	public function addPrimaryKey( AbstractColumn $column ) : void {
 		$this->primaryKeys[spl_object_hash($column)] = $column;
@@ -126,19 +126,19 @@ class Table {
 	}
 
 	/**
-	 * @param \donatj\MySqlSchema\Columns\AbstractColumn $column
+	 * @param AbstractColumn $column
 	 * @return bool
 	 */
 	public function isPrimaryKey( AbstractColumn $column ) : bool {
 		return isset($this->primaryKeys[spl_object_hash($column)]);
 	}
 
-	protected $keys = [ ];
+	protected $keys = [];
 
 	public function addKeyColumn( $keyName, AbstractColumn $column, $index = null, $type = 'NORMAL', $method = '' ) : void {
 		if( !isset($this->keys[$keyName]) ) {
 			$this->keys[$keyName] = [
-				'columns' => [ ],
+				'columns' => [],
 			];
 		}
 
@@ -152,7 +152,7 @@ class Table {
 		}
 	}
 
-	protected $foreignKeys = [ ];
+	protected $foreignKeys = [];
 
 	public function addForeignKey( AbstractColumn $local, AbstractColumn $remote ) : void {
 		$this->foreignKeys[spl_object_hash($local)] = [
@@ -164,7 +164,7 @@ class Table {
 	/**
 	 * @var Columns\AbstractColumn[]
 	 */
-	protected $columns = [ ];
+	protected $columns = [];
 
 	public function addColumn( AbstractColumn $column ) : void {
 		$this->columns[spl_object_hash($column)] = $column;
@@ -172,18 +172,18 @@ class Table {
 	}
 
 	public function toString() : string {
-		$warnings   = [ ];
-		$statements = [ ];
+		$warnings   = [];
+		$statements = [];
 		foreach( $this->columns as $column ) {
 			$statements[] = "\t" . $column->toString($this);
 		}
 
 		if( count($this->primaryKeys) > 0 ) {
-			$primary = "\tPRIMARY KEY (";
-			$primary .= implode(',', array_map(function ( AbstractColumn $column ) {
+			$primary      = "\tPRIMARY KEY (";
+			$primary      .= implode(',', array_map(function ( AbstractColumn $column ) {
 				return $this->mkString($column->getName());
 			}, $this->primaryKeys));
-			$primary .= ')';
+			$primary      .= ')';
 			$statements[] = $primary;
 		}
 
@@ -201,11 +201,11 @@ class Table {
 			if( $key['type'] != 'NORMAL' ) {
 				$keys .= $key['type'] . ' ';
 			}
-			$keys .= 'KEY ' . $this->mkString($keyName) . ' (';
-			$keys .= implode(',', array_map(function ( AbstractColumn $column ) {
+			$keys         .= 'KEY ' . $this->mkString($keyName) . ' (';
+			$keys         .= implode(',', array_map(function ( AbstractColumn $column ) {
 				return $this->mkString($column->getName());
 			}, $key['columns']));
-			$keys .= ')';
+			$keys         .= ')';
 			$statements[] = $keys;
 		}
 
@@ -232,7 +232,7 @@ class Table {
 				$remoteName    = $this->mkString($remote->getName());
 				$remoteTblName = $this->mkString($tbl->getName());
 
-				$keys = "\tFOREIGN KEY ({$localName}) REFERENCES {$remoteTblName}({$remoteName})";
+				$keys         = "\tFOREIGN KEY ({$localName}) REFERENCES {$remoteTblName}({$remoteName})";
 				$statements[] = $keys;
 			}
 		}
