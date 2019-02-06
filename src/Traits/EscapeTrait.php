@@ -9,7 +9,7 @@ trait EscapeTrait {
 	 * @param string $wrapChar
 	 * @return mixed
 	 */
-	protected function escape( $input, $wrapChar = '`' ) {
+	protected function escape( string $input, string $wrapChar = '`' ) : string {
 		return str_replace($wrapChar, $wrapChar . $wrapChar, $input);
 	}
 
@@ -18,7 +18,7 @@ trait EscapeTrait {
 	 * @param string $wrapChar
 	 * @return string
 	 */
-	protected function mkString( $input, $wrapChar = '`' ) {
+	protected function mkString( string $input, string $wrapChar = '`' ) : string {
 		return $wrapChar . $this->escape($input, $wrapChar) . $wrapChar;
 	}
 }

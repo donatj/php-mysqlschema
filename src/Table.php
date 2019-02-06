@@ -39,21 +39,21 @@ class Table {
 	/**
 	 * @return Columns\AbstractColumn[]
 	 */
-	public function getColumns() {
+	public function getColumns() : array {
 		return $this->columns;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getComment() {
+	public function getComment() : string {
 		return $this->comment;
 	}
 
 	/**
 	 * @param string $comment
 	 */
-	public function setComment( $comment ) {
+	public function setComment( $comment ) : void {
 		$this->comment = $comment;
 	}
 
@@ -61,14 +61,14 @@ class Table {
 		return $this->engine;
 	}
 
-	public function setEngine( $engine ) {
+	public function setEngine( $engine ) : void {
 		$this->engine = $engine;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getName() {
+	public function getName() : string {
 		return $this->name;
 	}
 
@@ -94,7 +94,7 @@ class Table {
 	 * @param \donatj\MySqlSchema\Columns\Numeric\AbstractIntegerColumn $column
 	 * @return bool
 	 */
-	public function isAutoIncrement( AbstractIntegerColumn $column ) {
+	public function isAutoIncrement( AbstractIntegerColumn $column ) : bool {
 		return $this->autoIncrement === $column;
 	}
 
@@ -103,7 +103,7 @@ class Table {
 	 */
 	protected $primaryKeys = [ ];
 
-	public function addPrimaryKey( AbstractColumn $column ) {
+	public function addPrimaryKey( AbstractColumn $column ) : void {
 		$this->primaryKeys[spl_object_hash($column)] = $column;
 
 		$this->addColumn($column);
@@ -113,13 +113,13 @@ class Table {
 	 * @param \donatj\MySqlSchema\Columns\AbstractColumn $column
 	 * @return bool
 	 */
-	public function isPrimaryKey( AbstractColumn $column ) {
+	public function isPrimaryKey( AbstractColumn $column ) : bool {
 		return isset($this->primaryKeys[spl_object_hash($column)]);
 	}
 
 	protected $keys = [ ];
 
-	public function addKeyColumn( $keyName, AbstractColumn $column, $index = null, $type = 'NORMAL', $method = '' ) {
+	public function addKeyColumn( $keyName, AbstractColumn $column, $index = null, $type = 'NORMAL', $method = '' ) : void {
 		if( !isset($this->keys[$keyName]) ) {
 			$this->keys[$keyName] = [
 				'columns' => [ ],
@@ -138,7 +138,7 @@ class Table {
 
 	protected $foreignKeys = [ ];
 
-	public function addForeignKey( AbstractColumn $local, AbstractColumn $remote ) {
+	public function addForeignKey( AbstractColumn $local, AbstractColumn $remote ) : void {
 		$this->foreignKeys[spl_object_hash($local)] = [
 			'local'  => $local,
 			'remote' => $remote,
@@ -150,12 +150,12 @@ class Table {
 	 */
 	protected $columns = [ ];
 
-	public function addColumn( AbstractColumn $column ) {
+	public function addColumn( AbstractColumn $column ) : void {
 		$this->columns[spl_object_hash($column)] = $column;
 		$column->addTable($this);
 	}
 
-	public function toString() {
+	public function toString() : string {
 		$warnings   = [ ];
 		$statements = [ ];
 		foreach( $this->columns as $column ) {
@@ -164,10 +164,10 @@ class Table {
 
 		if( count($this->primaryKeys) > 0 ) {
 			$primary = "\tPRIMARY KEY (";
-			$primary .= implode(",", array_map(function ( AbstractColumn $column ) {
+			$primary .= implode(',', array_map(function ( AbstractColumn $column ) {
 				return $this->mkString($column->getName());
 			}, $this->primaryKeys));
-			$primary .= ")";
+			$primary .= ')';
 			$statements[] = $primary;
 		}
 
@@ -185,11 +185,11 @@ class Table {
 			if( $key['type'] != 'NORMAL' ) {
 				$keys .= $key['type'] . ' ';
 			}
-			$keys .= "KEY " . $this->mkString($keyName) . " (";
-			$keys .= implode(",", array_map(function ( AbstractColumn $column ) {
+			$keys .= 'KEY ' . $this->mkString($keyName) . ' (';
+			$keys .= implode(',', array_map(function ( AbstractColumn $column ) {
 				return $this->mkString($column->getName());
 			}, $key['columns']));
-			$keys .= ")";
+			$keys .= ')';
 			$statements[] = $keys;
 		}
 

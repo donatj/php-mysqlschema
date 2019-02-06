@@ -115,15 +115,13 @@ abstract class AbstractColumn {
 		if( $this instanceof RequiredLengthInterface ||
 			($this instanceof OptionalLengthInterface && $this->getLength())
 		) {
-			$l      = intval($this->getLength());
+			$l      = (int)$this->getLength();
 			$length = "($l)";
 		}
 
 		$signed = '';
-		if( $this instanceof SignedInterface ) {
-			if( !$this->isSigned() ) {
-				$signed = ' unsigned';
-			}
+		if( ($this instanceof SignedInterface) && !$this->isSigned() ) {
+			$signed = ' unsigned';
 		}
 
 		$default = '';
@@ -133,12 +131,10 @@ abstract class AbstractColumn {
 
 		$charset   = '';
 		$collation = '';
-		if( $this instanceof CharsetColumnInterface ) {
-			if( $this->getCharset() ) {
-				$charset = ' CHARACTER SET ' . $this->getCharset();
-				if( $this->getCollation() ) {
-					$collation = ' COLLATE ' . $this->getCollation();
-				}
+		if( ($this instanceof CharsetColumnInterface) && $this->getCharset() ) {
+			$charset = ' CHARACTER SET ' . $this->getCharset();
+			if( $this->getCollation() ) {
+				$collation = ' COLLATE ' . $this->getCollation();
 			}
 		}
 
@@ -148,10 +144,8 @@ abstract class AbstractColumn {
 		}
 
 		$autoIncrement = '';
-		if( $this instanceof AbstractIntegerColumn ) {
-			if( $table->isAutoIncrement($this) ) {
-				$autoIncrement = ' AUTO_INCREMENT';
-			}
+		if( ($this instanceof AbstractIntegerColumn) && $table->isAutoIncrement($this) ) {
+			$autoIncrement = ' AUTO_INCREMENT';
 		}
 
 		$name = $this->mkString($this->name);
