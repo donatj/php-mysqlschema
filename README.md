@@ -21,7 +21,7 @@ composer require 'donatj/mysql-schema'
 
 ## Documentation
 
-### Class: \donatj\MySqlSchema\Columns\AbstractColumn
+### Class: donatj\MySqlSchema\Columns\AbstractColumn
 
 #### Method: AbstractColumn->__construct
 
@@ -32,8 +32,6 @@ function __construct($name)
 ##### Parameters:
 
 - ***string*** `$name`
-
-
 
 ---
 
@@ -81,7 +79,7 @@ function isNullable()
 
 ##### Returns:
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -93,7 +91,7 @@ function setNullable($nullable)
 
 ##### Parameters:
 
-- ***boolean*** `$nullable`
+- ***bool*** `$nullable`
 
 ---
 
@@ -124,7 +122,7 @@ function setName($name)
 #### Method: AbstractColumn->toString
 
 ```php
-function toString($table)
+function toString(\donatj\MySqlSchema\Table $table)
 ```
 
 ##### Parameters:
@@ -171,7 +169,7 @@ function setDefault($default)
 
 - ***mixed*** `$default`
 
-### Class: \donatj\MySqlSchema\Columns\Interfaces\CharsetColumnInterface
+### Class: donatj\MySqlSchema\Columns\Interfaces\CharsetColumnInterface
 
 #### Method: CharsetColumnInterface->getCharset
 
@@ -219,7 +217,7 @@ function setCollation($collation)
 
 - ***null*** `$collation`
 
-### Class: \donatj\MySqlSchema\Columns\Interfaces\OptionalLengthInterface
+### Class: donatj\MySqlSchema\Columns\Interfaces\OptionalLengthInterface
 
 #### Method: OptionalLengthInterface->getLength
 
@@ -243,7 +241,7 @@ function setLength([ $length = null])
 
 - ***int*** | ***null*** `$length`
 
-### Class: \donatj\MySqlSchema\Columns\Interfaces\RequiredLengthInterface
+### Class: donatj\MySqlSchema\Columns\Interfaces\RequiredLengthInterface
 
 #### Method: RequiredLengthInterface->getLength
 
@@ -267,7 +265,7 @@ function setLength($length)
 
 - ***int*** `$length`
 
-### Class: \donatj\MySqlSchema\Columns\Interfaces\SignedInterface
+### Class: donatj\MySqlSchema\Columns\Interfaces\SignedInterface
 
 #### Method: SignedInterface->isSigned
 
@@ -277,7 +275,7 @@ function isSigned()
 
 ##### Returns:
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -289,9 +287,157 @@ function setSigned($signed)
 
 ##### Parameters:
 
-- ***boolean*** `$signed`
+- ***bool*** `$signed`
 
-### Class: \donatj\MySqlSchema\Columns\Numeric\AbstractFractionColumn
+### Class: donatj\MySqlSchema\Columns\Json\JsonColumn
+
+#### Method: JsonColumn->getTypeName
+
+```php
+function getTypeName() : string
+```
+
+##### Returns:
+
+- ***string***
+
+---
+
+#### Method: JsonColumn->__construct
+
+```php
+function __construct($name)
+```
+
+##### Parameters:
+
+- ***string*** `$name`
+
+---
+
+#### Method: JsonColumn->getTables
+
+```php
+function getTables()
+```
+
+##### Returns:
+
+- ***\donatj\MySqlSchema\Table[]***
+
+---
+
+#### Method: JsonColumn->getComment
+
+```php
+function getComment()
+```
+
+##### Returns:
+
+- ***string***
+
+---
+
+#### Method: JsonColumn->setComment
+
+```php
+function setComment($comment)
+```
+
+##### Parameters:
+
+- ***string*** `$comment`
+
+---
+
+#### Method: JsonColumn->isNullable
+
+```php
+function isNullable()
+```
+
+##### Returns:
+
+- ***bool***
+
+---
+
+#### Method: JsonColumn->setNullable
+
+```php
+function setNullable($nullable)
+```
+
+##### Parameters:
+
+- ***bool*** `$nullable`
+
+---
+
+#### Method: JsonColumn->getName
+
+```php
+function getName()
+```
+
+##### Returns:
+
+- ***string***
+
+---
+
+#### Method: JsonColumn->setName
+
+```php
+function setName($name)
+```
+
+##### Parameters:
+
+- ***string*** `$name`
+
+---
+
+#### Method: JsonColumn->toString
+
+```php
+function toString(\donatj\MySqlSchema\Table $table)
+```
+
+##### Parameters:
+
+- ***\donatj\MySqlSchema\Table*** `$table`
+
+##### Returns:
+
+- ***string***
+
+---
+
+#### Method: JsonColumn->getDefault
+
+```php
+function getDefault()
+```
+
+##### Returns:
+
+- ***mixed***
+
+---
+
+#### Method: JsonColumn->setDefault
+
+```php
+function setDefault($default)
+```
+
+##### Parameters:
+
+- ***mixed*** `$default`
+
+### Class: donatj\MySqlSchema\Columns\Numeric\AbstractFractionColumn
 
 #### Method: AbstractFractionColumn->__construct
 
@@ -327,8 +473,6 @@ function setDecimals($decimals)
 ##### Parameters:
 
 - ***int*** `$decimals`
-
-
 
 ---
 
@@ -376,7 +520,7 @@ function isNullable()
 
 ##### Returns:
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -388,7 +532,7 @@ function setNullable($nullable)
 
 ##### Parameters:
 
-- ***boolean*** `$nullable`
+- ***bool*** `$nullable`
 
 ---
 
@@ -419,7 +563,7 @@ function setName($name)
 #### Method: AbstractFractionColumn->toString
 
 ```php
-function toString($table)
+function toString(\donatj\MySqlSchema\Table $table)
 ```
 
 ##### Parameters:
@@ -500,7 +644,7 @@ function isSigned()
 
 ##### Returns:
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -512,9 +656,9 @@ function setSigned($signed)
 
 ##### Parameters:
 
-- ***boolean*** `$signed`
+- ***bool*** `$signed`
 
-### Class: \donatj\MySqlSchema\Columns\Numeric\AbstractIntegerColumn
+### Class: donatj\MySqlSchema\Columns\Numeric\AbstractIntegerColumn
 
 #### Method: AbstractIntegerColumn->__construct
 
@@ -525,8 +669,6 @@ function __construct($name)
 ##### Parameters:
 
 - ***string*** `$name`
-
-
 
 ---
 
@@ -574,7 +716,7 @@ function isNullable()
 
 ##### Returns:
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -586,7 +728,7 @@ function setNullable($nullable)
 
 ##### Parameters:
 
-- ***boolean*** `$nullable`
+- ***bool*** `$nullable`
 
 ---
 
@@ -617,7 +759,7 @@ function setName($name)
 #### Method: AbstractIntegerColumn->toString
 
 ```php
-function toString($table)
+function toString(\donatj\MySqlSchema\Table $table)
 ```
 
 ##### Parameters:
@@ -698,7 +840,7 @@ function isSigned()
 
 ##### Returns:
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -710,9 +852,9 @@ function setSigned($signed)
 
 ##### Parameters:
 
-- ***boolean*** `$signed`
+- ***bool*** `$signed`
 
-### Class: \donatj\MySqlSchema\Columns\Numeric\AbstractNumberColumn
+### Class: donatj\MySqlSchema\Columns\Numeric\AbstractNumberColumn
 
 #### Method: AbstractNumberColumn->__construct
 
@@ -723,8 +865,6 @@ function __construct($name)
 ##### Parameters:
 
 - ***string*** `$name`
-
-
 
 ---
 
@@ -772,7 +912,7 @@ function isNullable()
 
 ##### Returns:
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -784,7 +924,7 @@ function setNullable($nullable)
 
 ##### Parameters:
 
-- ***boolean*** `$nullable`
+- ***bool*** `$nullable`
 
 ---
 
@@ -815,7 +955,7 @@ function setName($name)
 #### Method: AbstractNumberColumn->toString
 
 ```php
-function toString($table)
+function toString(\donatj\MySqlSchema\Table $table)
 ```
 
 ##### Parameters:
@@ -896,7 +1036,7 @@ function isSigned()
 
 ##### Returns:
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -908,9 +1048,9 @@ function setSigned($signed)
 
 ##### Parameters:
 
-- ***boolean*** `$signed`
+- ***bool*** `$signed`
 
-### Class: \donatj\MySqlSchema\Columns\Numeric\FixedPoint\DecimalColumn
+### Class: donatj\MySqlSchema\Columns\Numeric\FixedPoint\DecimalColumn
 
 #### Method: DecimalColumn->getTypeName
 
@@ -959,8 +1099,6 @@ function setDecimals($decimals)
 
 - ***int*** `$decimals`
 
-
-
 ---
 
 #### Method: DecimalColumn->getTables
@@ -1007,7 +1145,7 @@ function isNullable()
 
 ##### Returns:
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -1019,7 +1157,7 @@ function setNullable($nullable)
 
 ##### Parameters:
 
-- ***boolean*** `$nullable`
+- ***bool*** `$nullable`
 
 ---
 
@@ -1050,7 +1188,7 @@ function setName($name)
 #### Method: DecimalColumn->toString
 
 ```php
-function toString($table)
+function toString(\donatj\MySqlSchema\Table $table)
 ```
 
 ##### Parameters:
@@ -1119,7 +1257,7 @@ function isSigned()
 
 ##### Returns:
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -1131,9 +1269,9 @@ function setSigned($signed)
 
 ##### Parameters:
 
-- ***boolean*** `$signed`
+- ***bool*** `$signed`
 
-### Class: \donatj\MySqlSchema\Columns\Numeric\FloatingPoint\DoubleColumn
+### Class: donatj\MySqlSchema\Columns\Numeric\FloatingPoint\DoubleColumn
 
 #### Method: DoubleColumn->getTypeName
 
@@ -1182,8 +1320,6 @@ function setDecimals($decimals)
 
 - ***int*** `$decimals`
 
-
-
 ---
 
 #### Method: DoubleColumn->getTables
@@ -1230,7 +1366,7 @@ function isNullable()
 
 ##### Returns:
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -1242,7 +1378,7 @@ function setNullable($nullable)
 
 ##### Parameters:
 
-- ***boolean*** `$nullable`
+- ***bool*** `$nullable`
 
 ---
 
@@ -1273,7 +1409,7 @@ function setName($name)
 #### Method: DoubleColumn->toString
 
 ```php
-function toString($table)
+function toString(\donatj\MySqlSchema\Table $table)
 ```
 
 ##### Parameters:
@@ -1342,7 +1478,7 @@ function isSigned()
 
 ##### Returns:
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -1354,9 +1490,9 @@ function setSigned($signed)
 
 ##### Parameters:
 
-- ***boolean*** `$signed`
+- ***bool*** `$signed`
 
-### Class: \donatj\MySqlSchema\Columns\Numeric\FloatingPoint\FloatColumn
+### Class: donatj\MySqlSchema\Columns\Numeric\FloatingPoint\FloatColumn
 
 #### Method: FloatColumn->getTypeName
 
@@ -1405,8 +1541,6 @@ function setDecimals($decimals)
 
 - ***int*** `$decimals`
 
-
-
 ---
 
 #### Method: FloatColumn->getTables
@@ -1453,7 +1587,7 @@ function isNullable()
 
 ##### Returns:
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -1465,7 +1599,7 @@ function setNullable($nullable)
 
 ##### Parameters:
 
-- ***boolean*** `$nullable`
+- ***bool*** `$nullable`
 
 ---
 
@@ -1496,7 +1630,7 @@ function setName($name)
 #### Method: FloatColumn->toString
 
 ```php
-function toString($table)
+function toString(\donatj\MySqlSchema\Table $table)
 ```
 
 ##### Parameters:
@@ -1565,7 +1699,7 @@ function isSigned()
 
 ##### Returns:
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -1577,9 +1711,9 @@ function setSigned($signed)
 
 ##### Parameters:
 
-- ***boolean*** `$signed`
+- ***bool*** `$signed`
 
-### Class: \donatj\MySqlSchema\Columns\Numeric\Integers\BigIntColumn
+### Class: donatj\MySqlSchema\Columns\Numeric\Integers\BigIntColumn
 
 #### Method: BigIntColumn->getTypeName
 
@@ -1602,8 +1736,6 @@ function __construct($name)
 ##### Parameters:
 
 - ***string*** `$name`
-
-
 
 ---
 
@@ -1651,7 +1783,7 @@ function isNullable()
 
 ##### Returns:
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -1663,7 +1795,7 @@ function setNullable($nullable)
 
 ##### Parameters:
 
-- ***boolean*** `$nullable`
+- ***bool*** `$nullable`
 
 ---
 
@@ -1694,7 +1826,7 @@ function setName($name)
 #### Method: BigIntColumn->toString
 
 ```php
-function toString($table)
+function toString(\donatj\MySqlSchema\Table $table)
 ```
 
 ##### Parameters:
@@ -1763,7 +1895,7 @@ function isSigned()
 
 ##### Returns:
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -1775,9 +1907,9 @@ function setSigned($signed)
 
 ##### Parameters:
 
-- ***boolean*** `$signed`
+- ***bool*** `$signed`
 
-### Class: \donatj\MySqlSchema\Columns\Numeric\Integers\IntColumn
+### Class: donatj\MySqlSchema\Columns\Numeric\Integers\IntColumn
 
 #### Method: IntColumn->getTypeName
 
@@ -1800,8 +1932,6 @@ function __construct($name)
 ##### Parameters:
 
 - ***string*** `$name`
-
-
 
 ---
 
@@ -1849,7 +1979,7 @@ function isNullable()
 
 ##### Returns:
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -1861,7 +1991,7 @@ function setNullable($nullable)
 
 ##### Parameters:
 
-- ***boolean*** `$nullable`
+- ***bool*** `$nullable`
 
 ---
 
@@ -1892,7 +2022,7 @@ function setName($name)
 #### Method: IntColumn->toString
 
 ```php
-function toString($table)
+function toString(\donatj\MySqlSchema\Table $table)
 ```
 
 ##### Parameters:
@@ -1961,7 +2091,7 @@ function isSigned()
 
 ##### Returns:
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -1973,9 +2103,9 @@ function setSigned($signed)
 
 ##### Parameters:
 
-- ***boolean*** `$signed`
+- ***bool*** `$signed`
 
-### Class: \donatj\MySqlSchema\Columns\Numeric\Integers\MediumIntColumn
+### Class: donatj\MySqlSchema\Columns\Numeric\Integers\MediumIntColumn
 
 #### Method: MediumIntColumn->getTypeName
 
@@ -1998,8 +2128,6 @@ function __construct($name)
 ##### Parameters:
 
 - ***string*** `$name`
-
-
 
 ---
 
@@ -2047,7 +2175,7 @@ function isNullable()
 
 ##### Returns:
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -2059,7 +2187,7 @@ function setNullable($nullable)
 
 ##### Parameters:
 
-- ***boolean*** `$nullable`
+- ***bool*** `$nullable`
 
 ---
 
@@ -2090,7 +2218,7 @@ function setName($name)
 #### Method: MediumIntColumn->toString
 
 ```php
-function toString($table)
+function toString(\donatj\MySqlSchema\Table $table)
 ```
 
 ##### Parameters:
@@ -2159,7 +2287,7 @@ function isSigned()
 
 ##### Returns:
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -2171,9 +2299,9 @@ function setSigned($signed)
 
 ##### Parameters:
 
-- ***boolean*** `$signed`
+- ***bool*** `$signed`
 
-### Class: \donatj\MySqlSchema\Columns\Numeric\Integers\SmallIntColumn
+### Class: donatj\MySqlSchema\Columns\Numeric\Integers\SmallIntColumn
 
 #### Method: SmallIntColumn->getTypeName
 
@@ -2196,8 +2324,6 @@ function __construct($name)
 ##### Parameters:
 
 - ***string*** `$name`
-
-
 
 ---
 
@@ -2245,7 +2371,7 @@ function isNullable()
 
 ##### Returns:
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -2257,7 +2383,7 @@ function setNullable($nullable)
 
 ##### Parameters:
 
-- ***boolean*** `$nullable`
+- ***bool*** `$nullable`
 
 ---
 
@@ -2288,7 +2414,7 @@ function setName($name)
 #### Method: SmallIntColumn->toString
 
 ```php
-function toString($table)
+function toString(\donatj\MySqlSchema\Table $table)
 ```
 
 ##### Parameters:
@@ -2357,7 +2483,7 @@ function isSigned()
 
 ##### Returns:
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -2369,9 +2495,9 @@ function setSigned($signed)
 
 ##### Parameters:
 
-- ***boolean*** `$signed`
+- ***bool*** `$signed`
 
-### Class: \donatj\MySqlSchema\Columns\Numeric\Integers\TinyIntColumn
+### Class: donatj\MySqlSchema\Columns\Numeric\Integers\TinyIntColumn
 
 #### Method: TinyIntColumn->getTypeName
 
@@ -2394,8 +2520,6 @@ function __construct($name)
 ##### Parameters:
 
 - ***string*** `$name`
-
-
 
 ---
 
@@ -2443,7 +2567,7 @@ function isNullable()
 
 ##### Returns:
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -2455,7 +2579,7 @@ function setNullable($nullable)
 
 ##### Parameters:
 
-- ***boolean*** `$nullable`
+- ***bool*** `$nullable`
 
 ---
 
@@ -2486,7 +2610,7 @@ function setName($name)
 #### Method: TinyIntColumn->toString
 
 ```php
-function toString($table)
+function toString(\donatj\MySqlSchema\Table $table)
 ```
 
 ##### Parameters:
@@ -2555,7 +2679,7 @@ function isSigned()
 
 ##### Returns:
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -2567,9 +2691,9 @@ function setSigned($signed)
 
 ##### Parameters:
 
-- ***boolean*** `$signed`
+- ***bool*** `$signed`
 
-### Class: \donatj\MySqlSchema\Columns\String\AbstractCharacterColumn
+### Class: donatj\MySqlSchema\Columns\String\AbstractCharacterColumn
 
 #### Method: AbstractCharacterColumn->__construct
 
@@ -2581,8 +2705,6 @@ function __construct($name, $length)
 
 - ***string*** `$name`
 - ***int*** `$length`
-
-
 
 ---
 
@@ -2630,7 +2752,7 @@ function isNullable()
 
 ##### Returns:
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -2642,7 +2764,7 @@ function setNullable($nullable)
 
 ##### Parameters:
 
-- ***boolean*** `$nullable`
+- ***bool*** `$nullable`
 
 ---
 
@@ -2673,7 +2795,7 @@ function setName($name)
 #### Method: AbstractCharacterColumn->toString
 
 ```php
-function toString($table)
+function toString(\donatj\MySqlSchema\Table $table)
 ```
 
 ##### Parameters:
@@ -2792,7 +2914,7 @@ function setLength($length)
 
 - ***int*** `$length`
 
-### Class: \donatj\MySqlSchema\Columns\String\AbstractStringColumn
+### Class: donatj\MySqlSchema\Columns\String\AbstractStringColumn
 
 #### Method: AbstractStringColumn->__construct
 
@@ -2803,8 +2925,6 @@ function __construct($name)
 ##### Parameters:
 
 - ***string*** `$name`
-
-
 
 ---
 
@@ -2852,7 +2972,7 @@ function isNullable()
 
 ##### Returns:
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -2864,7 +2984,7 @@ function setNullable($nullable)
 
 ##### Parameters:
 
-- ***boolean*** `$nullable`
+- ***bool*** `$nullable`
 
 ---
 
@@ -2895,7 +3015,7 @@ function setName($name)
 #### Method: AbstractStringColumn->toString
 
 ```php
-function toString($table)
+function toString(\donatj\MySqlSchema\Table $table)
 ```
 
 ##### Parameters:
@@ -2990,7 +3110,7 @@ function setCollation($collation)
 
 - ***null*** `$collation`
 
-### Class: \donatj\MySqlSchema\Columns\String\AbstractTextColumn
+### Class: donatj\MySqlSchema\Columns\String\AbstractTextColumn
 
 #### Method: AbstractTextColumn->__construct
 
@@ -3001,8 +3121,6 @@ function __construct($name)
 ##### Parameters:
 
 - ***string*** `$name`
-
-
 
 ---
 
@@ -3050,7 +3168,7 @@ function isNullable()
 
 ##### Returns:
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -3062,7 +3180,7 @@ function setNullable($nullable)
 
 ##### Parameters:
 
-- ***boolean*** `$nullable`
+- ***bool*** `$nullable`
 
 ---
 
@@ -3093,7 +3211,7 @@ function setName($name)
 #### Method: AbstractTextColumn->toString
 
 ```php
-function toString($table)
+function toString(\donatj\MySqlSchema\Table $table)
 ```
 
 ##### Parameters:
@@ -3188,7 +3306,7 @@ function setCollation($collation)
 
 - ***null*** `$collation`
 
-### Class: \donatj\MySqlSchema\Columns\String\Character\CharColumn
+### Class: donatj\MySqlSchema\Columns\String\Character\CharColumn
 
 #### Method: CharColumn->getTypeName
 
@@ -3212,8 +3330,6 @@ function __construct($name, $length)
 
 - ***string*** `$name`
 - ***int*** `$length`
-
-
 
 ---
 
@@ -3261,7 +3377,7 @@ function isNullable()
 
 ##### Returns:
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -3273,7 +3389,7 @@ function setNullable($nullable)
 
 ##### Parameters:
 
-- ***boolean*** `$nullable`
+- ***bool*** `$nullable`
 
 ---
 
@@ -3304,7 +3420,7 @@ function setName($name)
 #### Method: CharColumn->toString
 
 ```php
-function toString($table)
+function toString(\donatj\MySqlSchema\Table $table)
 ```
 
 ##### Parameters:
@@ -3411,7 +3527,7 @@ function setLength($length)
 
 - ***int*** `$length`
 
-### Class: \donatj\MySqlSchema\Columns\String\Character\VarcharColumn
+### Class: donatj\MySqlSchema\Columns\String\Character\VarcharColumn
 
 #### Method: VarcharColumn->getTypeName
 
@@ -3435,8 +3551,6 @@ function __construct($name, $length)
 
 - ***string*** `$name`
 - ***int*** `$length`
-
-
 
 ---
 
@@ -3484,7 +3598,7 @@ function isNullable()
 
 ##### Returns:
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -3496,7 +3610,7 @@ function setNullable($nullable)
 
 ##### Parameters:
 
-- ***boolean*** `$nullable`
+- ***bool*** `$nullable`
 
 ---
 
@@ -3527,7 +3641,7 @@ function setName($name)
 #### Method: VarcharColumn->toString
 
 ```php
-function toString($table)
+function toString(\donatj\MySqlSchema\Table $table)
 ```
 
 ##### Parameters:
@@ -3634,7 +3748,7 @@ function setLength($length)
 
 - ***int*** `$length`
 
-### Class: \donatj\MySqlSchema\Columns\String\Text\LongTextColumn
+### Class: donatj\MySqlSchema\Columns\String\Text\LongTextColumn
 
 #### Method: LongTextColumn->getTypeName
 
@@ -3657,8 +3771,6 @@ function __construct($name)
 ##### Parameters:
 
 - ***string*** `$name`
-
-
 
 ---
 
@@ -3706,7 +3818,7 @@ function isNullable()
 
 ##### Returns:
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -3718,7 +3830,7 @@ function setNullable($nullable)
 
 ##### Parameters:
 
-- ***boolean*** `$nullable`
+- ***bool*** `$nullable`
 
 ---
 
@@ -3749,7 +3861,7 @@ function setName($name)
 #### Method: LongTextColumn->toString
 
 ```php
-function toString($table)
+function toString(\donatj\MySqlSchema\Table $table)
 ```
 
 ##### Parameters:
@@ -3832,7 +3944,7 @@ function setCollation($collation)
 
 - ***null*** `$collation`
 
-### Class: \donatj\MySqlSchema\Columns\String\Text\MediumTextColumn
+### Class: donatj\MySqlSchema\Columns\String\Text\MediumTextColumn
 
 #### Method: MediumTextColumn->getTypeName
 
@@ -3855,8 +3967,6 @@ function __construct($name)
 ##### Parameters:
 
 - ***string*** `$name`
-
-
 
 ---
 
@@ -3904,7 +4014,7 @@ function isNullable()
 
 ##### Returns:
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -3916,7 +4026,7 @@ function setNullable($nullable)
 
 ##### Parameters:
 
-- ***boolean*** `$nullable`
+- ***bool*** `$nullable`
 
 ---
 
@@ -3947,7 +4057,7 @@ function setName($name)
 #### Method: MediumTextColumn->toString
 
 ```php
-function toString($table)
+function toString(\donatj\MySqlSchema\Table $table)
 ```
 
 ##### Parameters:
@@ -4030,7 +4140,7 @@ function setCollation($collation)
 
 - ***null*** `$collation`
 
-### Class: \donatj\MySqlSchema\Columns\String\Text\TextColumn
+### Class: donatj\MySqlSchema\Columns\String\Text\TextColumn
 
 #### Method: TextColumn->getTypeName
 
@@ -4053,8 +4163,6 @@ function __construct($name)
 ##### Parameters:
 
 - ***string*** `$name`
-
-
 
 ---
 
@@ -4102,7 +4210,7 @@ function isNullable()
 
 ##### Returns:
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -4114,7 +4222,7 @@ function setNullable($nullable)
 
 ##### Parameters:
 
-- ***boolean*** `$nullable`
+- ***bool*** `$nullable`
 
 ---
 
@@ -4145,7 +4253,7 @@ function setName($name)
 #### Method: TextColumn->toString
 
 ```php
-function toString($table)
+function toString(\donatj\MySqlSchema\Table $table)
 ```
 
 ##### Parameters:
@@ -4228,7 +4336,7 @@ function setCollation($collation)
 
 - ***null*** `$collation`
 
-### Class: \donatj\MySqlSchema\Columns\String\Text\TinyTextColumn
+### Class: donatj\MySqlSchema\Columns\String\Text\TinyTextColumn
 
 #### Method: TinyTextColumn->getTypeName
 
@@ -4251,8 +4359,6 @@ function __construct($name)
 ##### Parameters:
 
 - ***string*** `$name`
-
-
 
 ---
 
@@ -4300,7 +4406,7 @@ function isNullable()
 
 ##### Returns:
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -4312,7 +4418,7 @@ function setNullable($nullable)
 
 ##### Parameters:
 
-- ***boolean*** `$nullable`
+- ***bool*** `$nullable`
 
 ---
 
@@ -4343,7 +4449,7 @@ function setName($name)
 #### Method: TinyTextColumn->toString
 
 ```php
-function toString($table)
+function toString(\donatj\MySqlSchema\Table $table)
 ```
 
 ##### Parameters:
@@ -4426,7 +4532,7 @@ function setCollation($collation)
 
 - ***null*** `$collation`
 
-### Class: \donatj\MySqlSchema\Columns\Temporal\AbstractTemporalColumn
+### Class: donatj\MySqlSchema\Columns\Temporal\AbstractTemporalColumn
 
 #### Method: AbstractTemporalColumn->__construct
 
@@ -4437,8 +4543,6 @@ function __construct($name)
 ##### Parameters:
 
 - ***string*** `$name`
-
-
 
 ---
 
@@ -4486,7 +4590,7 @@ function isNullable()
 
 ##### Returns:
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -4498,7 +4602,7 @@ function setNullable($nullable)
 
 ##### Parameters:
 
-- ***boolean*** `$nullable`
+- ***bool*** `$nullable`
 
 ---
 
@@ -4529,7 +4633,7 @@ function setName($name)
 #### Method: AbstractTemporalColumn->toString
 
 ```php
-function toString($table)
+function toString(\donatj\MySqlSchema\Table $table)
 ```
 
 ##### Parameters:
@@ -4576,7 +4680,7 @@ function setDefault($default)
 
 - ***mixed*** `$default`
 
-### Class: \donatj\MySqlSchema\Columns\Temporal\DateTimeColumn
+### Class: donatj\MySqlSchema\Columns\Temporal\DateTimeColumn
 
 #### Method: DateTimeColumn->getTypeName
 
@@ -4599,8 +4703,6 @@ function __construct($name)
 ##### Parameters:
 
 - ***string*** `$name`
-
-
 
 ---
 
@@ -4648,7 +4750,7 @@ function isNullable()
 
 ##### Returns:
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -4660,7 +4762,7 @@ function setNullable($nullable)
 
 ##### Parameters:
 
-- ***boolean*** `$nullable`
+- ***bool*** `$nullable`
 
 ---
 
@@ -4691,7 +4793,7 @@ function setName($name)
 #### Method: DateTimeColumn->toString
 
 ```php
-function toString($table)
+function toString(\donatj\MySqlSchema\Table $table)
 ```
 
 ##### Parameters:
@@ -4726,7 +4828,7 @@ function setDefault($default)
 
 - ***mixed*** `$default`
 
-### Class: \donatj\MySqlSchema\Columns\Temporal\TimeColumn
+### Class: donatj\MySqlSchema\Columns\Temporal\TimeColumn
 
 #### Method: TimeColumn->getTypeName
 
@@ -4749,8 +4851,6 @@ function __construct($name)
 ##### Parameters:
 
 - ***string*** `$name`
-
-
 
 ---
 
@@ -4798,7 +4898,7 @@ function isNullable()
 
 ##### Returns:
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -4810,7 +4910,7 @@ function setNullable($nullable)
 
 ##### Parameters:
 
-- ***boolean*** `$nullable`
+- ***bool*** `$nullable`
 
 ---
 
@@ -4841,7 +4941,7 @@ function setName($name)
 #### Method: TimeColumn->toString
 
 ```php
-function toString($table)
+function toString(\donatj\MySqlSchema\Table $table)
 ```
 
 ##### Parameters:
@@ -4876,7 +4976,7 @@ function setDefault($default)
 
 - ***mixed*** `$default`
 
-### Class: \donatj\MySqlSchema\Columns\Temporal\TimestampColumn
+### Class: donatj\MySqlSchema\Columns\Temporal\TimestampColumn
 
 #### Method: TimestampColumn->getTypeName
 
@@ -4899,8 +4999,6 @@ function __construct($name)
 ##### Parameters:
 
 - ***string*** `$name`
-
-
 
 ---
 
@@ -4948,7 +5046,7 @@ function isNullable()
 
 ##### Returns:
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -4960,7 +5058,7 @@ function setNullable($nullable)
 
 ##### Parameters:
 
-- ***boolean*** `$nullable`
+- ***bool*** `$nullable`
 
 ---
 
@@ -4991,7 +5089,7 @@ function setName($name)
 #### Method: TimestampColumn->toString
 
 ```php
-function toString($table)
+function toString(\donatj\MySqlSchema\Table $table)
 ```
 
 ##### Parameters:
@@ -5026,7 +5124,7 @@ function setDefault($default)
 
 - ***mixed*** `$default`
 
-### Class: \donatj\MySqlSchema\Columns\Temporal\YearColumn
+### Class: donatj\MySqlSchema\Columns\Temporal\YearColumn
 
 #### Method: YearColumn->__construct
 
@@ -5062,8 +5160,6 @@ function getTypeName()
 ##### Returns:
 
 - ***string***
-
-
 
 ---
 
@@ -5111,7 +5207,7 @@ function isNullable()
 
 ##### Returns:
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -5123,7 +5219,7 @@ function setNullable($nullable)
 
 ##### Parameters:
 
-- ***boolean*** `$nullable`
+- ***bool*** `$nullable`
 
 ---
 
@@ -5154,7 +5250,7 @@ function setName($name)
 #### Method: YearColumn->toString
 
 ```php
-function toString($table)
+function toString(\donatj\MySqlSchema\Table $table)
 ```
 
 ##### Parameters:
@@ -5201,7 +5297,7 @@ function getLength()
 
 - ***int***
 
-### Class: \donatj\MySqlSchema\Columns\Traits\OptionalLengthTrait
+### Class: donatj\MySqlSchema\Columns\Traits\OptionalLengthTrait
 
 #### Method: OptionalLengthTrait->getLength
 
@@ -5225,7 +5321,7 @@ function setLength([ $length = null])
 
 - ***int*** | ***null*** `$length`
 
-### Class: \donatj\MySqlSchema\Columns\Traits\RequiredLengthTrait
+### Class: donatj\MySqlSchema\Columns\Traits\RequiredLengthTrait
 
 #### Method: RequiredLengthTrait->getLength
 
@@ -5249,7 +5345,7 @@ function setLength($length)
 
 - ***int*** `$length`
 
-### Class: \donatj\MySqlSchema\Columns\Traits\SignedTrait
+### Class: donatj\MySqlSchema\Columns\Traits\SignedTrait
 
 #### Method: SignedTrait->isSigned
 
@@ -5259,7 +5355,7 @@ function isSigned()
 
 ##### Returns:
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -5271,9 +5367,9 @@ function setSigned($signed)
 
 ##### Parameters:
 
-- ***boolean*** `$signed`
+- ***bool*** `$signed`
 
-### Class: \donatj\MySqlSchema\Table
+### Class: donatj\MySqlSchema\Table
 
 #### Method: Table->__construct
 
@@ -5371,16 +5467,16 @@ function setName($name)
 
 - ***string*** `$name`
 
+---
 
-
-#### Undocumented Method: `Table->addAutoIncrement($column)`
+#### Undocumented Method: `Table->addAutoIncrement(\donatj\MySqlSchema\Columns\Numeric\AbstractIntegerColumn $column)`
 
 ---
 
 #### Method: Table->isAutoIncrement
 
 ```php
-function isAutoIncrement($column)
+function isAutoIncrement(\donatj\MySqlSchema\Columns\Numeric\AbstractIntegerColumn $column)
 ```
 
 ##### Parameters:
@@ -5391,16 +5487,16 @@ function isAutoIncrement($column)
 
 - ***bool***
 
+---
 
-
-#### Undocumented Method: `Table->addPrimaryKey($column)`
+#### Undocumented Method: `Table->addPrimaryKey(\donatj\MySqlSchema\Columns\AbstractColumn $column)`
 
 ---
 
 #### Method: Table->isPrimaryKey
 
 ```php
-function isPrimaryKey($column)
+function isPrimaryKey(\donatj\MySqlSchema\Columns\AbstractColumn $column)
 ```
 
 ##### Parameters:
@@ -5411,19 +5507,19 @@ function isPrimaryKey($column)
 
 - ***bool***
 
+---
 
+#### Undocumented Method: `Table->addKeyColumn($keyName, \donatj\MySqlSchema\Columns\AbstractColumn $column [, $index = null [, $type = 'NORMAL' [, $method = '']]])`
 
-#### Undocumented Method: `Table->addKeyColumn($keyName, $column [, $index = null [, $type = 'NORMAL' [, $method = '']]])`
+---
 
+#### Undocumented Method: `Table->addForeignKey(\donatj\MySqlSchema\Columns\AbstractColumn $local, \donatj\MySqlSchema\Columns\AbstractColumn $remote)`
 
+---
 
-#### Undocumented Method: `Table->addForeignKey($local, $remote)`
+#### Undocumented Method: `Table->addColumn(\donatj\MySqlSchema\Columns\AbstractColumn $column)`
 
-
-
-#### Undocumented Method: `Table->addColumn($column)`
-
-
+---
 
 #### Undocumented Method: `Table->toString()`
 
@@ -5475,7 +5571,7 @@ function setCollation($collation)
 
 - ***null*** `$collation`
 
-### Class: \donatj\MySqlSchema\Traits\CharsetAndCollationTrait
+### Class: donatj\MySqlSchema\Traits\CharsetAndCollationTrait
 
 #### Method: CharsetAndCollationTrait->getCharset
 
@@ -5523,4 +5619,4 @@ function setCollation($collation)
 
 - ***null*** `$collation`
 
-### Class: \donatj\MySqlSchema\Traits\EscapeTrait
+### Class: donatj\MySqlSchema\Traits\EscapeTrait
