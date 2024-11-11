@@ -3,7 +3,10 @@
 namespace donatj\MySqlSchema\Columns;
 
 use donatj\MySqlSchema\Columns\Interfaces\CharsetColumnInterface;
+use donatj\MySqlSchema\Columns\Interfaces\DecimalPlacesInterface;
+use donatj\MySqlSchema\Columns\Interfaces\MaxDigitsInterface;
 use donatj\MySqlSchema\Columns\Interfaces\OptionalLengthInterface;
+use donatj\MySqlSchema\Columns\Interfaces\PrecisionInterface;
 use donatj\MySqlSchema\Columns\Interfaces\RequiredLengthInterface;
 use donatj\MySqlSchema\Columns\Interfaces\SignedInterface;
 use donatj\MySqlSchema\Columns\Numeric\AbstractIntegerColumn;
@@ -115,13 +118,7 @@ abstract class AbstractColumn {
 			$nullable = ' NOT NULL';
 		}
 
-		$length = '';
-		if( $this instanceof RequiredLengthInterface ||
-			($this instanceof OptionalLengthInterface && $this->getLength())
-		) {
-			$l      = intval($this->getLength());
-			$length = "($l)";
-		}
+		$modifier = $this->getTypeModifierString();
 
 		$signed = '';
 		if( $this instanceof SignedInterface ) {
@@ -160,7 +157,7 @@ abstract class AbstractColumn {
 
 		$name = $this->mkString($this->name);
 
-		return "{$name} {$type}{$length}{$signed}{$charset}{$collation}{$nullable}{$default}{$autoIncrement}{$comment}";
+		return "{$name} {$type}{$modifier}{$signed}{$charset}{$collation}{$nullable}{$default}{$autoIncrement}{$comment}";
 	}
 
 	/**
@@ -181,5 +178,26 @@ abstract class AbstractColumn {
 	 */
 	public function setDefault( $default ) {
 		$this->default = $default;
+	}
+
+	/**
+	 * @return string
+	 */
+	private function getTypeModifierString() {
+		if( $this instanceof RequiredLengthInterface ||
+			($this instanceof OptionalLengthInterface && !is_null($this->getLength()))
+		) {
+			return sprintf("(%s)", $this->getLength());
+		}
+
+		if( $this instanceof PrecisionInterface ) {
+			return sprintf("(%d)", $this->getPrecision());
+		}
+
+		if( $this instanceof DecimalPlacesInterface && $this instanceof MaxDigitsInterface) {
+			return sprintf("(%d,%d)", $this->getMaxDigits(), $this->getDecimalPlaces());
+		}
+
+		return '';
 	}
 }

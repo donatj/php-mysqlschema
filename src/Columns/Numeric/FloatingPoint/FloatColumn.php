@@ -2,9 +2,9 @@
 
 namespace donatj\MySqlSchema\Columns\Numeric\FloatingPoint;
 
-use donatj\MySqlSchema\Columns\Numeric\AbstractFractionColumn;
+use donatj\MySqlSchema\Columns\Numeric\AbstractFloatingColumn;
 
-class FloatColumn extends AbstractFractionColumn {
+class FloatColumn extends AbstractFloatingColumn {
 
 	/**
 	 * @return string

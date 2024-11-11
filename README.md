@@ -241,6 +241,62 @@ function setCollation($collation)
 
 - ***void***
 
+### Class: donatj\MySqlSchema\Columns\Interfaces\DecimalPlacesInterface
+
+#### Method: DecimalPlacesInterface->getDecimalPlaces
+
+```php
+function getDecimalPlaces()
+```
+
+##### Returns:
+
+- ***int***
+
+---
+
+#### Method: DecimalPlacesInterface->setDecimalPlaces
+
+```php
+function setDecimalPlaces($decimalPlaces)
+```
+
+##### Parameters:
+
+- ***int*** `$decimalPlaces`
+
+##### Returns:
+
+- ***void***
+
+### Class: donatj\MySqlSchema\Columns\Interfaces\MaxDigitsInterface
+
+#### Method: MaxDigitsInterface->getMaxDigits
+
+```php
+function getMaxDigits()
+```
+
+##### Returns:
+
+- ***int***
+
+---
+
+#### Method: MaxDigitsInterface->setMaxDigits
+
+```php
+function setMaxDigits($maxDigits)
+```
+
+##### Parameters:
+
+- ***int*** `$maxDigits`
+
+##### Returns:
+
+- ***void***
+
 ### Class: donatj\MySqlSchema\Columns\Interfaces\OptionalLengthInterface
 
 #### Method: OptionalLengthInterface->getLength
@@ -264,6 +320,34 @@ function setLength([ $length = null])
 ##### Parameters:
 
 - ***int*** | ***null*** `$length`
+
+##### Returns:
+
+- ***void***
+
+### Class: donatj\MySqlSchema\Columns\Interfaces\PrecisionInterface
+
+#### Method: PrecisionInterface->getPrecision
+
+```php
+function getPrecision()
+```
+
+##### Returns:
+
+- ***int***
+
+---
+
+#### Method: PrecisionInterface->setPrecision
+
+```php
+function setPrecision($precision)
+```
+
+##### Parameters:
+
+- ***int*** `$precision`
 
 ##### Returns:
 
@@ -489,25 +573,25 @@ function setDefault($default)
 
 - ***void***
 
-### Class: donatj\MySqlSchema\Columns\Numeric\AbstractFractionColumn
+### Class: donatj\MySqlSchema\Columns\Numeric\AbstractFloatingColumn
 
-#### Method: AbstractFractionColumn->__construct
+#### Method: AbstractFloatingColumn->__construct
 
 ```php
-function __construct($name, $decimals)
+function __construct($name, $precision)
 ```
 
 ##### Parameters:
 
 - ***string*** `$name`
-- ***int*** `$decimals`
+- ***int*** `$precision`
 
 ---
 
-#### Method: AbstractFractionColumn->getDecimals
+#### Method: AbstractFloatingColumn->getPrecision
 
 ```php
-function getDecimals()
+function getPrecision()
 ```
 
 ##### Returns:
@@ -516,19 +600,23 @@ function getDecimals()
 
 ---
 
-#### Method: AbstractFractionColumn->setDecimals
+#### Method: AbstractFloatingColumn->setPrecision
 
 ```php
-function setDecimals($decimals)
+function setPrecision($precision)
 ```
 
 ##### Parameters:
 
-- ***int*** `$decimals`
+- ***int*** `$precision`
+
+##### Returns:
+
+- ***void***
 
 ---
 
-#### Method: AbstractFractionColumn->getTables
+#### Method: AbstractFloatingColumn->getTables
 
 ```php
 function getTables()
@@ -540,7 +628,7 @@ function getTables()
 
 ---
 
-#### Method: AbstractFractionColumn->getComment
+#### Method: AbstractFloatingColumn->getComment
 
 ```php
 function getComment()
@@ -552,7 +640,7 @@ function getComment()
 
 ---
 
-#### Method: AbstractFractionColumn->setComment
+#### Method: AbstractFloatingColumn->setComment
 
 ```php
 function setComment($comment)
@@ -568,7 +656,7 @@ function setComment($comment)
 
 ---
 
-#### Method: AbstractFractionColumn->isNullable
+#### Method: AbstractFloatingColumn->isNullable
 
 ```php
 function isNullable()
@@ -580,7 +668,7 @@ function isNullable()
 
 ---
 
-#### Method: AbstractFractionColumn->setNullable
+#### Method: AbstractFloatingColumn->setNullable
 
 ```php
 function setNullable($nullable)
@@ -596,7 +684,7 @@ function setNullable($nullable)
 
 ---
 
-#### Method: AbstractFractionColumn->getName
+#### Method: AbstractFloatingColumn->getName
 
 ```php
 function getName()
@@ -608,7 +696,7 @@ function getName()
 
 ---
 
-#### Method: AbstractFractionColumn->setName
+#### Method: AbstractFloatingColumn->setName
 
 ```php
 function setName($name)
@@ -624,7 +712,7 @@ function setName($name)
 
 ---
 
-#### Method: AbstractFractionColumn->toString
+#### Method: AbstractFloatingColumn->toString
 
 ```php
 function toString(\donatj\MySqlSchema\Table $table)
@@ -640,7 +728,7 @@ function toString(\donatj\MySqlSchema\Table $table)
 
 ---
 
-#### Method: AbstractFractionColumn->getTypeName
+#### Method: AbstractFloatingColumn->getTypeName
 
 ```php
 function getTypeName()
@@ -652,7 +740,7 @@ function getTypeName()
 
 ---
 
-#### Method: AbstractFractionColumn->getDefault
+#### Method: AbstractFloatingColumn->getDefault
 
 ```php
 function getDefault()
@@ -664,7 +752,7 @@ function getDefault()
 
 ---
 
-#### Method: AbstractFractionColumn->setDefault
+#### Method: AbstractFloatingColumn->setDefault
 
 ```php
 function setDefault($default)
@@ -680,31 +768,7 @@ function setDefault($default)
 
 ---
 
-#### Method: AbstractFractionColumn->getLength
-
-```php
-function getLength()
-```
-
-##### Returns:
-
-- ***int*** | ***null***
-
----
-
-#### Method: AbstractFractionColumn->setLength
-
-```php
-function setLength([ $length = null])
-```
-
-##### Parameters:
-
-- ***int*** | ***null*** `$length`
-
----
-
-#### Method: AbstractFractionColumn->isSigned
+#### Method: AbstractFloatingColumn->isSigned
 
 ```php
 function isSigned()
@@ -716,7 +780,7 @@ function isSigned()
 
 ---
 
-#### Method: AbstractFractionColumn->setSigned
+#### Method: AbstractFloatingColumn->setSigned
 
 ```php
 function setSigned($signed)
@@ -892,30 +956,6 @@ function setDefault($default)
 
 ---
 
-#### Method: AbstractIntegerColumn->getLength
-
-```php
-function getLength()
-```
-
-##### Returns:
-
-- ***int*** | ***null***
-
----
-
-#### Method: AbstractIntegerColumn->setLength
-
-```php
-function setLength([ $length = null])
-```
-
-##### Parameters:
-
-- ***int*** | ***null*** `$length`
-
----
-
 #### Method: AbstractIntegerColumn->isSigned
 
 ```php
@@ -937,6 +977,30 @@ function setSigned($signed)
 ##### Parameters:
 
 - ***bool*** `$signed`
+
+---
+
+#### Method: AbstractIntegerColumn->getLength
+
+```php
+function getLength()
+```
+
+##### Returns:
+
+- ***int*** | ***null***
+
+---
+
+#### Method: AbstractIntegerColumn->setLength
+
+```php
+function setLength([ $length = null])
+```
+
+##### Parameters:
+
+- ***int*** | ***null*** `$length`
 
 ### Class: donatj\MySqlSchema\Columns\Numeric\AbstractNumberColumn
 
@@ -1104,30 +1168,6 @@ function setDefault($default)
 
 ---
 
-#### Method: AbstractNumberColumn->getLength
-
-```php
-function getLength()
-```
-
-##### Returns:
-
-- ***int*** | ***null***
-
----
-
-#### Method: AbstractNumberColumn->setLength
-
-```php
-function setLength([ $length = null])
-```
-
-##### Parameters:
-
-- ***int*** | ***null*** `$length`
-
----
-
 #### Method: AbstractNumberColumn->isSigned
 
 ```php
@@ -1152,6 +1192,20 @@ function setSigned($signed)
 
 ### Class: donatj\MySqlSchema\Columns\Numeric\FixedPoint\DecimalColumn
 
+#### Method: DecimalColumn->__construct
+
+```php
+function __construct($name, $maxDigits, $decimalPlaces)
+```
+
+##### Parameters:
+
+- ***string*** `$name`
+- ***int*** `$maxDigits`
+- ***int*** `$decimalPlaces`
+
+---
+
 #### Method: DecimalColumn->getTypeName
 
 ```php
@@ -1164,23 +1218,10 @@ function getTypeName()
 
 ---
 
-#### Method: DecimalColumn->__construct
+#### Method: DecimalColumn->getMaxDigits
 
 ```php
-function __construct($name, $decimals)
-```
-
-##### Parameters:
-
-- ***string*** `$name`
-- ***int*** `$decimals`
-
----
-
-#### Method: DecimalColumn->getDecimals
-
-```php
-function getDecimals()
+function getMaxDigits()
 ```
 
 ##### Returns:
@@ -1189,15 +1230,47 @@ function getDecimals()
 
 ---
 
-#### Method: DecimalColumn->setDecimals
+#### Method: DecimalColumn->setMaxDigits
 
 ```php
-function setDecimals($decimals)
+function setMaxDigits($maxDigits)
 ```
 
 ##### Parameters:
 
-- ***int*** `$decimals`
+- ***int*** `$maxDigits`
+
+##### Returns:
+
+- ***void***
+
+---
+
+#### Method: DecimalColumn->getDecimalPlaces
+
+```php
+function getDecimalPlaces()
+```
+
+##### Returns:
+
+- ***int***
+
+---
+
+#### Method: DecimalColumn->setDecimalPlaces
+
+```php
+function setDecimalPlaces($decimalPlaces)
+```
+
+##### Parameters:
+
+- ***int*** `$decimalPlaces`
+
+##### Returns:
+
+- ***void***
 
 ---
 
@@ -1341,30 +1414,6 @@ function setDefault($default)
 
 ---
 
-#### Method: DecimalColumn->getLength
-
-```php
-function getLength()
-```
-
-##### Returns:
-
-- ***int*** | ***null***
-
----
-
-#### Method: DecimalColumn->setLength
-
-```php
-function setLength([ $length = null])
-```
-
-##### Parameters:
-
-- ***int*** | ***null*** `$length`
-
----
-
 #### Method: DecimalColumn->isSigned
 
 ```php
@@ -1404,20 +1453,20 @@ function getTypeName()
 #### Method: DoubleColumn->__construct
 
 ```php
-function __construct($name, $decimals)
+function __construct($name, $precision)
 ```
 
 ##### Parameters:
 
 - ***string*** `$name`
-- ***int*** `$decimals`
+- ***int*** `$precision`
 
 ---
 
-#### Method: DoubleColumn->getDecimals
+#### Method: DoubleColumn->getPrecision
 
 ```php
-function getDecimals()
+function getPrecision()
 ```
 
 ##### Returns:
@@ -1426,15 +1475,19 @@ function getDecimals()
 
 ---
 
-#### Method: DoubleColumn->setDecimals
+#### Method: DoubleColumn->setPrecision
 
 ```php
-function setDecimals($decimals)
+function setPrecision($precision)
 ```
 
 ##### Parameters:
 
-- ***int*** `$decimals`
+- ***int*** `$precision`
+
+##### Returns:
+
+- ***void***
 
 ---
 
@@ -1578,30 +1631,6 @@ function setDefault($default)
 
 ---
 
-#### Method: DoubleColumn->getLength
-
-```php
-function getLength()
-```
-
-##### Returns:
-
-- ***int*** | ***null***
-
----
-
-#### Method: DoubleColumn->setLength
-
-```php
-function setLength([ $length = null])
-```
-
-##### Parameters:
-
-- ***int*** | ***null*** `$length`
-
----
-
 #### Method: DoubleColumn->isSigned
 
 ```php
@@ -1641,20 +1670,20 @@ function getTypeName()
 #### Method: FloatColumn->__construct
 
 ```php
-function __construct($name, $decimals)
+function __construct($name, $precision)
 ```
 
 ##### Parameters:
 
 - ***string*** `$name`
-- ***int*** `$decimals`
+- ***int*** `$precision`
 
 ---
 
-#### Method: FloatColumn->getDecimals
+#### Method: FloatColumn->getPrecision
 
 ```php
-function getDecimals()
+function getPrecision()
 ```
 
 ##### Returns:
@@ -1663,15 +1692,19 @@ function getDecimals()
 
 ---
 
-#### Method: FloatColumn->setDecimals
+#### Method: FloatColumn->setPrecision
 
 ```php
-function setDecimals($decimals)
+function setPrecision($precision)
 ```
 
 ##### Parameters:
 
-- ***int*** `$decimals`
+- ***int*** `$precision`
+
+##### Returns:
+
+- ***void***
 
 ---
 
@@ -1812,30 +1845,6 @@ function setDefault($default)
 ##### Returns:
 
 - ***void***
-
----
-
-#### Method: FloatColumn->getLength
-
-```php
-function getLength()
-```
-
-##### Returns:
-
-- ***int*** | ***null***
-
----
-
-#### Method: FloatColumn->setLength
-
-```php
-function setLength([ $length = null])
-```
-
-##### Parameters:
-
-- ***int*** | ***null*** `$length`
 
 ---
 
@@ -2027,30 +2036,6 @@ function setDefault($default)
 
 ---
 
-#### Method: BigIntColumn->getLength
-
-```php
-function getLength()
-```
-
-##### Returns:
-
-- ***int*** | ***null***
-
----
-
-#### Method: BigIntColumn->setLength
-
-```php
-function setLength([ $length = null])
-```
-
-##### Parameters:
-
-- ***int*** | ***null*** `$length`
-
----
-
 #### Method: BigIntColumn->isSigned
 
 ```php
@@ -2072,6 +2057,30 @@ function setSigned($signed)
 ##### Parameters:
 
 - ***bool*** `$signed`
+
+---
+
+#### Method: BigIntColumn->getLength
+
+```php
+function getLength()
+```
+
+##### Returns:
+
+- ***int*** | ***null***
+
+---
+
+#### Method: BigIntColumn->setLength
+
+```php
+function setLength([ $length = null])
+```
+
+##### Parameters:
+
+- ***int*** | ***null*** `$length`
 
 ### Class: donatj\MySqlSchema\Columns\Numeric\Integers\IntColumn
 
@@ -2239,30 +2248,6 @@ function setDefault($default)
 
 ---
 
-#### Method: IntColumn->getLength
-
-```php
-function getLength()
-```
-
-##### Returns:
-
-- ***int*** | ***null***
-
----
-
-#### Method: IntColumn->setLength
-
-```php
-function setLength([ $length = null])
-```
-
-##### Parameters:
-
-- ***int*** | ***null*** `$length`
-
----
-
 #### Method: IntColumn->isSigned
 
 ```php
@@ -2284,6 +2269,30 @@ function setSigned($signed)
 ##### Parameters:
 
 - ***bool*** `$signed`
+
+---
+
+#### Method: IntColumn->getLength
+
+```php
+function getLength()
+```
+
+##### Returns:
+
+- ***int*** | ***null***
+
+---
+
+#### Method: IntColumn->setLength
+
+```php
+function setLength([ $length = null])
+```
+
+##### Parameters:
+
+- ***int*** | ***null*** `$length`
 
 ### Class: donatj\MySqlSchema\Columns\Numeric\Integers\MediumIntColumn
 
@@ -2451,30 +2460,6 @@ function setDefault($default)
 
 ---
 
-#### Method: MediumIntColumn->getLength
-
-```php
-function getLength()
-```
-
-##### Returns:
-
-- ***int*** | ***null***
-
----
-
-#### Method: MediumIntColumn->setLength
-
-```php
-function setLength([ $length = null])
-```
-
-##### Parameters:
-
-- ***int*** | ***null*** `$length`
-
----
-
 #### Method: MediumIntColumn->isSigned
 
 ```php
@@ -2496,6 +2481,30 @@ function setSigned($signed)
 ##### Parameters:
 
 - ***bool*** `$signed`
+
+---
+
+#### Method: MediumIntColumn->getLength
+
+```php
+function getLength()
+```
+
+##### Returns:
+
+- ***int*** | ***null***
+
+---
+
+#### Method: MediumIntColumn->setLength
+
+```php
+function setLength([ $length = null])
+```
+
+##### Parameters:
+
+- ***int*** | ***null*** `$length`
 
 ### Class: donatj\MySqlSchema\Columns\Numeric\Integers\SmallIntColumn
 
@@ -2663,30 +2672,6 @@ function setDefault($default)
 
 ---
 
-#### Method: SmallIntColumn->getLength
-
-```php
-function getLength()
-```
-
-##### Returns:
-
-- ***int*** | ***null***
-
----
-
-#### Method: SmallIntColumn->setLength
-
-```php
-function setLength([ $length = null])
-```
-
-##### Parameters:
-
-- ***int*** | ***null*** `$length`
-
----
-
 #### Method: SmallIntColumn->isSigned
 
 ```php
@@ -2708,6 +2693,30 @@ function setSigned($signed)
 ##### Parameters:
 
 - ***bool*** `$signed`
+
+---
+
+#### Method: SmallIntColumn->getLength
+
+```php
+function getLength()
+```
+
+##### Returns:
+
+- ***int*** | ***null***
+
+---
+
+#### Method: SmallIntColumn->setLength
+
+```php
+function setLength([ $length = null])
+```
+
+##### Parameters:
+
+- ***int*** | ***null*** `$length`
 
 ### Class: donatj\MySqlSchema\Columns\Numeric\Integers\TinyIntColumn
 
@@ -2875,30 +2884,6 @@ function setDefault($default)
 
 ---
 
-#### Method: TinyIntColumn->getLength
-
-```php
-function getLength()
-```
-
-##### Returns:
-
-- ***int*** | ***null***
-
----
-
-#### Method: TinyIntColumn->setLength
-
-```php
-function setLength([ $length = null])
-```
-
-##### Parameters:
-
-- ***int*** | ***null*** `$length`
-
----
-
 #### Method: TinyIntColumn->isSigned
 
 ```php
@@ -2920,6 +2905,30 @@ function setSigned($signed)
 ##### Parameters:
 
 - ***bool*** `$signed`
+
+---
+
+#### Method: TinyIntColumn->getLength
+
+```php
+function getLength()
+```
+
+##### Returns:
+
+- ***int*** | ***null***
+
+---
+
+#### Method: TinyIntColumn->setLength
+
+```php
+function setLength([ $length = null])
+```
+
+##### Parameters:
+
+- ***int*** | ***null*** `$length`
 
 ### Class: donatj\MySqlSchema\Columns\String\AbstractCharacterColumn
 

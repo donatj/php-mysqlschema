@@ -2,6 +2,10 @@
 
 namespace donatj\MySqlSchema\Columns\Numeric;
 
-abstract class AbstractIntegerColumn extends AbstractNumberColumn {
+use donatj\MySqlSchema\Columns\Interfaces\OptionalLengthInterface;
+use donatj\MySqlSchema\Columns\Traits\OptionalLengthTrait;
 
+abstract class AbstractIntegerColumn extends AbstractNumberColumn implements OptionalLengthInterface {
+
+	use OptionalLengthTrait;
 }
