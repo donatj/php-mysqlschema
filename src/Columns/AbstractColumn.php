@@ -45,6 +45,7 @@ abstract class AbstractColumn {
 	/**
 	 * @access private
 	 * @param \donatj\MySqlSchema\Table $table
+	 * @return void
 	 */
 	public function addTable( Table $table ) {
 		$this->tables[spl_object_hash($table)] = $table;
@@ -66,6 +67,7 @@ abstract class AbstractColumn {
 
 	/**
 	 * @param string $comment
+	 * @return void
 	 */
 	public function setComment( $comment ) {
 		$this->comment = $comment;
@@ -80,6 +82,7 @@ abstract class AbstractColumn {
 
 	/**
 	 * @param boolean $nullable
+	 * @return void
 	 */
 	public function setNullable( $nullable ) {
 		$this->nullable = $nullable;
@@ -94,6 +97,7 @@ abstract class AbstractColumn {
 
 	/**
 	 * @param string $name
+	 * @return void
 	 */
 	public function setName( $name ) {
 		$this->name = $name;
@@ -173,6 +177,7 @@ abstract class AbstractColumn {
 
 	/**
 	 * @param mixed $default
+	 * @return void
 	 */
 	public function setDefault( $default ) {
 		$this->default = $default;

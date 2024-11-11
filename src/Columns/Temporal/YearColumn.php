@@ -20,6 +20,8 @@ class YearColumn extends AbstractTemporalColumn implements RequiredLengthInterfa
 
 	/**
 	 * @param int $length 2 or 4
+	 * @return void
+	 * @throws \InvalidArgumentException
 	 */
 	public function setLength( $length ) {
 		if( $length != 2 && $length != 4 ) {

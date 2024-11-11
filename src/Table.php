@@ -34,6 +34,9 @@ class Table {
 	 */
 	protected $comment = '';
 
+	/**
+	 * @var null|string
+	 */
 	protected $engine = null;
 
 	/**
@@ -52,20 +55,22 @@ class Table {
 
 	/**
 	 * @param string $comment
+	 * @return void
 	 */
 	public function setComment( $comment ) {
 		$this->comment = $comment;
 	}
 
 	/**
-	 * @return null
+	 * @return null|string
 	 */
 	public function getEngine() {
 		return $this->engine;
 	}
 
 	/**
-	 * @param null $engine
+	 * @param null|string $engine
+	 * @return void
 	 */
 	public function setEngine( $engine ) {
 		$this->engine = $engine;
@@ -80,6 +85,7 @@ class Table {
 
 	/**
 	 * @param string $name
+	 * @return void
 	 */
 	public function setName( $name ) {
 		$this->name = $name;
@@ -90,6 +96,9 @@ class Table {
 	 */
 	protected $autoIncrement = null;
 
+	/**
+	 * @return void
+	 */
 	public function addAutoIncrement( AbstractIntegerColumn $column ) {
 		$this->autoIncrement = $column;
 
@@ -105,10 +114,13 @@ class Table {
 	}
 
 	/**
-	 * @var AbstractColumn[]
+	 * @var array<string, AbstractColumn>
 	 */
 	protected $primaryKeys = [ ];
 
+	/**
+	 * @return void
+	 */
 	public function addPrimaryKey( AbstractColumn $column ) {
 		$this->primaryKeys[spl_object_hash($column)] = $column;
 
@@ -123,13 +135,22 @@ class Table {
 		return isset($this->primaryKeys[spl_object_hash($column)]);
 	}
 
+	/**
+	 * @var array<string, array{columns:AbstractColumn[],type:string,method:string}>
+	 */
 	protected $keys = [ ];
 
+	/**
+	 * @param string $keyName
+	 * @param AbstractColumn $column
+	 * @param int|null $index
+	 * @param string $type
+	 * @param string $method
+	 * @return void
+	 */
 	public function addKeyColumn( $keyName, AbstractColumn $column, $index = null, $type = 'NORMAL', $method = '' ) {
 		if( !isset($this->keys[$keyName]) ) {
-			$this->keys[$keyName] = [
-				'columns' => [ ],
-			];
+			$this->keys[$keyName]['columns'] = [];
 		}
 
 		$this->keys[$keyName]['type']   = $type;
@@ -143,8 +164,14 @@ class Table {
 		}
 	}
 
+	/**
+	 * @var array<string, array{local:AbstractColumn,remote:AbstractColumn}>
+	 */
 	protected $foreignKeys = [ ];
 
+	/**
+	 * @return void
+	 */
 	public function addForeignKey( AbstractColumn $local, AbstractColumn $remote ) {
 		$this->foreignKeys[spl_object_hash($local)] = [
 			'local'  => $local,
@@ -157,11 +184,17 @@ class Table {
 	 */
 	protected $columns = [ ];
 
+	/**
+	 * @return void
+	 */
 	public function addColumn( AbstractColumn $column ) {
 		$this->columns[spl_object_hash($column)] = $column;
 		$column->addTable($this);
 	}
 
+	/**
+	 * @return string
+	 */
 	public function toString() {
 		$warnings   = [ ];
 		$statements = [ ];
@@ -202,8 +235,8 @@ class Table {
 
 		foreach( $this->foreignKeys as $fks ) {
 			/**
-			 * @var $local AbstractColumn
-			 * @var $remote AbstractColumn
+			 * @var AbstractColumn $local
+			 * @var AbstractColumn $remote
 			 */
 			$local  = $fks['local'];
 			$remote = $fks['remote'];
@@ -217,7 +250,7 @@ class Table {
 			foreach( $tables as $tbl ) {
 				// @todo check length and perhaps other stuff
 				if( $local->getTypeName() != $remote->getTypeName() ) {
-					$warnings[] = $this->mkString($this->autoIncrement->getName()) . ' type does not match defined foreign key type';
+					$warnings[] = $this->mkString($local->getName()) . ' type does not match defined foreign key type';
 				}
 				$localName     = $this->mkString($local->getName());
 				$remoteName    = $this->mkString($remote->getName());

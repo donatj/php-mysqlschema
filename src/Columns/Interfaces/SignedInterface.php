@@ -11,6 +11,7 @@ interface SignedInterface {
 
 	/**
 	 * @param boolean $signed
+	 * @return void
 	 */
 	public function setSigned( $signed );
 }

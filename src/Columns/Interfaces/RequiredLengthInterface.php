@@ -11,6 +11,7 @@ interface RequiredLengthInterface {
 
 	/**
 	 * @param int $length
+	 * @return void
 	 */
 	public function setLength( $length );
 }
