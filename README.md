@@ -21,7 +21,7 @@ composer require 'donatj/mysql-schema'
 
 ## Documentation
 
-### Class: donatj\MySqlSchema\Columns\AbstractColumn
+### Class: \donatj\MySqlSchema\Columns\AbstractColumn
 
 #### Method: AbstractColumn->__construct
 
@@ -185,7 +185,7 @@ function setDefault($default)
 
 - ***void***
 
-### Class: donatj\MySqlSchema\Columns\Interfaces\CharsetColumnInterface
+### Class: \donatj\MySqlSchema\Columns\Interfaces\CharsetColumnInterface
 
 #### Method: CharsetColumnInterface->getCharset
 
@@ -241,7 +241,7 @@ function setCollation($collation)
 
 - ***void***
 
-### Class: donatj\MySqlSchema\Columns\Interfaces\DecimalPlacesInterface
+### Class: \donatj\MySqlSchema\Columns\Interfaces\DecimalPlacesInterface
 
 #### Method: DecimalPlacesInterface->getDecimalPlaces
 
@@ -269,7 +269,7 @@ function setDecimalPlaces($decimalPlaces)
 
 - ***void***
 
-### Class: donatj\MySqlSchema\Columns\Interfaces\MaxDigitsInterface
+### Class: \donatj\MySqlSchema\Columns\Interfaces\MaxDigitsInterface
 
 #### Method: MaxDigitsInterface->getMaxDigits
 
@@ -297,7 +297,7 @@ function setMaxDigits($maxDigits)
 
 - ***void***
 
-### Class: donatj\MySqlSchema\Columns\Interfaces\OptionalLengthInterface
+### Class: \donatj\MySqlSchema\Columns\Interfaces\OptionalLengthInterface
 
 #### Method: OptionalLengthInterface->getLength
 
@@ -325,7 +325,7 @@ function setLength([ $length = null])
 
 - ***void***
 
-### Class: donatj\MySqlSchema\Columns\Interfaces\PrecisionInterface
+### Class: \donatj\MySqlSchema\Columns\Interfaces\PrecisionInterface
 
 #### Method: PrecisionInterface->getPrecision
 
@@ -353,7 +353,7 @@ function setPrecision($precision)
 
 - ***void***
 
-### Class: donatj\MySqlSchema\Columns\Interfaces\RequiredLengthInterface
+### Class: \donatj\MySqlSchema\Columns\Interfaces\RequiredLengthInterface
 
 #### Method: RequiredLengthInterface->getLength
 
@@ -381,7 +381,7 @@ function setLength($length)
 
 - ***void***
 
-### Class: donatj\MySqlSchema\Columns\Interfaces\SignedInterface
+### Class: \donatj\MySqlSchema\Columns\Interfaces\SignedInterface
 
 #### Method: SignedInterface->isSigned
 
@@ -409,7 +409,7 @@ function setSigned($signed)
 
 - ***void***
 
-### Class: donatj\MySqlSchema\Columns\Json\JsonColumn
+### Class: \donatj\MySqlSchema\Columns\Json\JsonColumn
 
 #### Method: JsonColumn->getTypeName
 
@@ -573,7 +573,7 @@ function setDefault($default)
 
 - ***void***
 
-### Class: donatj\MySqlSchema\Columns\Numeric\AbstractFloatingColumn
+### Class: \donatj\MySqlSchema\Columns\Numeric\AbstractFloatingColumn
 
 #### Method: AbstractFloatingColumn->__construct
 
@@ -790,7 +790,7 @@ function setSigned($signed)
 
 - ***bool*** `$signed`
 
-### Class: donatj\MySqlSchema\Columns\Numeric\AbstractIntegerColumn
+### Class: \donatj\MySqlSchema\Columns\Numeric\AbstractIntegerColumn
 
 #### Method: AbstractIntegerColumn->__construct
 
@@ -1002,7 +1002,7 @@ function setLength([ $length = null])
 
 - ***int*** | ***null*** `$length`
 
-### Class: donatj\MySqlSchema\Columns\Numeric\AbstractNumberColumn
+### Class: \donatj\MySqlSchema\Columns\Numeric\AbstractNumberColumn
 
 #### Method: AbstractNumberColumn->__construct
 
@@ -1190,7 +1190,7 @@ function setSigned($signed)
 
 - ***bool*** `$signed`
 
-### Class: donatj\MySqlSchema\Columns\Numeric\FixedPoint\DecimalColumn
+### Class: \donatj\MySqlSchema\Columns\Numeric\FixedPoint\DecimalColumn
 
 #### Method: DecimalColumn->__construct
 
@@ -1436,7 +1436,7 @@ function setSigned($signed)
 
 - ***bool*** `$signed`
 
-### Class: donatj\MySqlSchema\Columns\Numeric\FloatingPoint\DoubleColumn
+### Class: \donatj\MySqlSchema\Columns\Numeric\FloatingPoint\DoubleColumn
 
 #### Method: DoubleColumn->getTypeName
 
@@ -1653,7 +1653,7 @@ function setSigned($signed)
 
 - ***bool*** `$signed`
 
-### Class: donatj\MySqlSchema\Columns\Numeric\FloatingPoint\FloatColumn
+### Class: \donatj\MySqlSchema\Columns\Numeric\FloatingPoint\FloatColumn
 
 #### Method: FloatColumn->getTypeName
 
@@ -1870,7 +1870,7 @@ function setSigned($signed)
 
 - ***bool*** `$signed`
 
-### Class: donatj\MySqlSchema\Columns\Numeric\Integers\BigIntColumn
+### Class: \donatj\MySqlSchema\Columns\Numeric\Integers\BigIntColumn
 
 #### Method: BigIntColumn->getTypeName
 
@@ -2082,7 +2082,7 @@ function setLength([ $length = null])
 
 - ***int*** | ***null*** `$length`
 
-### Class: donatj\MySqlSchema\Columns\Numeric\Integers\IntColumn
+### Class: \donatj\MySqlSchema\Columns\Numeric\Integers\IntColumn
 
 #### Method: IntColumn->getTypeName
 
@@ -2294,7 +2294,7 @@ function setLength([ $length = null])
 
 - ***int*** | ***null*** `$length`
 
-### Class: donatj\MySqlSchema\Columns\Numeric\Integers\MediumIntColumn
+### Class: \donatj\MySqlSchema\Columns\Numeric\Integers\MediumIntColumn
 
 #### Method: MediumIntColumn->getTypeName
 
@@ -2506,7 +2506,7 @@ function setLength([ $length = null])
 
 - ***int*** | ***null*** `$length`
 
-### Class: donatj\MySqlSchema\Columns\Numeric\Integers\SmallIntColumn
+### Class: \donatj\MySqlSchema\Columns\Numeric\Integers\SmallIntColumn
 
 #### Method: SmallIntColumn->getTypeName
 
@@ -2718,7 +2718,7 @@ function setLength([ $length = null])
 
 - ***int*** | ***null*** `$length`
 
-### Class: donatj\MySqlSchema\Columns\Numeric\Integers\TinyIntColumn
+### Class: \donatj\MySqlSchema\Columns\Numeric\Integers\TinyIntColumn
 
 #### Method: TinyIntColumn->getTypeName
 
@@ -2930,7 +2930,7 @@ function setLength([ $length = null])
 
 - ***int*** | ***null*** `$length`
 
-### Class: donatj\MySqlSchema\Columns\String\AbstractCharacterColumn
+### Class: \donatj\MySqlSchema\Columns\String\AbstractCharacterColumn
 
 #### Method: AbstractCharacterColumn->__construct
 
@@ -3175,7 +3175,7 @@ function setLength($length)
 
 - ***int*** `$length`
 
-### Class: donatj\MySqlSchema\Columns\String\AbstractStringColumn
+### Class: \donatj\MySqlSchema\Columns\String\AbstractStringColumn
 
 #### Method: AbstractStringColumn->__construct
 
@@ -3395,7 +3395,7 @@ function setCollation($collation)
 
 - ***void***
 
-### Class: donatj\MySqlSchema\Columns\String\AbstractTextColumn
+### Class: \donatj\MySqlSchema\Columns\String\AbstractTextColumn
 
 #### Method: AbstractTextColumn->__construct
 
@@ -3615,7 +3615,7 @@ function setCollation($collation)
 
 - ***void***
 
-### Class: donatj\MySqlSchema\Columns\String\Character\CharColumn
+### Class: \donatj\MySqlSchema\Columns\String\Character\CharColumn
 
 #### Method: CharColumn->getTypeName
 
@@ -3860,7 +3860,7 @@ function setLength($length)
 
 - ***int*** `$length`
 
-### Class: donatj\MySqlSchema\Columns\String\Character\VarcharColumn
+### Class: \donatj\MySqlSchema\Columns\String\Character\VarcharColumn
 
 #### Method: VarcharColumn->getTypeName
 
@@ -4105,7 +4105,7 @@ function setLength($length)
 
 - ***int*** `$length`
 
-### Class: donatj\MySqlSchema\Columns\String\Text\LongTextColumn
+### Class: \donatj\MySqlSchema\Columns\String\Text\LongTextColumn
 
 #### Method: LongTextColumn->getTypeName
 
@@ -4325,7 +4325,7 @@ function setCollation($collation)
 
 - ***void***
 
-### Class: donatj\MySqlSchema\Columns\String\Text\MediumTextColumn
+### Class: \donatj\MySqlSchema\Columns\String\Text\MediumTextColumn
 
 #### Method: MediumTextColumn->getTypeName
 
@@ -4545,7 +4545,7 @@ function setCollation($collation)
 
 - ***void***
 
-### Class: donatj\MySqlSchema\Columns\String\Text\TextColumn
+### Class: \donatj\MySqlSchema\Columns\String\Text\TextColumn
 
 #### Method: TextColumn->getTypeName
 
@@ -4765,7 +4765,7 @@ function setCollation($collation)
 
 - ***void***
 
-### Class: donatj\MySqlSchema\Columns\String\Text\TinyTextColumn
+### Class: \donatj\MySqlSchema\Columns\String\Text\TinyTextColumn
 
 #### Method: TinyTextColumn->getTypeName
 
@@ -4985,7 +4985,7 @@ function setCollation($collation)
 
 - ***void***
 
-### Class: donatj\MySqlSchema\Columns\Temporal\AbstractTemporalColumn
+### Class: \donatj\MySqlSchema\Columns\Temporal\AbstractTemporalColumn
 
 #### Method: AbstractTemporalColumn->__construct
 
@@ -5149,7 +5149,7 @@ function setDefault($default)
 
 - ***void***
 
-### Class: donatj\MySqlSchema\Columns\Temporal\DateTimeColumn
+### Class: \donatj\MySqlSchema\Columns\Temporal\DateTimeColumn
 
 #### Method: DateTimeColumn->getTypeName
 
@@ -5313,7 +5313,7 @@ function setDefault($default)
 
 - ***void***
 
-### Class: donatj\MySqlSchema\Columns\Temporal\TimeColumn
+### Class: \donatj\MySqlSchema\Columns\Temporal\TimeColumn
 
 #### Method: TimeColumn->getTypeName
 
@@ -5477,7 +5477,7 @@ function setDefault($default)
 
 - ***void***
 
-### Class: donatj\MySqlSchema\Columns\Temporal\TimestampColumn
+### Class: \donatj\MySqlSchema\Columns\Temporal\TimestampColumn
 
 #### Method: TimestampColumn->getTypeName
 
@@ -5641,7 +5641,7 @@ function setDefault($default)
 
 - ***void***
 
-### Class: donatj\MySqlSchema\Columns\Temporal\YearColumn
+### Class: \donatj\MySqlSchema\Columns\Temporal\YearColumn
 
 #### Method: YearColumn->__construct
 
@@ -5836,7 +5836,7 @@ function getLength()
 
 - ***int***
 
-### Class: donatj\MySqlSchema\Columns\Traits\OptionalLengthTrait
+### Class: \donatj\MySqlSchema\Columns\Traits\OptionalLengthTrait
 
 #### Method: OptionalLengthTrait->getLength
 
@@ -5860,7 +5860,7 @@ function setLength([ $length = null])
 
 - ***int*** | ***null*** `$length`
 
-### Class: donatj\MySqlSchema\Columns\Traits\RequiredLengthTrait
+### Class: \donatj\MySqlSchema\Columns\Traits\RequiredLengthTrait
 
 #### Method: RequiredLengthTrait->getLength
 
@@ -5884,7 +5884,7 @@ function setLength($length)
 
 - ***int*** `$length`
 
-### Class: donatj\MySqlSchema\Columns\Traits\SignedTrait
+### Class: \donatj\MySqlSchema\Columns\Traits\SignedTrait
 
 #### Method: SignedTrait->isSigned
 
@@ -5908,7 +5908,7 @@ function setSigned($signed)
 
 - ***bool*** `$signed`
 
-### Class: donatj\MySqlSchema\Table
+### Class: \donatj\MySqlSchema\Table
 
 #### Method: Table->__construct
 
@@ -6029,6 +6029,18 @@ function addAutoIncrement(\donatj\MySqlSchema\Columns\Numeric\AbstractIntegerCol
 ##### Returns:
 
 - ***void***
+
+---
+
+#### Method: Table->getAutoIncrementColumn
+
+```php
+function getAutoIncrementColumn()
+```
+
+##### Returns:
+
+- ***\donatj\MySqlSchema\Columns\Numeric\AbstractIntegerColumn*** | ***null***
 
 ---
 
@@ -6186,7 +6198,7 @@ function setCollation($collation)
 
 - ***void***
 
-### Class: donatj\MySqlSchema\Traits\CharsetAndCollationTrait
+### Class: \donatj\MySqlSchema\Traits\CharsetAndCollationTrait
 
 #### Method: CharsetAndCollationTrait->getCharset
 
@@ -6242,4 +6254,4 @@ function setCollation($collation)
 
 - ***void***
 
-### Class: donatj\MySqlSchema\Traits\EscapeTrait
+### Class: \donatj\MySqlSchema\Traits\EscapeTrait

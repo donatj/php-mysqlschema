@@ -106,6 +106,13 @@ class Table {
 	}
 
 	/**
+	 * @return AbstractIntegerColumn|null
+	 */
+	public function getAutoIncrementColumn() {
+		return $this->autoIncrement;
+	}
+
+	/**
 	 * @param \donatj\MySqlSchema\Columns\Numeric\AbstractIntegerColumn $column
 	 * @return bool
 	 */
