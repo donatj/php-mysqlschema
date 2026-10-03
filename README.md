@@ -5,7 +5,7 @@
 [![ci.yml](https://github.com/donatj/php-mysqlschema/actions/workflows/ci.yml/badge.svg)](https://github.com/donatj/php-mysqlschema/actions/workflows/ci.yml)
 
 
-Simple PHP MySQL Schema Model
+An intentionally small PHP object model for describing MySQL tables and rendering `CREATE TABLE` statements. Define columns, keys, foreign keys, and table options in PHP, then call `toString()` to produce SQL for your application or migration tool to execute.
 
 ## Requirements
 
@@ -17,6 +17,43 @@ Install the latest version with:
 
 ```bash
 composer require 'donatj/mysql-schema'
+```
+
+## Example
+
+The following example defines a `users` table with an auto-increment primary key and a unique email index:
+
+```php
+<?php
+
+require __DIR__ . '/../vendor/autoload.php';
+
+use donatj\MySqlSchema\Columns\Numeric\Integers\IntColumn;
+use donatj\MySqlSchema\Columns\String\Character\VarcharColumn;
+use donatj\MySqlSchema\Table;
+
+$users = new Table('users');
+
+$id = new IntColumn('id');
+$users->addAutoIncrement($id);
+
+$email = new VarcharColumn('email', 255);
+$users->addColumn($email);
+$users->addKeyColumn('email_unique', $email, null, 'UNIQUE');
+
+echo $users->toString();
+
+```
+
+It renders:
+
+```sql
+CREATE TABLE `users` (
+	`id` int unsigned NOT NULL AUTO_INCREMENT,
+	`email` varchar(255) NOT NULL,
+	PRIMARY KEY (`id`),
+	UNIQUE KEY `email_unique` (`email`)
+);
 ```
 
 ## Documentation
