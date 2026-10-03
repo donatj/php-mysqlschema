@@ -1,0 +1,7 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Parameter \#1 \$input of method donatj\\MySqlSchema\\Columns\\AbstractColumn\:\:mkString\(\) expects string, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Columns/AbstractColumn.php

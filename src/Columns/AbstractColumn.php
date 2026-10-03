@@ -18,7 +18,7 @@ abstract class AbstractColumn {
 	use EscapeTrait;
 
 	/**
-	 * @var \donatj\MySqlSchema\Table[]
+	 * @var array<string, \donatj\MySqlSchema\Table>
 	 */
 	protected $tables = [ ];
 	/**
@@ -55,7 +55,7 @@ abstract class AbstractColumn {
 	}
 
 	/**
-	 * @return \donatj\MySqlSchema\Table[]
+	 * @return list<\donatj\MySqlSchema\Table>
 	 */
 	public function getTables() {
 		return array_values($this->tables);
@@ -183,7 +183,7 @@ abstract class AbstractColumn {
 	/**
 	 * @return string
 	 */
-	private function getTypeModifierString() {
+	private function getTypeModifierString() : string {
 		if( $this instanceof RequiredLengthInterface ||
 			($this instanceof OptionalLengthInterface && !is_null($this->getLength()))
 		) {

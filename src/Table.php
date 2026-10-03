@@ -40,7 +40,7 @@ class Table {
 	protected $engine = null;
 
 	/**
-	 * @return Columns\AbstractColumn[]
+	 * @return array<string, AbstractColumn>
 	 */
 	public function getColumns() {
 		return $this->columns;
@@ -143,7 +143,7 @@ class Table {
 	}
 
 	/**
-	 * @var array<string, array{columns:AbstractColumn[],type:string,method:string}>
+	 * @var array<string, array{columns:array<int, AbstractColumn>,type:string,method:string}>
 	 */
 	protected $keys = [ ];
 
@@ -157,11 +157,15 @@ class Table {
 	 */
 	public function addKeyColumn( $keyName, AbstractColumn $column, $index = null, $type = 'NORMAL', $method = '' ) {
 		if( !isset($this->keys[$keyName]) ) {
-			$this->keys[$keyName]['columns'] = [];
+			$this->keys[$keyName] = [
+				'columns' => [],
+				'type'    => $type,
+				'method'  => $method,
+			];
+		} else {
+			$this->keys[$keyName]['type']   = $type;
+			$this->keys[$keyName]['method'] = $method;
 		}
-
-		$this->keys[$keyName]['type']   = $type;
-		$this->keys[$keyName]['method'] = $method;
 
 
 		if( is_null($index) ) {
@@ -187,7 +191,7 @@ class Table {
 	}
 
 	/**
-	 * @var Columns\AbstractColumn[]
+	 * @var array<string, AbstractColumn>
 	 */
 	protected $columns = [ ];
 
