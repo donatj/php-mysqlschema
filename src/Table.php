@@ -157,11 +157,15 @@ class Table {
 	 */
 	public function addKeyColumn( $keyName, AbstractColumn $column, $index = null, $type = 'NORMAL', $method = '' ) {
 		if( !isset($this->keys[$keyName]) ) {
-			$this->keys[$keyName]['columns'] = [];
+			$this->keys[$keyName] = [
+				'columns' => [],
+				'type'    => $type,
+				'method'  => $method,
+			];
+		} else {
+			$this->keys[$keyName]['type']   = $type;
+			$this->keys[$keyName]['method'] = $method;
 		}
-
-		$this->keys[$keyName]['type']   = $type;
-		$this->keys[$keyName]['method'] = $method;
 
 
 		if( is_null($index) ) {

@@ -1,25 +1,7 @@
 parameters:
 	ignoreErrors:
 		-
-			message: '#^Binary operation "\." between string and mixed results in an error\.$#'
-			identifier: binaryOp.invalid
-			count: 1
-			path: src/Columns/AbstractColumn.php
-
-		-
 			message: '#^Parameter \#1 \$input of method donatj\\MySqlSchema\\Columns\\AbstractColumn\:\:mkString\(\) expects string, mixed given\.$#'
 			identifier: argument.type
 			count: 1
 			path: src/Columns/AbstractColumn.php
-
-		-
-			message: '#^Binary operation "\." between string and mixed results in an error\.$#'
-			identifier: binaryOp.invalid
-			count: 1
-			path: src/Table.php
-
-		-
-			message: '#^Property donatj\\MySqlSchema\\Table\:\:\$keys \(array\<string, array\{columns\: array\<donatj\\MySqlSchema\\Columns\\AbstractColumn\>, type\: string, method\: string\}\>\) does not accept non\-empty\-array\<string, array\{columns\: array\<donatj\\MySqlSchema\\Columns\\AbstractColumn\>, type\: string, method\?\: string\}\>\.$#'
-			identifier: assign.propertyType
-			count: 1
-			path: src/Table.php

@@ -7,7 +7,7 @@ trait EscapeTrait {
 	/**
 	 * @param string $input
 	 * @param string $wrapChar
-	 * @return mixed
+	 * @return string
 	 */
 	protected function escape( $input, $wrapChar = '`' ) {
 		return str_replace($wrapChar, $wrapChar . $wrapChar, $input);
