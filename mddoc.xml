@@ -18,7 +18,7 @@
 				<text>The following example defines a `users` table with an auto-increment primary key and a unique email index:</text>
 				<source name="examples/basic.php" lang="php"/>
 				<text>It renders:</text>
-				<exec cmd="php examples/basic.php" format="code-block"/>
+				<exec cmd="php examples/basic.php" format="code-block" lang="sql"/>
 			</section>
 			<section title="Documentation">
 				<recursive-directory name="src"/>
