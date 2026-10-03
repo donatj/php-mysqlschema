@@ -5,12 +5,12 @@ namespace donatj\MySqlSchema\Columns\Interfaces;
 interface SignedInterface {
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function isSigned();
 
 	/**
-	 * @param boolean $signed
+	 * @param bool $signed
 	 * @return void
 	 */
 	public function setSigned( $signed );

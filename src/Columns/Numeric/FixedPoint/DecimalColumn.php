@@ -8,14 +8,10 @@ use donatj\MySqlSchema\Columns\Numeric\AbstractNumberColumn;
 
 class DecimalColumn extends AbstractNumberColumn implements MaxDigitsInterface, DecimalPlacesInterface {
 
-	/**
-	 * @var int
-	 */
+	/** @var int */
 	protected $maxDigits;
 
-	/**
-	 * @var int
-	 */
+	/** @var int */
 	protected $decimalPlaces;
 
 	/**

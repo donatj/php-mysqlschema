@@ -6,7 +6,7 @@ use donatj\MySqlSchema\Columns\AbstractColumn;
 
 class JsonColumn extends AbstractColumn {
 
-	public function getTypeName() : string {
+	public function getTypeName(): string {
 		return 'json';
 	}
 

@@ -4,10 +4,8 @@ namespace donatj\MySqlSchema\Columns\Traits;
 
 trait OptionalLengthTrait {
 
-	/**
-	 * @var int|null
-	 */
-	protected $length = null;
+	/** @var int|null */
+	protected $length;
 
 	/**
 	 * @return int|null

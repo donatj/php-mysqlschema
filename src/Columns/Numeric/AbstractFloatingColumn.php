@@ -1,6 +1,5 @@
 <?php
 
-
 namespace donatj\MySqlSchema\Columns\Numeric;
 
 use donatj\MySqlSchema\Columns\Interfaces\PrecisionInterface;
@@ -15,9 +14,7 @@ abstract class AbstractFloatingColumn extends AbstractNumberColumn implements Pr
 		$this->precision = $precision;
 	}
 
-	/**
-	 * @var int
-	 */
+	/** @var int */
 	protected $precision = 0;
 
 	/**

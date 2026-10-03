@@ -34,10 +34,8 @@ class Table {
 	 */
 	protected $comment = '';
 
-	/**
-	 * @var null|string
-	 */
-	protected $engine = null;
+	/** @var string|null */
+	protected $engine;
 
 	/**
 	 * @return array<string, AbstractColumn>
@@ -62,14 +60,14 @@ class Table {
 	}
 
 	/**
-	 * @return null|string
+	 * @return string|null
 	 */
 	public function getEngine() {
 		return $this->engine;
 	}
 
 	/**
-	 * @param null|string $engine
+	 * @param string|null $engine
 	 * @return void
 	 */
 	public function setEngine( $engine ) {
@@ -91,10 +89,8 @@ class Table {
 		$this->name = $name;
 	}
 
-	/**
-	 * @var AbstractIntegerColumn|null
-	 */
-	protected $autoIncrement = null;
+	/** @var AbstractIntegerColumn|null */
+	protected $autoIncrement;
 
 	/**
 	 * @return void
@@ -120,9 +116,7 @@ class Table {
 		return $this->autoIncrement === $column;
 	}
 
-	/**
-	 * @var array<string, AbstractColumn>
-	 */
+	/** @var array<string, AbstractColumn> */
 	protected $primaryKeys = [ ];
 
 	/**
@@ -142,17 +136,15 @@ class Table {
 		return isset($this->primaryKeys[spl_object_hash($column)]);
 	}
 
-	/**
-	 * @var array<string, array{columns:array<int, AbstractColumn>,type:string,method:string}>
-	 */
+	/** @var array<string, array{columns:array<int, AbstractColumn>,type:string,method:string}> */
 	protected $keys = [ ];
 
 	/**
-	 * @param string $keyName
+	 * @param string         $keyName
 	 * @param AbstractColumn $column
-	 * @param int|null $index
-	 * @param string $type
-	 * @param string $method
+	 * @param int|null       $index
+	 * @param string         $type
+	 * @param string         $method
 	 * @return void
 	 */
 	public function addKeyColumn( $keyName, AbstractColumn $column, $index = null, $type = 'NORMAL', $method = '' ) {
@@ -167,17 +159,14 @@ class Table {
 			$this->keys[$keyName]['method'] = $method;
 		}
 
-
-		if( is_null($index) ) {
+		if( $index === null ) {
 			$this->keys[$keyName]['columns'][] = $column;
 		} else {
 			$this->keys[$keyName]['columns'][$index] = $column;
 		}
 	}
 
-	/**
-	 * @var array<string, array{local:AbstractColumn,remote:AbstractColumn}>
-	 */
+	/** @var array<string, array{local:AbstractColumn,remote:AbstractColumn}> */
 	protected $foreignKeys = [ ];
 
 	/**
@@ -190,9 +179,7 @@ class Table {
 		];
 	}
 
-	/**
-	 * @var array<string, AbstractColumn>
-	 */
+	/** @var array<string, AbstractColumn> */
 	protected $columns = [ ];
 
 	/**
@@ -222,7 +209,7 @@ class Table {
 			$statements[] = $primary;
 		}
 
-		if( !is_null($this->autoIncrement) ) {
+		if( $this->autoIncrement !== null ) {
 			if( $this->autoIncrement->isSigned() ) {
 				$warnings[] = $this->mkString($this->autoIncrement->getName()) . ' is a signed AUTO_INCREMENT';
 			}
@@ -281,7 +268,6 @@ class Table {
 			}
 		}
 
-
 		$comment = '';
 		if( $this->comment ) {
 			$comment = ' COMMENT ' . $this->mkString($this->comment, "'");
@@ -296,10 +282,10 @@ class Table {
 		}
 
 		return <<<EOT
-CREATE TABLE {$name} (
-{$stmnts}
-){$charset}{$collation}{$comment}{$warn};
+			CREATE TABLE {$name} (
+			{$stmnts}
+			){$charset}{$collation}{$comment}{$warn};
 
-EOT;
+			EOT;
 	}
 }

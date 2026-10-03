@@ -30,5 +30,8 @@ jobs:
       - name: Run tests
         run: make test
 
+      - name: Check code style
+        run: make lint
+
       - name: Verify generated documentation
         run: vendor/bin/mddoc --dry-run=true mddoc.xml
