@@ -5,6 +5,7 @@
 		<section title="Simple PHP MySQL Schema Model">
 			<badge-poser type="version" />
 			<badge-poser type="license" />
+			<badge-github-action name="donatj/php-mysqlschema" workflow-file="ci.yml"/>
 			<text>Simple PHP MySQL Schema Model</text>
 			<section title="Requirements">
 				<composer-requires/>

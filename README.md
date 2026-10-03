@@ -2,13 +2,14 @@
 
 [![Latest Stable Version](https://poser.pugx.org/donatj/mysql-schema/version)](https://packagist.org/packages/donatj/mysql-schema)
 [![License](https://poser.pugx.org/donatj/mysql-schema/license)](https://packagist.org/packages/donatj/mysql-schema)
+[![ci.yml](https://github.com/donatj/php-mysqlschema/actions/workflows/ci.yml/badge.svg?)](https://github.com/donatj/php-mysqlschema/actions/workflows/ci.yml)
 
 
 Simple PHP MySQL Schema Model
 
 ## Requirements
 
-- **php**: >=5.4.0
+- **php**: >=7.4
 
 ## Installing
 
