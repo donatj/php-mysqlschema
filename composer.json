@@ -10,6 +10,7 @@
 	"require-dev": {
 		"donatj/drop": "*",
 		"donatj/mddoc": "^0.12",
+		"phpstan/phpstan": "^2.2",
 		"phpunit/phpunit": "~9|~11"
 	},
 	"license": "MIT",
