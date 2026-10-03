@@ -5,7 +5,6 @@
 		<section title="Simple PHP MySQL Schema Model">
 			<badge-poser type="version" />
 			<badge-poser type="license" />
-			<badge-scrutinizer name="donatj/PhpMySqlSchema" type="quality" />
 			<text>Simple PHP MySQL Schema Model</text>
 			<section title="Requirements">
 				<composer-requires/>

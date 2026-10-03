@@ -2,7 +2,6 @@
 
 [![Latest Stable Version](https://poser.pugx.org/donatj/mysql-schema/version)](https://packagist.org/packages/donatj/mysql-schema)
 [![License](https://poser.pugx.org/donatj/mysql-schema/license)](https://packagist.org/packages/donatj/mysql-schema)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/donatj/PhpMySqlSchema/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/donatj/PhpMySqlSchema)
 
 
 Simple PHP MySQL Schema Model
