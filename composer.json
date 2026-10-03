@@ -9,7 +9,8 @@
 	],
 	"require-dev": {
 		"donatj/drop": "*",
-		"phpunit/phpunit": "3.7.*"
+		"donatj/mddoc": "^0.12",
+		"phpunit/phpunit": "~9|~11"
 	},
 	"license": "MIT",
 	"authors": [
@@ -21,11 +22,16 @@
 		}
 	],
 	"require": {
-		"php": ">=5.4.0"
+		"php": ">=7.4"
 	},
 	"autoload": {
 		"psr-4": {
 			"donatj\\MySqlSchema\\": "src/"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"Test\\": "test/"
 		}
 	}
 }

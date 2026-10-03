@@ -1,10 +1,12 @@
 <mddoc>
 
-	<docpage target="README.md" autoloader="psr4" autoloader-root="src" autoloader-root-namespace="donatj\MySqlSchema">
+	<docpage target="README.md">
+		<autoloader type="psr4" root="src" namespace="donatj\MySqlSchema"/>
 
 		<section title="Simple PHP MySQL Schema Model">
 			<badge-poser type="version" />
 			<badge-poser type="license" />
+			<badge-github-action name="donatj/php-mysqlschema" workflow-file="ci.yml"/>
 			<text>Simple PHP MySQL Schema Model</text>
 			<section title="Requirements">
 				<composer-requires/>
@@ -13,7 +15,7 @@
 				<composer-install/>
 			</section>
 			<section title="Documentation">
-				<recursivedirectory name="src"/>
+				<recursive-directory name="src"/>
 			</section>
 		</section>
 	</docpage>
