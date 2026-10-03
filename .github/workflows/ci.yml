@@ -29,3 +29,6 @@ jobs:
 
       - name: Run tests
         run: make test
+
+      - name: Verify generated documentation
+        run: vendor/bin/mddoc --dry-run=true mddoc.xml

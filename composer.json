@@ -9,6 +9,7 @@
 	],
 	"require-dev": {
 		"donatj/drop": "*",
+		"donatj/mddoc": "^0.12",
 		"phpunit/phpunit": "~9|~11"
 	},
 	"license": "MIT",
