@@ -17,7 +17,7 @@ abstract class AbstractColumn {
 
 	use EscapeTrait;
 
-	/** @var array<string, \donatj\MySqlSchema\Table> */
+	/** @var array<int, \donatj\MySqlSchema\Table> */
 	protected $tables = [ ];
 	/** @var string */
 	protected $name;
@@ -41,7 +41,7 @@ abstract class AbstractColumn {
 	 * @return void
 	 */
 	public function addTable( Table $table ) {
-		$this->tables[spl_object_hash($table)] = $table;
+		$this->tables[spl_object_id($table)] = $table;
 	}
 
 	/**

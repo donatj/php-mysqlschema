@@ -38,7 +38,7 @@ class Table {
 	protected $engine;
 
 	/**
-	 * @return array<string, AbstractColumn>
+	 * @return array<int, AbstractColumn>
 	 */
 	public function getColumns() {
 		return $this->columns;
@@ -116,14 +116,14 @@ class Table {
 		return $this->autoIncrement === $column;
 	}
 
-	/** @var array<string, AbstractColumn> */
+	/** @var array<int, AbstractColumn> */
 	protected $primaryKeys = [ ];
 
 	/**
 	 * @return void
 	 */
 	public function addPrimaryKey( AbstractColumn $column ) {
-		$this->primaryKeys[spl_object_hash($column)] = $column;
+		$this->primaryKeys[spl_object_id($column)] = $column;
 
 		$this->addColumn($column);
 	}
@@ -133,7 +133,7 @@ class Table {
 	 * @return bool
 	 */
 	public function isPrimaryKey( AbstractColumn $column ) {
-		return isset($this->primaryKeys[spl_object_hash($column)]);
+		return isset($this->primaryKeys[spl_object_id($column)]);
 	}
 
 	/** @var array<string, array{columns:array<int, AbstractColumn>,type:string,method:string}> */
@@ -166,27 +166,27 @@ class Table {
 		}
 	}
 
-	/** @var array<string, array{local:AbstractColumn,remote:AbstractColumn}> */
+	/** @var array<int, array{local:AbstractColumn,remote:AbstractColumn}> */
 	protected $foreignKeys = [ ];
 
 	/**
 	 * @return void
 	 */
 	public function addForeignKey( AbstractColumn $local, AbstractColumn $remote ) {
-		$this->foreignKeys[spl_object_hash($local)] = [
+		$this->foreignKeys[spl_object_id($local)] = [
 			'local'  => $local,
 			'remote' => $remote,
 		];
 	}
 
-	/** @var array<string, AbstractColumn> */
+	/** @var array<int, AbstractColumn> */
 	protected $columns = [ ];
 
 	/**
 	 * @return void
 	 */
 	public function addColumn( AbstractColumn $column ) {
-		$this->columns[spl_object_hash($column)] = $column;
+		$this->columns[spl_object_id($column)] = $column;
 		$column->addTable($this);
 	}
 
