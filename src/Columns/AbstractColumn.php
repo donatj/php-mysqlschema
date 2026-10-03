@@ -17,25 +17,15 @@ abstract class AbstractColumn {
 
 	use EscapeTrait;
 
-	/**
-	 * @var array<string, \donatj\MySqlSchema\Table>
-	 */
+	/** @var array<string, \donatj\MySqlSchema\Table> */
 	protected $tables = [ ];
-	/**
-	 * @var string
-	 */
+	/** @var string */
 	protected $name;
-	/**
-	 * @var string
-	 */
+	/** @var string */
 	protected $comment = '';
-	/**
-	 * @var bool
-	 */
+	/** @var bool */
 	protected $nullable = false;
-	/**
-	 * @var mixed
-	 */
+	/** @var mixed */
 	protected $default;
 
 	/**
@@ -77,14 +67,14 @@ abstract class AbstractColumn {
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function isNullable() {
 		return $this->nullable;
 	}
 
 	/**
-	 * @param boolean $nullable
+	 * @param bool $nullable
 	 * @return void
 	 */
 	public function setNullable( $nullable ) {
@@ -128,8 +118,8 @@ abstract class AbstractColumn {
 		}
 
 		$default = '';
-		if( !is_null($this->default) ) {
-			$default = ' DEFAULT ' . $this->mkString($this->default, "'");;
+		if( $this->default !== null ) {
+			$default = ' DEFAULT ' . $this->mkString($this->default, "'");
 		}
 
 		$charset   = '';
@@ -180,12 +170,9 @@ abstract class AbstractColumn {
 		$this->default = $default;
 	}
 
-	/**
-	 * @return string
-	 */
-	private function getTypeModifierString() : string {
+	private function getTypeModifierString(): string {
 		if( $this instanceof RequiredLengthInterface ||
-			($this instanceof OptionalLengthInterface && !is_null($this->getLength()))
+			($this instanceof OptionalLengthInterface && $this->getLength() !== null)
 		) {
 			return sprintf("(%s)", $this->getLength());
 		}

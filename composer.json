@@ -9,6 +9,7 @@
 	],
 	"require-dev": {
 		"donatj/drop": "*",
+		"friendsofphp/php-cs-fixer": "^3.95",
 		"donatj/mddoc": "^0.12",
 		"phpstan/phpstan": "^2.2",
 		"phpunit/phpunit": "~9|~11"

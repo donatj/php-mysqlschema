@@ -4,20 +4,18 @@ namespace donatj\MySqlSchema\Columns\Traits;
 
 trait SignedTrait {
 
-	/**
-	 * @var bool
-	 */
+	/** @var bool */
 	protected $signed = false;
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function isSigned() {
 		return $this->signed;
 	}
 
 	/**
-	 * @param boolean $signed
+	 * @param bool $signed
 	 */
 	public function setSigned( $signed ) {
 		$this->signed = $signed;

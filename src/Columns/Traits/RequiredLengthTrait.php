@@ -4,9 +4,7 @@ namespace donatj\MySqlSchema\Columns\Traits;
 
 trait RequiredLengthTrait {
 
-	/**
-	 * @var int
-	 */
+	/** @var int */
 	protected $length = 0;
 
 	/**

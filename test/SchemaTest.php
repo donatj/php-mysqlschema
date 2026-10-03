@@ -23,7 +23,7 @@ class SchemaTest extends TestCase {
 		$column->setComment('Visible name');
 		$table->addColumn($column);
 
-		self::assertSame(
+		$this->assertSame(
 			"CREATE TABLE `user`` accounts` (\n\t`display``name` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT 'John''s' COMMENT 'Visible name'\n) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci COMMENT 'Account table';\n",
 			$table->toString()
 		);
@@ -34,9 +34,9 @@ class SchemaTest extends TestCase {
 		$id = new IntColumn('id');
 		$table->addAutoIncrement($id);
 
-		self::assertSame($id, $table->getAutoIncrementColumn());
-		self::assertTrue($table->isPrimaryKey($id));
-		self::assertSame(
+		$this->assertSame($id, $table->getAutoIncrementColumn());
+		$this->assertTrue($table->isPrimaryKey($id));
+		$this->assertSame(
 			"CREATE TABLE `users` (\n\t`id` int unsigned NOT NULL AUTO_INCREMENT,\n\tPRIMARY KEY (`id`)\n);\n",
 			$table->toString()
 		);
@@ -53,7 +53,7 @@ class SchemaTest extends TestCase {
 		$users->addKeyColumn('role_id_idx', $userRoleId);
 		$users->addForeignKey($userRoleId, $roleId);
 
-		self::assertSame(
+		$this->assertSame(
 			"CREATE TABLE `users` (\n\t`role_id` int unsigned NOT NULL,\n\tKEY `role_id_idx` (`role_id`),\n\tFOREIGN KEY (`role_id`) REFERENCES `roles`(`id`)\n);\n",
 			$users->toString()
 		);

@@ -120,7 +120,7 @@ function isNullable()
 
 ##### Return Value
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -132,7 +132,7 @@ function setNullable($nullable)
 
 ##### Parameters
 
-- ***boolean*** `$nullable`
+- ***bool*** `$nullable`
 
 ##### Return Value
 
@@ -232,7 +232,7 @@ function getCharset()
 
 ##### Return Value
 
-- ***null*** | ***string***
+- ***string*** | ***null***
 
 ---
 
@@ -244,7 +244,7 @@ function setCharset($charset)
 
 ##### Parameters
 
-- ***null*** | ***string*** `$charset`
+- ***string*** | ***null*** `$charset`
 
 ##### Return Value
 
@@ -260,7 +260,7 @@ function getCollation()
 
 ##### Return Value
 
-- ***null*** | ***string***
+- ***string*** | ***null***
 
 ---
 
@@ -272,7 +272,7 @@ function setCollation($collation)
 
 ##### Parameters
 
-- ***null*** | ***string*** `$collation`
+- ***string*** | ***null*** `$collation`
 
 ##### Return Value
 
@@ -428,7 +428,7 @@ function isSigned()
 
 ##### Return Value
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -440,7 +440,7 @@ function setSigned($signed)
 
 ##### Parameters
 
-- ***boolean*** `$signed`
+- ***bool*** `$signed`
 
 ##### Return Value
 
@@ -520,7 +520,7 @@ function isNullable()
 
 ##### Return Value
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -532,7 +532,7 @@ function setNullable($nullable)
 
 ##### Parameters
 
-- ***boolean*** `$nullable`
+- ***bool*** `$nullable`
 
 ##### Return Value
 
@@ -701,7 +701,7 @@ function isNullable()
 
 ##### Return Value
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -713,7 +713,7 @@ function setNullable($nullable)
 
 ##### Parameters
 
-- ***boolean*** `$nullable`
+- ***bool*** `$nullable`
 
 ##### Return Value
 
@@ -813,7 +813,7 @@ function isSigned()
 
 ##### Return Value
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -825,7 +825,7 @@ function setSigned($signed)
 
 ##### Parameters
 
-- ***boolean*** `$signed`
+- ***bool*** `$signed`
 
 ### Class: donatj\MySqlSchema\Columns\Numeric\AbstractIntegerColumn
 
@@ -889,7 +889,7 @@ function isNullable()
 
 ##### Return Value
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -901,7 +901,7 @@ function setNullable($nullable)
 
 ##### Parameters
 
-- ***boolean*** `$nullable`
+- ***bool*** `$nullable`
 
 ##### Return Value
 
@@ -1001,7 +1001,7 @@ function isSigned()
 
 ##### Return Value
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -1013,7 +1013,7 @@ function setSigned($signed)
 
 ##### Parameters
 
-- ***boolean*** `$signed`
+- ***bool*** `$signed`
 
 ---
 
@@ -1101,7 +1101,7 @@ function isNullable()
 
 ##### Return Value
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -1113,7 +1113,7 @@ function setNullable($nullable)
 
 ##### Parameters
 
-- ***boolean*** `$nullable`
+- ***bool*** `$nullable`
 
 ##### Return Value
 
@@ -1213,7 +1213,7 @@ function isSigned()
 
 ##### Return Value
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -1225,7 +1225,7 @@ function setSigned($signed)
 
 ##### Parameters
 
-- ***boolean*** `$signed`
+- ***bool*** `$signed`
 
 ### Class: donatj\MySqlSchema\Columns\Numeric\FixedPoint\DecimalColumn
 
@@ -1359,7 +1359,7 @@ function isNullable()
 
 ##### Return Value
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -1371,7 +1371,7 @@ function setNullable($nullable)
 
 ##### Parameters
 
-- ***boolean*** `$nullable`
+- ***bool*** `$nullable`
 
 ##### Return Value
 
@@ -1459,7 +1459,7 @@ function isSigned()
 
 ##### Return Value
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -1471,7 +1471,7 @@ function setSigned($signed)
 
 ##### Parameters
 
-- ***boolean*** `$signed`
+- ***bool*** `$signed`
 
 ### Class: donatj\MySqlSchema\Columns\Numeric\FloatingPoint\DoubleColumn
 
@@ -1576,7 +1576,7 @@ function isNullable()
 
 ##### Return Value
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -1588,7 +1588,7 @@ function setNullable($nullable)
 
 ##### Parameters
 
-- ***boolean*** `$nullable`
+- ***bool*** `$nullable`
 
 ##### Return Value
 
@@ -1676,7 +1676,7 @@ function isSigned()
 
 ##### Return Value
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -1688,7 +1688,7 @@ function setSigned($signed)
 
 ##### Parameters
 
-- ***boolean*** `$signed`
+- ***bool*** `$signed`
 
 ### Class: donatj\MySqlSchema\Columns\Numeric\FloatingPoint\FloatColumn
 
@@ -1793,7 +1793,7 @@ function isNullable()
 
 ##### Return Value
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -1805,7 +1805,7 @@ function setNullable($nullable)
 
 ##### Parameters
 
-- ***boolean*** `$nullable`
+- ***bool*** `$nullable`
 
 ##### Return Value
 
@@ -1893,7 +1893,7 @@ function isSigned()
 
 ##### Return Value
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -1905,7 +1905,7 @@ function setSigned($signed)
 
 ##### Parameters
 
-- ***boolean*** `$signed`
+- ***bool*** `$signed`
 
 ### Class: donatj\MySqlSchema\Columns\Numeric\Integers\BigIntColumn
 
@@ -1981,7 +1981,7 @@ function isNullable()
 
 ##### Return Value
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -1993,7 +1993,7 @@ function setNullable($nullable)
 
 ##### Parameters
 
-- ***boolean*** `$nullable`
+- ***bool*** `$nullable`
 
 ##### Return Value
 
@@ -2081,7 +2081,7 @@ function isSigned()
 
 ##### Return Value
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -2093,7 +2093,7 @@ function setSigned($signed)
 
 ##### Parameters
 
-- ***boolean*** `$signed`
+- ***bool*** `$signed`
 
 ---
 
@@ -2193,7 +2193,7 @@ function isNullable()
 
 ##### Return Value
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -2205,7 +2205,7 @@ function setNullable($nullable)
 
 ##### Parameters
 
-- ***boolean*** `$nullable`
+- ***bool*** `$nullable`
 
 ##### Return Value
 
@@ -2293,7 +2293,7 @@ function isSigned()
 
 ##### Return Value
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -2305,7 +2305,7 @@ function setSigned($signed)
 
 ##### Parameters
 
-- ***boolean*** `$signed`
+- ***bool*** `$signed`
 
 ---
 
@@ -2405,7 +2405,7 @@ function isNullable()
 
 ##### Return Value
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -2417,7 +2417,7 @@ function setNullable($nullable)
 
 ##### Parameters
 
-- ***boolean*** `$nullable`
+- ***bool*** `$nullable`
 
 ##### Return Value
 
@@ -2505,7 +2505,7 @@ function isSigned()
 
 ##### Return Value
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -2517,7 +2517,7 @@ function setSigned($signed)
 
 ##### Parameters
 
-- ***boolean*** `$signed`
+- ***bool*** `$signed`
 
 ---
 
@@ -2617,7 +2617,7 @@ function isNullable()
 
 ##### Return Value
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -2629,7 +2629,7 @@ function setNullable($nullable)
 
 ##### Parameters
 
-- ***boolean*** `$nullable`
+- ***bool*** `$nullable`
 
 ##### Return Value
 
@@ -2717,7 +2717,7 @@ function isSigned()
 
 ##### Return Value
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -2729,7 +2729,7 @@ function setSigned($signed)
 
 ##### Parameters
 
-- ***boolean*** `$signed`
+- ***bool*** `$signed`
 
 ---
 
@@ -2829,7 +2829,7 @@ function isNullable()
 
 ##### Return Value
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -2841,7 +2841,7 @@ function setNullable($nullable)
 
 ##### Parameters
 
-- ***boolean*** `$nullable`
+- ***bool*** `$nullable`
 
 ##### Return Value
 
@@ -2929,7 +2929,7 @@ function isSigned()
 
 ##### Return Value
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -2941,7 +2941,7 @@ function setSigned($signed)
 
 ##### Parameters
 
-- ***boolean*** `$signed`
+- ***bool*** `$signed`
 
 ---
 
@@ -3030,7 +3030,7 @@ function isNullable()
 
 ##### Return Value
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -3042,7 +3042,7 @@ function setNullable($nullable)
 
 ##### Parameters
 
-- ***boolean*** `$nullable`
+- ***bool*** `$nullable`
 
 ##### Return Value
 
@@ -3142,7 +3142,7 @@ function getCharset()
 
 ##### Return Value
 
-- ***null*** | ***string***
+- ***string*** | ***null***
 
 ---
 
@@ -3154,7 +3154,7 @@ function setCharset($charset)
 
 ##### Parameters
 
-- ***null*** | ***string*** `$charset`
+- ***string*** | ***null*** `$charset`
 
 ##### Return Value
 
@@ -3170,7 +3170,7 @@ function getCollation()
 
 ##### Return Value
 
-- ***null*** | ***string***
+- ***string*** | ***null***
 
 ---
 
@@ -3182,7 +3182,7 @@ function setCollation($collation)
 
 ##### Parameters
 
-- ***null*** | ***string*** `$collation`
+- ***string*** | ***null*** `$collation`
 
 ##### Return Value
 
@@ -3274,7 +3274,7 @@ function isNullable()
 
 ##### Return Value
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -3286,7 +3286,7 @@ function setNullable($nullable)
 
 ##### Parameters
 
-- ***boolean*** `$nullable`
+- ***bool*** `$nullable`
 
 ##### Return Value
 
@@ -3386,7 +3386,7 @@ function getCharset()
 
 ##### Return Value
 
-- ***null*** | ***string***
+- ***string*** | ***null***
 
 ---
 
@@ -3398,7 +3398,7 @@ function setCharset($charset)
 
 ##### Parameters
 
-- ***null*** | ***string*** `$charset`
+- ***string*** | ***null*** `$charset`
 
 ##### Return Value
 
@@ -3414,7 +3414,7 @@ function getCollation()
 
 ##### Return Value
 
-- ***null*** | ***string***
+- ***string*** | ***null***
 
 ---
 
@@ -3426,7 +3426,7 @@ function setCollation($collation)
 
 ##### Parameters
 
-- ***null*** | ***string*** `$collation`
+- ***string*** | ***null*** `$collation`
 
 ##### Return Value
 
@@ -3494,7 +3494,7 @@ function isNullable()
 
 ##### Return Value
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -3506,7 +3506,7 @@ function setNullable($nullable)
 
 ##### Parameters
 
-- ***boolean*** `$nullable`
+- ***bool*** `$nullable`
 
 ##### Return Value
 
@@ -3606,7 +3606,7 @@ function getCharset()
 
 ##### Return Value
 
-- ***null*** | ***string***
+- ***string*** | ***null***
 
 ---
 
@@ -3618,7 +3618,7 @@ function setCharset($charset)
 
 ##### Parameters
 
-- ***null*** | ***string*** `$charset`
+- ***string*** | ***null*** `$charset`
 
 ##### Return Value
 
@@ -3634,7 +3634,7 @@ function getCollation()
 
 ##### Return Value
 
-- ***null*** | ***string***
+- ***string*** | ***null***
 
 ---
 
@@ -3646,7 +3646,7 @@ function setCollation($collation)
 
 ##### Parameters
 
-- ***null*** | ***string*** `$collation`
+- ***string*** | ***null*** `$collation`
 
 ##### Return Value
 
@@ -3727,7 +3727,7 @@ function isNullable()
 
 ##### Return Value
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -3739,7 +3739,7 @@ function setNullable($nullable)
 
 ##### Parameters
 
-- ***boolean*** `$nullable`
+- ***bool*** `$nullable`
 
 ##### Return Value
 
@@ -3827,7 +3827,7 @@ function getCharset()
 
 ##### Return Value
 
-- ***null*** | ***string***
+- ***string*** | ***null***
 
 ---
 
@@ -3839,7 +3839,7 @@ function setCharset($charset)
 
 ##### Parameters
 
-- ***null*** | ***string*** `$charset`
+- ***string*** | ***null*** `$charset`
 
 ##### Return Value
 
@@ -3855,7 +3855,7 @@ function getCollation()
 
 ##### Return Value
 
-- ***null*** | ***string***
+- ***string*** | ***null***
 
 ---
 
@@ -3867,7 +3867,7 @@ function setCollation($collation)
 
 ##### Parameters
 
-- ***null*** | ***string*** `$collation`
+- ***string*** | ***null*** `$collation`
 
 ##### Return Value
 
@@ -3972,7 +3972,7 @@ function isNullable()
 
 ##### Return Value
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -3984,7 +3984,7 @@ function setNullable($nullable)
 
 ##### Parameters
 
-- ***boolean*** `$nullable`
+- ***bool*** `$nullable`
 
 ##### Return Value
 
@@ -4072,7 +4072,7 @@ function getCharset()
 
 ##### Return Value
 
-- ***null*** | ***string***
+- ***string*** | ***null***
 
 ---
 
@@ -4084,7 +4084,7 @@ function setCharset($charset)
 
 ##### Parameters
 
-- ***null*** | ***string*** `$charset`
+- ***string*** | ***null*** `$charset`
 
 ##### Return Value
 
@@ -4100,7 +4100,7 @@ function getCollation()
 
 ##### Return Value
 
-- ***null*** | ***string***
+- ***string*** | ***null***
 
 ---
 
@@ -4112,7 +4112,7 @@ function setCollation($collation)
 
 ##### Parameters
 
-- ***null*** | ***string*** `$collation`
+- ***string*** | ***null*** `$collation`
 
 ##### Return Value
 
@@ -4216,7 +4216,7 @@ function isNullable()
 
 ##### Return Value
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -4228,7 +4228,7 @@ function setNullable($nullable)
 
 ##### Parameters
 
-- ***boolean*** `$nullable`
+- ***bool*** `$nullable`
 
 ##### Return Value
 
@@ -4316,7 +4316,7 @@ function getCharset()
 
 ##### Return Value
 
-- ***null*** | ***string***
+- ***string*** | ***null***
 
 ---
 
@@ -4328,7 +4328,7 @@ function setCharset($charset)
 
 ##### Parameters
 
-- ***null*** | ***string*** `$charset`
+- ***string*** | ***null*** `$charset`
 
 ##### Return Value
 
@@ -4344,7 +4344,7 @@ function getCollation()
 
 ##### Return Value
 
-- ***null*** | ***string***
+- ***string*** | ***null***
 
 ---
 
@@ -4356,7 +4356,7 @@ function setCollation($collation)
 
 ##### Parameters
 
-- ***null*** | ***string*** `$collation`
+- ***string*** | ***null*** `$collation`
 
 ##### Return Value
 
@@ -4436,7 +4436,7 @@ function isNullable()
 
 ##### Return Value
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -4448,7 +4448,7 @@ function setNullable($nullable)
 
 ##### Parameters
 
-- ***boolean*** `$nullable`
+- ***bool*** `$nullable`
 
 ##### Return Value
 
@@ -4536,7 +4536,7 @@ function getCharset()
 
 ##### Return Value
 
-- ***null*** | ***string***
+- ***string*** | ***null***
 
 ---
 
@@ -4548,7 +4548,7 @@ function setCharset($charset)
 
 ##### Parameters
 
-- ***null*** | ***string*** `$charset`
+- ***string*** | ***null*** `$charset`
 
 ##### Return Value
 
@@ -4564,7 +4564,7 @@ function getCollation()
 
 ##### Return Value
 
-- ***null*** | ***string***
+- ***string*** | ***null***
 
 ---
 
@@ -4576,7 +4576,7 @@ function setCollation($collation)
 
 ##### Parameters
 
-- ***null*** | ***string*** `$collation`
+- ***string*** | ***null*** `$collation`
 
 ##### Return Value
 
@@ -4656,7 +4656,7 @@ function isNullable()
 
 ##### Return Value
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -4668,7 +4668,7 @@ function setNullable($nullable)
 
 ##### Parameters
 
-- ***boolean*** `$nullable`
+- ***bool*** `$nullable`
 
 ##### Return Value
 
@@ -4756,7 +4756,7 @@ function getCharset()
 
 ##### Return Value
 
-- ***null*** | ***string***
+- ***string*** | ***null***
 
 ---
 
@@ -4768,7 +4768,7 @@ function setCharset($charset)
 
 ##### Parameters
 
-- ***null*** | ***string*** `$charset`
+- ***string*** | ***null*** `$charset`
 
 ##### Return Value
 
@@ -4784,7 +4784,7 @@ function getCollation()
 
 ##### Return Value
 
-- ***null*** | ***string***
+- ***string*** | ***null***
 
 ---
 
@@ -4796,7 +4796,7 @@ function setCollation($collation)
 
 ##### Parameters
 
-- ***null*** | ***string*** `$collation`
+- ***string*** | ***null*** `$collation`
 
 ##### Return Value
 
@@ -4876,7 +4876,7 @@ function isNullable()
 
 ##### Return Value
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -4888,7 +4888,7 @@ function setNullable($nullable)
 
 ##### Parameters
 
-- ***boolean*** `$nullable`
+- ***bool*** `$nullable`
 
 ##### Return Value
 
@@ -4976,7 +4976,7 @@ function getCharset()
 
 ##### Return Value
 
-- ***null*** | ***string***
+- ***string*** | ***null***
 
 ---
 
@@ -4988,7 +4988,7 @@ function setCharset($charset)
 
 ##### Parameters
 
-- ***null*** | ***string*** `$charset`
+- ***string*** | ***null*** `$charset`
 
 ##### Return Value
 
@@ -5004,7 +5004,7 @@ function getCollation()
 
 ##### Return Value
 
-- ***null*** | ***string***
+- ***string*** | ***null***
 
 ---
 
@@ -5016,7 +5016,7 @@ function setCollation($collation)
 
 ##### Parameters
 
-- ***null*** | ***string*** `$collation`
+- ***string*** | ***null*** `$collation`
 
 ##### Return Value
 
@@ -5084,7 +5084,7 @@ function isNullable()
 
 ##### Return Value
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -5096,7 +5096,7 @@ function setNullable($nullable)
 
 ##### Parameters
 
-- ***boolean*** `$nullable`
+- ***bool*** `$nullable`
 
 ##### Return Value
 
@@ -5260,7 +5260,7 @@ function isNullable()
 
 ##### Return Value
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -5272,7 +5272,7 @@ function setNullable($nullable)
 
 ##### Parameters
 
-- ***boolean*** `$nullable`
+- ***bool*** `$nullable`
 
 ##### Return Value
 
@@ -5424,7 +5424,7 @@ function isNullable()
 
 ##### Return Value
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -5436,7 +5436,7 @@ function setNullable($nullable)
 
 ##### Parameters
 
-- ***boolean*** `$nullable`
+- ***bool*** `$nullable`
 
 ##### Return Value
 
@@ -5588,7 +5588,7 @@ function isNullable()
 
 ##### Return Value
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -5600,7 +5600,7 @@ function setNullable($nullable)
 
 ##### Parameters
 
-- ***boolean*** `$nullable`
+- ***bool*** `$nullable`
 
 ##### Return Value
 
@@ -5771,7 +5771,7 @@ function isNullable()
 
 ##### Return Value
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -5783,7 +5783,7 @@ function setNullable($nullable)
 
 ##### Parameters
 
-- ***boolean*** `$nullable`
+- ***bool*** `$nullable`
 
 ##### Return Value
 
@@ -5931,7 +5931,7 @@ function isSigned()
 
 ##### Return Value
 
-- ***boolean***
+- ***bool***
 
 ---
 
@@ -5943,7 +5943,7 @@ function setSigned($signed)
 
 ##### Parameters
 
-- ***boolean*** `$signed`
+- ***bool*** `$signed`
 
 ### Class: donatj\MySqlSchema\Table
 
@@ -6009,7 +6009,7 @@ function getEngine()
 
 ##### Return Value
 
-- ***null*** | ***string***
+- ***string*** | ***null***
 
 ---
 
@@ -6021,7 +6021,7 @@ function setEngine($engine)
 
 ##### Parameters
 
-- ***null*** | ***string*** `$engine`
+- ***string*** | ***null*** `$engine`
 
 ##### Return Value
 
@@ -6189,7 +6189,7 @@ function getCharset()
 
 ##### Return Value
 
-- ***null*** | ***string***
+- ***string*** | ***null***
 
 ---
 
@@ -6201,7 +6201,7 @@ function setCharset($charset)
 
 ##### Parameters
 
-- ***null*** | ***string*** `$charset`
+- ***string*** | ***null*** `$charset`
 
 ##### Return Value
 
@@ -6217,7 +6217,7 @@ function getCollation()
 
 ##### Return Value
 
-- ***null*** | ***string***
+- ***string*** | ***null***
 
 ---
 
@@ -6229,7 +6229,7 @@ function setCollation($collation)
 
 ##### Parameters
 
-- ***null*** | ***string*** `$collation`
+- ***string*** | ***null*** `$collation`
 
 ##### Return Value
 
@@ -6245,7 +6245,7 @@ function getCharset()
 
 ##### Return Value
 
-- ***null*** | ***string***
+- ***string*** | ***null***
 
 ---
 
@@ -6257,7 +6257,7 @@ function setCharset($charset)
 
 ##### Parameters
 
-- ***null*** | ***string*** `$charset`
+- ***string*** | ***null*** `$charset`
 
 ##### Return Value
 
@@ -6273,7 +6273,7 @@ function getCollation()
 
 ##### Return Value
 
-- ***null*** | ***string***
+- ***string*** | ***null***
 
 ---
 
@@ -6285,7 +6285,7 @@ function setCollation($collation)
 
 ##### Parameters
 
-- ***null*** | ***string*** `$collation`
+- ***string*** | ***null*** `$collation`
 
 ##### Return Value
 
