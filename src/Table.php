@@ -40,7 +40,7 @@ class Table {
 	protected $engine = null;
 
 	/**
-	 * @return Columns\AbstractColumn[]
+	 * @return array<string, AbstractColumn>
 	 */
 	public function getColumns() {
 		return $this->columns;
@@ -143,7 +143,7 @@ class Table {
 	}
 
 	/**
-	 * @var array<string, array{columns:AbstractColumn[],type:string,method:string}>
+	 * @var array<string, array{columns:array<int, AbstractColumn>,type:string,method:string}>
 	 */
 	protected $keys = [ ];
 
@@ -191,7 +191,7 @@ class Table {
 	}
 
 	/**
-	 * @var Columns\AbstractColumn[]
+	 * @var array<string, AbstractColumn>
 	 */
 	protected $columns = [ ];
 

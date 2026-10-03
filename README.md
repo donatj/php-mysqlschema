@@ -43,7 +43,7 @@ function getTables()
 
 ##### Return Value
 
-- ***\donatj\MySqlSchema\Table[]***
+- ***list<\donatj\MySqlSchema\Table>***
 
 ---
 
@@ -443,7 +443,7 @@ function getTables()
 
 ##### Return Value
 
-- ***\donatj\MySqlSchema\Table[]***
+- ***list<\donatj\MySqlSchema\Table>***
 
 ---
 
@@ -624,7 +624,7 @@ function getTables()
 
 ##### Return Value
 
-- ***\donatj\MySqlSchema\Table[]***
+- ***list<\donatj\MySqlSchema\Table>***
 
 ---
 
@@ -812,7 +812,7 @@ function getTables()
 
 ##### Return Value
 
-- ***\donatj\MySqlSchema\Table[]***
+- ***list<\donatj\MySqlSchema\Table>***
 
 ---
 
@@ -1024,7 +1024,7 @@ function getTables()
 
 ##### Return Value
 
-- ***\donatj\MySqlSchema\Table[]***
+- ***list<\donatj\MySqlSchema\Table>***
 
 ---
 
@@ -1282,7 +1282,7 @@ function getTables()
 
 ##### Return Value
 
-- ***\donatj\MySqlSchema\Table[]***
+- ***list<\donatj\MySqlSchema\Table>***
 
 ---
 
@@ -1499,7 +1499,7 @@ function getTables()
 
 ##### Return Value
 
-- ***\donatj\MySqlSchema\Table[]***
+- ***list<\donatj\MySqlSchema\Table>***
 
 ---
 
@@ -1716,7 +1716,7 @@ function getTables()
 
 ##### Return Value
 
-- ***\donatj\MySqlSchema\Table[]***
+- ***list<\donatj\MySqlSchema\Table>***
 
 ---
 
@@ -1904,7 +1904,7 @@ function getTables()
 
 ##### Return Value
 
-- ***\donatj\MySqlSchema\Table[]***
+- ***list<\donatj\MySqlSchema\Table>***
 
 ---
 
@@ -2116,7 +2116,7 @@ function getTables()
 
 ##### Return Value
 
-- ***\donatj\MySqlSchema\Table[]***
+- ***list<\donatj\MySqlSchema\Table>***
 
 ---
 
@@ -2328,7 +2328,7 @@ function getTables()
 
 ##### Return Value
 
-- ***\donatj\MySqlSchema\Table[]***
+- ***list<\donatj\MySqlSchema\Table>***
 
 ---
 
@@ -2540,7 +2540,7 @@ function getTables()
 
 ##### Return Value
 
-- ***\donatj\MySqlSchema\Table[]***
+- ***list<\donatj\MySqlSchema\Table>***
 
 ---
 
@@ -2752,7 +2752,7 @@ function getTables()
 
 ##### Return Value
 
-- ***\donatj\MySqlSchema\Table[]***
+- ***list<\donatj\MySqlSchema\Table>***
 
 ---
 
@@ -2953,7 +2953,7 @@ function getTables()
 
 ##### Return Value
 
-- ***\donatj\MySqlSchema\Table[]***
+- ***list<\donatj\MySqlSchema\Table>***
 
 ---
 
@@ -3197,7 +3197,7 @@ function getTables()
 
 ##### Return Value
 
-- ***\donatj\MySqlSchema\Table[]***
+- ***list<\donatj\MySqlSchema\Table>***
 
 ---
 
@@ -3417,7 +3417,7 @@ function getTables()
 
 ##### Return Value
 
-- ***\donatj\MySqlSchema\Table[]***
+- ***list<\donatj\MySqlSchema\Table>***
 
 ---
 
@@ -3650,7 +3650,7 @@ function getTables()
 
 ##### Return Value
 
-- ***\donatj\MySqlSchema\Table[]***
+- ***list<\donatj\MySqlSchema\Table>***
 
 ---
 
@@ -3895,7 +3895,7 @@ function getTables()
 
 ##### Return Value
 
-- ***\donatj\MySqlSchema\Table[]***
+- ***list<\donatj\MySqlSchema\Table>***
 
 ---
 
@@ -4139,7 +4139,7 @@ function getTables()
 
 ##### Return Value
 
-- ***\donatj\MySqlSchema\Table[]***
+- ***list<\donatj\MySqlSchema\Table>***
 
 ---
 
@@ -4359,7 +4359,7 @@ function getTables()
 
 ##### Return Value
 
-- ***\donatj\MySqlSchema\Table[]***
+- ***list<\donatj\MySqlSchema\Table>***
 
 ---
 
@@ -4579,7 +4579,7 @@ function getTables()
 
 ##### Return Value
 
-- ***\donatj\MySqlSchema\Table[]***
+- ***list<\donatj\MySqlSchema\Table>***
 
 ---
 
@@ -4799,7 +4799,7 @@ function getTables()
 
 ##### Return Value
 
-- ***\donatj\MySqlSchema\Table[]***
+- ***list<\donatj\MySqlSchema\Table>***
 
 ---
 
@@ -5007,7 +5007,7 @@ function getTables()
 
 ##### Return Value
 
-- ***\donatj\MySqlSchema\Table[]***
+- ***list<\donatj\MySqlSchema\Table>***
 
 ---
 
@@ -5183,7 +5183,7 @@ function getTables()
 
 ##### Return Value
 
-- ***\donatj\MySqlSchema\Table[]***
+- ***list<\donatj\MySqlSchema\Table>***
 
 ---
 
@@ -5347,7 +5347,7 @@ function getTables()
 
 ##### Return Value
 
-- ***\donatj\MySqlSchema\Table[]***
+- ***list<\donatj\MySqlSchema\Table>***
 
 ---
 
@@ -5511,7 +5511,7 @@ function getTables()
 
 ##### Return Value
 
-- ***\donatj\MySqlSchema\Table[]***
+- ***list<\donatj\MySqlSchema\Table>***
 
 ---
 
@@ -5694,7 +5694,7 @@ function getTables()
 
 ##### Return Value
 
-- ***\donatj\MySqlSchema\Table[]***
+- ***list<\donatj\MySqlSchema\Table>***
 
 ---
 
@@ -5932,7 +5932,7 @@ function getColumns()
 
 ##### Return Value
 
-- ***\donatj\MySqlSchema\Columns\AbstractColumn[]***
+- ***array<string,\donatj\MySqlSchema\Columns\AbstractColumn>***
 
 ---
 
