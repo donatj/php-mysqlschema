@@ -38,7 +38,7 @@ class Table {
 	protected $engine;
 
 	/**
-	 * @return array<int, AbstractColumn>
+	 * @return AbstractColumn[]
 	 */
 	public function getColumns() {
 		return $this->columns;
