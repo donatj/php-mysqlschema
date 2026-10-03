@@ -14,4 +14,5 @@ interface MaxDigitsInterface {
 	 * @return void
 	 */
 	public function setMaxDigits( $maxDigits );
+
 }

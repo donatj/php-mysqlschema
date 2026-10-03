@@ -9,4 +9,5 @@ use donatj\MySqlSchema\Traits\CharsetAndCollationTrait;
 abstract class AbstractStringColumn extends AbstractColumn implements CharsetColumnInterface {
 
 	use CharsetAndCollationTrait;
+
 }

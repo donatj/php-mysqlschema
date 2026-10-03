@@ -171,8 +171,8 @@ abstract class AbstractColumn {
 	}
 
 	private function getTypeModifierString(): string {
-		if( $this instanceof RequiredLengthInterface ||
-			($this instanceof OptionalLengthInterface && $this->getLength() !== null)
+		if( $this instanceof RequiredLengthInterface
+			|| ($this instanceof OptionalLengthInterface && $this->getLength() !== null)
 		) {
 			return sprintf("(%s)", $this->getLength());
 		}
@@ -187,4 +187,5 @@ abstract class AbstractColumn {
 
 		return '';
 	}
+
 }

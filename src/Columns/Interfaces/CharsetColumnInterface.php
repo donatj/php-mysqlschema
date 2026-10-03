@@ -25,4 +25,5 @@ interface CharsetColumnInterface {
 	 * @return void
 	 */
 	public function setCollation( $collation );
+
 }

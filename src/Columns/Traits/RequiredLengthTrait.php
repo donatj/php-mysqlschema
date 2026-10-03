@@ -20,4 +20,5 @@ trait RequiredLengthTrait {
 	public function setLength( $length ) {
 		$this->length = $length;
 	}
+
 }

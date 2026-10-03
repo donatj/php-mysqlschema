@@ -58,4 +58,5 @@ class SchemaTest extends TestCase {
 			$users->toString()
 		);
 	}
+
 }

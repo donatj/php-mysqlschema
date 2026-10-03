@@ -8,4 +8,5 @@ use donatj\MySqlSchema\Columns\Traits\OptionalLengthTrait;
 abstract class AbstractIntegerColumn extends AbstractNumberColumn implements OptionalLengthInterface {
 
 	use OptionalLengthTrait;
+
 }

@@ -12,4 +12,5 @@ class BigIntColumn extends AbstractIntegerColumn {
 	public function getTypeName() {
 		return 'bigint';
 	}
+
 }

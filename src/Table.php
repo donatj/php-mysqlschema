@@ -213,6 +213,7 @@ class Table {
 			if( $this->autoIncrement->isSigned() ) {
 				$warnings[] = $this->mkString($this->autoIncrement->getName()) . ' is a signed AUTO_INCREMENT';
 			}
+
 			if( $this->autoIncrement->isNullable() ) {
 				$warnings[] = $this->mkString($this->autoIncrement->getName()) . ' is a nullable AUTO_INCREMENT';
 			}
@@ -223,6 +224,7 @@ class Table {
 			if( $key['type'] != 'NORMAL' ) {
 				$keys .= $key['type'] . ' ';
 			}
+
 			$keys .= "KEY " . $this->mkString($keyName) . " (";
 			$keys .= implode(",", array_map(function ( AbstractColumn $column ) {
 				return $this->mkString($column->getName());
@@ -241,7 +243,7 @@ class Table {
 
 			$tables = $remote->getTables();
 			// @todo doesn't really need to be a PK, just a key
-			$tables = array_filter($tables, function ( Table $a ) use ( $remote ) {
+			$tables = array_filter($tables, function ( self $a ) use ( $remote ) {
 				return $a->isPrimaryKey($remote);
 			});
 
@@ -250,6 +252,7 @@ class Table {
 				if( $local->getTypeName() != $remote->getTypeName() ) {
 					$warnings[] = $this->mkString($local->getName()) . ' type does not match defined foreign key type';
 				}
+
 				$localName     = $this->mkString($local->getName());
 				$remoteName    = $this->mkString($remote->getName());
 				$remoteTblName = $this->mkString($tbl->getName());
@@ -288,4 +291,5 @@ class Table {
 
 			EOT;
 	}
+
 }

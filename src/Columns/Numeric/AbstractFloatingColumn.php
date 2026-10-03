@@ -5,12 +5,14 @@ namespace donatj\MySqlSchema\Columns\Numeric;
 use donatj\MySqlSchema\Columns\Interfaces\PrecisionInterface;
 
 abstract class AbstractFloatingColumn extends AbstractNumberColumn implements PrecisionInterface {
+
 	/**
 	 * @param string $name
 	 * @param int    $precision
 	 */
 	public function __construct( $name, $precision ) {
 		parent::__construct($name);
+
 		$this->precision = $precision;
 	}
 
@@ -31,4 +33,5 @@ abstract class AbstractFloatingColumn extends AbstractNumberColumn implements Pr
 	public function setPrecision( $precision ) {
 		$this->precision = $precision;
 	}
+
 }

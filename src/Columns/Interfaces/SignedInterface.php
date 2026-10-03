@@ -14,4 +14,5 @@ interface SignedInterface {
 	 * @return void
 	 */
 	public function setSigned( $signed );
+
 }

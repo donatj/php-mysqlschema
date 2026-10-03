@@ -12,4 +12,5 @@ class IntColumn extends AbstractIntegerColumn {
 	public function getTypeName() {
 		return 'int';
 	}
+
 }

@@ -12,4 +12,5 @@ class DoubleColumn extends AbstractFloatingColumn {
 	public function getTypeName() {
 		return 'double';
 	}
+
 }

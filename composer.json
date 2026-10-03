@@ -8,11 +8,13 @@
 		"modeling"
 	],
 	"require-dev": {
+		"corpus/coding-standard": "^0.9",
 		"donatj/drop": "*",
 		"friendsofphp/php-cs-fixer": "^3.95",
 		"donatj/mddoc": "^0.12",
 		"phpstan/phpstan": "^2.2",
-		"phpunit/phpunit": "~9|~11"
+		"phpunit/phpunit": "~9|~11",
+		"squizlabs/php_codesniffer": "^3.6"
 	},
 	"license": "MIT",
 	"authors": [
@@ -34,6 +36,11 @@
 	"autoload-dev": {
 		"psr-4": {
 			"Test\\": "test/"
+		}
+	},
+	"config": {
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true
 		}
 	}
 }

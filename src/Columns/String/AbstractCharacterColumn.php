@@ -15,6 +15,8 @@ abstract class AbstractCharacterColumn extends AbstractStringColumn implements R
 	 */
 	public function __construct( $name, $length ) {
 		parent::__construct($name);
+
 		$this->setLength($length);
 	}
+
 }
