@@ -183,7 +183,7 @@ abstract class AbstractColumn {
 	/**
 	 * @return string
 	 */
-	private function getTypeModifierString() {
+	private function getTypeModifierString() : string {
 		if( $this instanceof RequiredLengthInterface ||
 			($this instanceof OptionalLengthInterface && !is_null($this->getLength()))
 		) {
