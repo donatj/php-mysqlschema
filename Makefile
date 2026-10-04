@@ -1,7 +1,7 @@
 .PHONY: fix
 fix:
 	vendor/bin/php-cs-fixer fix
-	vendor/bin/phpcbf
+	vendor/bin/phpcbf || [ $$? -eq 1 ]
 
 .PHONY: lint
 lint:
