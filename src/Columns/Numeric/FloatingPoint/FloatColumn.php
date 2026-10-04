@@ -12,4 +12,5 @@ class FloatColumn extends AbstractFloatingColumn {
 	public function getTypeName() {
 		return 'float';
 	}
+
 }

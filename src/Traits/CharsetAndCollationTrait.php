@@ -39,4 +39,5 @@ trait CharsetAndCollationTrait {
 	public function setCollation( $collation ) {
 		$this->collation = $collation;
 	}
+
 }

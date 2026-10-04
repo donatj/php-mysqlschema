@@ -21,6 +21,7 @@ class DecimalColumn extends AbstractNumberColumn implements MaxDigitsInterface, 
 	 */
 	public function __construct( $name, $maxDigits, $decimalPlaces ) {
 		parent::__construct($name);
+
 		$this->maxDigits = $maxDigits;
 		$this->decimalPlaces = $decimalPlaces;
 	}
@@ -61,4 +62,5 @@ class DecimalColumn extends AbstractNumberColumn implements MaxDigitsInterface, 
 	public function setDecimalPlaces( $decimalPlaces ) {
 		$this->decimalPlaces = $decimalPlaces;
 	}
+
 }

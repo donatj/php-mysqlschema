@@ -20,4 +20,5 @@ trait SignedTrait {
 	public function setSigned( $signed ) {
 		$this->signed = $signed;
 	}
+
 }

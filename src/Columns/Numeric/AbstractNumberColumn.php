@@ -9,4 +9,5 @@ use donatj\MySqlSchema\Columns\Traits\SignedTrait;
 abstract class AbstractNumberColumn extends AbstractColumn implements SignedInterface {
 
 	use SignedTrait;
+
 }

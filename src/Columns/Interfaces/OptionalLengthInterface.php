@@ -14,4 +14,5 @@ interface OptionalLengthInterface {
 	 * @return void
 	 */
 	public function setLength( $length = null );
+
 }

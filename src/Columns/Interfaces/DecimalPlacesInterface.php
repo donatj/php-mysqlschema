@@ -14,4 +14,5 @@ interface DecimalPlacesInterface {
 	 * @return void
 	 */
 	public function setDecimalPlaces( $decimalPlaces );
+
 }

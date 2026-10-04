@@ -20,4 +20,5 @@ trait OptionalLengthTrait {
 	public function setLength( $length = null ) {
 		$this->length = $length;
 	}
+
 }

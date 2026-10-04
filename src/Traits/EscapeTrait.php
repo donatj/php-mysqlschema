@@ -20,4 +20,5 @@ trait EscapeTrait {
 	protected function mkString( $input, $wrapChar = '`' ): string {
 		return $wrapChar . $this->escape($input, $wrapChar) . $wrapChar;
 	}
+
 }
