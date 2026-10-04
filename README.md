@@ -5969,7 +5969,7 @@ function getColumns()
 
 ##### Return Value
 
-- ***\donatj\MySqlSchema\Columns\AbstractColumn[]***
+- ***list<\donatj\MySqlSchema\Columns\AbstractColumn>***
 
 ---
 

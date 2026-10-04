@@ -9,6 +9,17 @@ use PHPUnit\Framework\TestCase;
 
 class SchemaTest extends TestCase {
 
+	public function testColumnsAreExposedAsAnOrderedList() {
+		$table = new Table('users');
+		$id    = new IntColumn('id');
+		$email = new VarcharColumn('email', 255);
+
+		$table->addColumn($id);
+		$table->addColumn($email);
+
+		$this->assertSame([$id, $email], $table->getColumns());
+	}
+
 	public function testRendersColumnModifiersAndEscapesValues() {
 		$table = new Table('user` accounts');
 		$table->setCharset('utf8mb4');

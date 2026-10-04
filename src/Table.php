@@ -38,10 +38,10 @@ class Table {
 	protected $engine;
 
 	/**
-	 * @return AbstractColumn[]
+	 * @return list<AbstractColumn>
 	 */
 	public function getColumns() {
-		return $this->columns;
+		return array_values($this->columns);
 	}
 
 	/**
