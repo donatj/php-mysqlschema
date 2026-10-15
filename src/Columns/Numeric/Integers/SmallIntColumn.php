@@ -6,10 +6,7 @@ use donatj\MySqlSchema\Columns\Numeric\AbstractIntegerColumn;
 
 class SmallIntColumn extends AbstractIntegerColumn {
 
-	/**
-	 * @return string
-	 */
-	public function getTypeName() {
+	public function getTypeName(): string {
 		return 'smallint';
 	}
 

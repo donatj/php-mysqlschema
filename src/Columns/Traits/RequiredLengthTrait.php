@@ -8,16 +8,16 @@ trait RequiredLengthTrait {
 	protected $length = 0;
 
 	/**
-	 * @return int
+	 * @return int The configured length.
 	 */
-	public function getLength() {
+	public function getLength(): int {
 		return $this->length;
 	}
 
 	/**
-	 * @param int $length
+	 * @param int $length The required length.
 	 */
-	public function setLength( $length ) {
+	public function setLength( int $length ): void {
 		$this->length = $length;
 	}
 

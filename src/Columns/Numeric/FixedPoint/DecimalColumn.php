@@ -15,51 +15,48 @@ class DecimalColumn extends AbstractNumberColumn implements MaxDigitsInterface, 
 	protected $decimalPlaces;
 
 	/**
-	 * @param string $name
-	 * @param int    $maxDigits
-	 * @param int    $decimalPlaces
+	 * @param string $name          The SQL column name.
+	 * @param int    $maxDigits     The total number of digits.
+	 * @param int    $decimalPlaces The number of digits after the decimal point.
 	 */
-	public function __construct( $name, $maxDigits, $decimalPlaces ) {
+	public function __construct( string $name, int $maxDigits, int $decimalPlaces ) {
 		parent::__construct($name);
 
 		$this->maxDigits = $maxDigits;
 		$this->decimalPlaces = $decimalPlaces;
 	}
 
-	/**
-	 * @return string
-	 */
-	public function getTypeName() {
+	public function getTypeName(): string {
 		return 'decimal';
 	}
 
 	/**
-	 * @return int
+	 * @return int The total number of digits.
 	 */
-	public function getMaxDigits() {
+	public function getMaxDigits(): int {
 		return $this->maxDigits;
 	}
 
 	/**
-	 * @param int $maxDigits
+	 * @param int $maxDigits The total number of digits.
 	 * @return void
 	 */
-	public function setMaxDigits( $maxDigits ) {
+	public function setMaxDigits( int $maxDigits ): void {
 		$this->maxDigits = $maxDigits;
 	}
 
 	/**
-	 * @return int
+	 * @return int The number of digits after the decimal point.
 	 */
-	public function getDecimalPlaces() {
+	public function getDecimalPlaces(): int {
 		return $this->decimalPlaces;
 	}
 
 	/**
-	 * @param int $decimalPlaces
+	 * @param int $decimalPlaces The number of digits after the decimal point.
 	 * @return void
 	 */
-	public function setDecimalPlaces( $decimalPlaces ) {
+	public function setDecimalPlaces( int $decimalPlaces ): void {
 		$this->decimalPlaces = $decimalPlaces;
 	}
 

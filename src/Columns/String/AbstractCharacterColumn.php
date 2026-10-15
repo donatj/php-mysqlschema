@@ -10,10 +10,10 @@ abstract class AbstractCharacterColumn extends AbstractStringColumn implements R
 	use RequiredLengthTrait;
 
 	/**
-	 * @param string $name
-	 * @param int    $length
+	 * @param string $name   The SQL column name.
+	 * @param int    $length The column length.
 	 */
-	public function __construct( $name, $length ) {
+	public function __construct( string $name, int $length ) {
 		parent::__construct($name);
 
 		$this->setLength($length);

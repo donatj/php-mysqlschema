@@ -21,7 +21,7 @@
 				<exec cmd="php examples/basic.php" format="code-block" lang="sql"/>
 			</section>
 			<section title="Documentation">
-				<recursive-directory name="src"/>
+				<recursive-directory name="src" warn-undocumented="false"/>
 			</section>
 		</section>
 	</docpage>

@@ -5,14 +5,13 @@ namespace donatj\MySqlSchema\Columns\Interfaces;
 interface DecimalPlacesInterface {
 
 	/**
-	 * @return int
+	 * @return int The number of digits after the decimal point.
 	 */
-	public function getDecimalPlaces();
+	public function getDecimalPlaces(): int;
 
 	/**
-	 * @param int $decimalPlaces
-	 * @return void
+	 * @param int $decimalPlaces The number of digits after the decimal point.
 	 */
-	public function setDecimalPlaces( $decimalPlaces );
+	public function setDecimalPlaces( int $decimalPlaces ): void;
 
 }

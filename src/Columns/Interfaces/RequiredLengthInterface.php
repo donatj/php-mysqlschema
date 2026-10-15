@@ -5,14 +5,13 @@ namespace donatj\MySqlSchema\Columns\Interfaces;
 interface RequiredLengthInterface {
 
 	/**
-	 * @return int
+	 * @return int The configured length.
 	 */
-	public function getLength();
+	public function getLength(): int;
 
 	/**
-	 * @param int $length
-	 * @return void
+	 * @param int $length The required length.
 	 */
-	public function setLength( $length );
+	public function setLength( int $length ): void;
 
 }

@@ -11,32 +11,30 @@ trait CharsetAndCollationTrait {
 	protected $collation;
 
 	/**
-	 * @return string|null
+	 * @return string|null The configured character set.
 	 */
-	public function getCharset() {
+	public function getCharset(): ?string {
 		return $this->charset;
 	}
 
 	/**
-	 * @param string|null $charset
-	 * @return void
+	 * @param string|null $charset The character set, or null to unset it.
 	 */
-	public function setCharset( $charset ) {
+	public function setCharset( ?string $charset ): void {
 		$this->charset = $charset;
 	}
 
 	/**
-	 * @return string|null
+	 * @return string|null The configured collation.
 	 */
-	public function getCollation() {
+	public function getCollation(): ?string {
 		return $this->collation;
 	}
 
 	/**
-	 * @param string|null $collation
-	 * @return void
+	 * @param string|null $collation The collation, or null to unset it.
 	 */
-	public function setCollation( $collation ) {
+	public function setCollation( ?string $collation ): void {
 		$this->collation = $collation;
 	}
 

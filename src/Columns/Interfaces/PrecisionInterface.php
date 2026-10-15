@@ -5,14 +5,13 @@ namespace donatj\MySqlSchema\Columns\Interfaces;
 interface PrecisionInterface {
 
 	/**
-	 * @return int
+	 * @return int The floating-point precision.
 	 */
-	public function getPrecision();
+	public function getPrecision(): int;
 
 	/**
-	 * @param int $precision
-	 * @return void
+	 * @param int $precision The floating-point precision.
 	 */
-	public function setPrecision( $precision );
+	public function setPrecision( int $precision ): void;
 
 }

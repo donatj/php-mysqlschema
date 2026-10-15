@@ -6,10 +6,7 @@ use donatj\MySqlSchema\Columns\String\AbstractCharacterColumn;
 
 class CharColumn extends AbstractCharacterColumn {
 
-	/**
-	 * @return string
-	 */
-	public function getTypeName() {
+	public function getTypeName(): string {
 		return 'char';
 	}
 
