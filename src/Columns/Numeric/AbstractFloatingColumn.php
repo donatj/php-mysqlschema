@@ -7,10 +7,10 @@ use donatj\MySqlSchema\Columns\Interfaces\PrecisionInterface;
 abstract class AbstractFloatingColumn extends AbstractNumberColumn implements PrecisionInterface {
 
 	/**
-	 * @param string $name
-	 * @param int    $precision
+	 * @param string $name      The SQL column name.
+	 * @param int    $precision The floating-point precision.
 	 */
-	public function __construct( $name, $precision ) {
+	public function __construct( string $name, int $precision ) {
 		parent::__construct($name);
 
 		$this->precision = $precision;
@@ -20,17 +20,17 @@ abstract class AbstractFloatingColumn extends AbstractNumberColumn implements Pr
 	protected $precision = 0;
 
 	/**
-	 * @return int
+	 * @return int The floating-point precision.
 	 */
-	public function getPrecision() {
+	public function getPrecision(): int {
 		return $this->precision;
 	}
 
 	/**
-	 * @param int $precision
+	 * @param int $precision The floating-point precision.
 	 * @return void
 	 */
-	public function setPrecision( $precision ) {
+	public function setPrecision( int $precision ): void {
 		$this->precision = $precision;
 	}
 

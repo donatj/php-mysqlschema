@@ -5,14 +5,13 @@ namespace donatj\MySqlSchema\Columns\Interfaces;
 interface MaxDigitsInterface {
 
 	/**
-	 * @return int
+	 * @return int The total number of digits.
 	 */
-	public function getMaxDigits();
+	public function getMaxDigits(): int;
 
 	/**
-	 * @param int $maxDigits
-	 * @return void
+	 * @param int $maxDigits The total number of digits.
 	 */
-	public function setMaxDigits( $maxDigits );
+	public function setMaxDigits( int $maxDigits ): void;
 
 }

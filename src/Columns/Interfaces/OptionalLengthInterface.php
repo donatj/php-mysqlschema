@@ -5,14 +5,13 @@ namespace donatj\MySqlSchema\Columns\Interfaces;
 interface OptionalLengthInterface {
 
 	/**
-	 * @return int|null
+	 * @return int|null The configured length, if any.
 	 */
-	public function getLength();
+	public function getLength(): ?int;
 
 	/**
-	 * @param int|null $length
-	 * @return void
+	 * @param int|null $length The length, or null to omit it.
 	 */
-	public function setLength( $length = null );
+	public function setLength( ?int $length = null ): void;
 
 }

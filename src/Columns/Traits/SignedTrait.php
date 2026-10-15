@@ -8,16 +8,16 @@ trait SignedTrait {
 	protected $signed = false;
 
 	/**
-	 * @return bool
+	 * @return bool Whether the numeric column is signed.
 	 */
-	public function isSigned() {
+	public function isSigned(): bool {
 		return $this->signed;
 	}
 
 	/**
-	 * @param bool $signed
+	 * @param bool $signed Whether the numeric column is signed.
 	 */
-	public function setSigned( $signed ) {
+	public function setSigned( bool $signed ): void {
 		$this->signed = $signed;
 	}
 

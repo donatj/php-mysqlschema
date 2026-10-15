@@ -12,11 +12,11 @@ class Table {
 	use CharsetAndCollationTrait;
 
 	/**
-	 * Table constructor.
+	 * Creates a table definition.
 	 *
-	 * @param string $name
+	 * @param string $name The SQL table name.
 	 */
-	public function __construct( $name ) {
+	public function __construct( string $name ) {
 		$this->name = $name;
 	}
 
@@ -38,54 +38,47 @@ class Table {
 	protected $engine;
 
 	/**
-	 * @return list<AbstractColumn>
+	 * @return list<AbstractColumn> Columns in the order they were added.
 	 */
-	public function getColumns() {
+	public function getColumns(): array {
 		return array_values($this->columns);
 	}
 
-	/**
-	 * @return string
-	 */
-	public function getComment() {
+	public function getComment(): string {
 		return $this->comment;
 	}
 
 	/**
-	 * @param string $comment
+	 * @param string $comment The table comment.
 	 * @return void
 	 */
-	public function setComment( $comment ) {
+	public function setComment( string $comment ): void {
 		$this->comment = $comment;
 	}
 
 	/**
-	 * @return string|null
+	 * @return string|null The configured storage engine.
 	 */
-	public function getEngine() {
+	public function getEngine(): ?string {
 		return $this->engine;
 	}
 
 	/**
-	 * @param string|null $engine
-	 * @return void
+	 * @param string|null $engine The storage engine, or null to unset it.
 	 */
-	public function setEngine( $engine ) {
+	public function setEngine( ?string $engine ): void {
 		$this->engine = $engine;
 	}
 
-	/**
-	 * @return string
-	 */
-	public function getName() {
+	public function getName(): string {
 		return $this->name;
 	}
 
 	/**
-	 * @param string $name
+	 * @param string $name The SQL table name.
 	 * @return void
 	 */
-	public function setName( $name ) {
+	public function setName( string $name ): void {
 		$this->name = $name;
 	}
 
@@ -93,26 +86,28 @@ class Table {
 	protected $autoIncrement;
 
 	/**
-	 * @return void
+	 * Marks an integer column as auto-incrementing and as a primary key.
+	 *
+	 * @param AbstractIntegerColumn $column The auto-incrementing column.
 	 */
-	public function addAutoIncrement( AbstractIntegerColumn $column ) {
+	public function addAutoIncrement( AbstractIntegerColumn $column ): void {
 		$this->autoIncrement = $column;
 
 		$this->addPrimaryKey($column);
 	}
 
 	/**
-	 * @return AbstractIntegerColumn|null
+	 * @return AbstractIntegerColumn|null The auto-incrementing column, if one is set.
 	 */
-	public function getAutoIncrementColumn() {
+	public function getAutoIncrementColumn(): ?AbstractIntegerColumn {
 		return $this->autoIncrement;
 	}
 
 	/**
-	 * @param \donatj\MySqlSchema\Columns\Numeric\AbstractIntegerColumn $column
+	 * @param AbstractIntegerColumn $column The column to check.
 	 * @return bool
 	 */
-	public function isAutoIncrement( AbstractIntegerColumn $column ) {
+	public function isAutoIncrement( AbstractIntegerColumn $column ): bool {
 		return $this->autoIncrement === $column;
 	}
 
@@ -120,19 +115,19 @@ class Table {
 	protected $primaryKeys = [ ];
 
 	/**
-	 * @return void
+	 * @param AbstractColumn $column The column to add to the primary key.
 	 */
-	public function addPrimaryKey( AbstractColumn $column ) {
+	public function addPrimaryKey( AbstractColumn $column ): void {
 		$this->primaryKeys[spl_object_id($column)] = $column;
 
 		$this->addColumn($column);
 	}
 
 	/**
-	 * @param \donatj\MySqlSchema\Columns\AbstractColumn $column
+	 * @param AbstractColumn $column The column to check.
 	 * @return bool
 	 */
-	public function isPrimaryKey( AbstractColumn $column ) {
+	public function isPrimaryKey( AbstractColumn $column ): bool {
 		return isset($this->primaryKeys[spl_object_id($column)]);
 	}
 
@@ -140,14 +135,21 @@ class Table {
 	protected $keys = [ ];
 
 	/**
-	 * @param string         $keyName
-	 * @param AbstractColumn $column
-	 * @param int|null       $index
-	 * @param string         $type
-	 * @param string         $method
-	 * @return void
+	 * Adds a column to an index.
+	 *
+	 * @param string         $keyName The index name.
+	 * @param AbstractColumn $column  The column to include in the index.
+	 * @param int|null       $index   The zero-based position in a multi-column index. Appends when null.
+	 * @param string         $type    The index type, such as NORMAL or UNIQUE.
+	 * @param string         $method  The index method, such as BTREE.
 	 */
-	public function addKeyColumn( $keyName, AbstractColumn $column, $index = null, $type = 'NORMAL', $method = '' ) {
+	public function addKeyColumn(
+		string $keyName,
+		AbstractColumn $column,
+		?int $index = null,
+		string $type = 'NORMAL',
+		string $method = ''
+	): void {
 		if( !isset($this->keys[$keyName]) ) {
 			$this->keys[$keyName] = [
 				'columns' => [],
@@ -170,9 +172,12 @@ class Table {
 	protected $foreignKeys = [ ];
 
 	/**
-	 * @return void
+	 * Adds a foreign key from a local column to a remote column.
+	 *
+	 * @param AbstractColumn $local  The local column.
+	 * @param AbstractColumn $remote The referenced column.
 	 */
-	public function addForeignKey( AbstractColumn $local, AbstractColumn $remote ) {
+	public function addForeignKey( AbstractColumn $local, AbstractColumn $remote ): void {
 		$this->foreignKeys[spl_object_id($local)] = [
 			'local'  => $local,
 			'remote' => $remote,
@@ -183,17 +188,17 @@ class Table {
 	protected $columns = [ ];
 
 	/**
-	 * @return void
+	 * @param AbstractColumn $column The column to add.
 	 */
-	public function addColumn( AbstractColumn $column ) {
+	public function addColumn( AbstractColumn $column ): void {
 		$this->columns[spl_object_id($column)] = $column;
 		$column->addTable($this);
 	}
 
 	/**
-	 * @return string
+	 * @return string The CREATE TABLE statement.
 	 */
-	public function toString() {
+	public function toString(): string {
 		$warnings   = [ ];
 		$statements = [ ];
 		foreach( $this->columns as $column ) {
@@ -202,7 +207,7 @@ class Table {
 
 		if( count($this->primaryKeys) > 0 ) {
 			$primary = "\tPRIMARY KEY (";
-			$primary .= implode(",", array_map(function ( AbstractColumn $column ) {
+			$primary .= implode(",", array_map(function ( AbstractColumn $column ): string {
 				return $this->mkString($column->getName());
 			}, $this->primaryKeys));
 			$primary .= ")";
@@ -226,7 +231,7 @@ class Table {
 			}
 
 			$keys .= "KEY " . $this->mkString($keyName) . " (";
-			$keys .= implode(",", array_map(function ( AbstractColumn $column ) {
+			$keys .= implode(",", array_map(function ( AbstractColumn $column ): string {
 				return $this->mkString($column->getName());
 			}, $key['columns']));
 			$keys .= ")";
@@ -243,7 +248,7 @@ class Table {
 
 			$tables = $remote->getTables();
 			// @todo doesn't really need to be a PK, just a key
-			$tables = array_filter($tables, function ( self $a ) use ( $remote ) {
+			$tables = array_filter($tables, function ( self $a ) use ( $remote ): bool {
 				return $a->isPrimaryKey($remote);
 			});
 

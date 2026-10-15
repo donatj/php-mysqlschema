@@ -29,9 +29,9 @@ abstract class AbstractColumn {
 	protected $default;
 
 	/**
-	 * @param string $name
+	 * @param string $name The SQL column name.
 	 */
-	public function __construct( $name ) {
+	public function __construct( string $name ) {
 		$this->name = $name;
 	}
 
@@ -40,67 +40,58 @@ abstract class AbstractColumn {
 	 * @param \donatj\MySqlSchema\Table $table
 	 * @return void
 	 */
-	public function addTable( Table $table ) {
+	public function addTable( Table $table ): void {
 		$this->tables[spl_object_id($table)] = $table;
 	}
 
 	/**
-	 * @return list<\donatj\MySqlSchema\Table>
+	 * @return list<Table> Tables that include this column.
 	 */
-	public function getTables() {
+	public function getTables(): array {
 		return array_values($this->tables);
 	}
 
-	/**
-	 * @return string
-	 */
-	public function getComment() {
+	public function getComment(): string {
 		return $this->comment;
 	}
 
 	/**
-	 * @param string $comment
+	 * @param string $comment The column comment.
 	 * @return void
 	 */
-	public function setComment( $comment ) {
+	public function setComment( string $comment ): void {
 		$this->comment = $comment;
 	}
 
-	/**
-	 * @return bool
-	 */
-	public function isNullable() {
+	public function isNullable(): bool {
 		return $this->nullable;
 	}
 
 	/**
-	 * @param bool $nullable
+	 * @param bool $nullable Whether the column accepts NULL values.
 	 * @return void
 	 */
-	public function setNullable( $nullable ) {
+	public function setNullable( bool $nullable ): void {
 		$this->nullable = $nullable;
 	}
 
-	/**
-	 * @return string
-	 */
-	public function getName() {
+	public function getName(): string {
 		return $this->name;
 	}
 
 	/**
-	 * @param string $name
+	 * @param string $name The SQL column name.
 	 * @return void
 	 */
-	public function setName( $name ) {
+	public function setName( string $name ): void {
 		$this->name = $name;
 	}
 
 	/**
-	 * @param \donatj\MySqlSchema\Table $table
-	 * @return string
+	 * @param Table $table The table that contains the column.
+	 * @return string The SQL column definition.
 	 */
-	public function toString( Table $table ) {
+	public function toString( Table $table ): string {
 		$type = $this->getTypeName();
 
 		$nullable = '';
@@ -151,22 +142,24 @@ abstract class AbstractColumn {
 	}
 
 	/**
-	 * @return string
+	 * @return string The MySQL type name.
 	 */
-	abstract public function getTypeName();
+	abstract public function getTypeName(): string;
 
 	/**
-	 * @return mixed
+	 * @return mixed The value used in the SQL DEFAULT clause.
 	 */
 	public function getDefault() {
 		return $this->default;
 	}
 
 	/**
-	 * @param mixed $default
+	 * Sets the value used in the SQL DEFAULT clause.
+	 *
+	 * @param mixed $default Pass null to omit the DEFAULT clause.
 	 * @return void
 	 */
-	public function setDefault( $default ) {
+	public function setDefault( $default ): void {
 		$this->default = $default;
 	}
 

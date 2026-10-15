@@ -8,16 +8,16 @@ trait OptionalLengthTrait {
 	protected $length;
 
 	/**
-	 * @return int|null
+	 * @return int|null The configured length, if any.
 	 */
-	public function getLength() {
+	public function getLength(): ?int {
 		return $this->length;
 	}
 
 	/**
-	 * @param int|null $length
+	 * @param int|null $length The length, or null to omit it.
 	 */
-	public function setLength( $length = null ) {
+	public function setLength( ?int $length = null ): void {
 		$this->length = $length;
 	}
 

@@ -6,10 +6,7 @@ use donatj\MySqlSchema\Columns\String\AbstractTextColumn;
 
 class TextColumn extends AbstractTextColumn {
 
-	/**
-	 * @return string
-	 */
-	public function getTypeName() {
+	public function getTypeName(): string {
 		return 'text';
 	}
 

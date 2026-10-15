@@ -5,14 +5,13 @@ namespace donatj\MySqlSchema\Columns\Interfaces;
 interface SignedInterface {
 
 	/**
-	 * @return bool
+	 * @return bool Whether the numeric column is signed.
 	 */
-	public function isSigned();
+	public function isSigned(): bool;
 
 	/**
-	 * @param bool $signed
-	 * @return void
+	 * @param bool $signed Whether the numeric column is signed.
 	 */
-	public function setSigned( $signed );
+	public function setSigned( bool $signed ): void;
 
 }

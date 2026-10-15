@@ -6,10 +6,7 @@ use donatj\MySqlSchema\Columns\Numeric\AbstractFloatingColumn;
 
 class FloatColumn extends AbstractFloatingColumn {
 
-	/**
-	 * @return string
-	 */
-	public function getTypeName() {
+	public function getTypeName(): string {
 		return 'float';
 	}
 
