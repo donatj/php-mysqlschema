@@ -106,10 +106,6 @@ function setComment($comment)
 
 - ***string*** `$comment`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: AbstractColumn->isNullable
@@ -134,10 +130,6 @@ function setNullable($nullable)
 
 - ***bool*** `$nullable`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: AbstractColumn->getName
@@ -161,10 +153,6 @@ function setName($name)
 ##### Parameters
 
 - ***string*** `$name`
-
-##### Return Value
-
-- ***void***
 
 ---
 
@@ -218,10 +206,6 @@ function setDefault($default)
 
 - ***mixed*** `$default`
 
-##### Return Value
-
-- ***void***
-
 ### Class: donatj\MySqlSchema\Columns\Interfaces\CharsetColumnInterface
 
 #### Method: CharsetColumnInterface->getCharset
@@ -245,10 +229,6 @@ function setCharset($charset)
 ##### Parameters
 
 - ***string*** | ***null*** `$charset`
-
-##### Return Value
-
-- ***void***
 
 ---
 
@@ -274,10 +254,6 @@ function setCollation($collation)
 
 - ***string*** | ***null*** `$collation`
 
-##### Return Value
-
-- ***void***
-
 ### Class: donatj\MySqlSchema\Columns\Interfaces\DecimalPlacesInterface
 
 #### Method: DecimalPlacesInterface->getDecimalPlaces
@@ -301,10 +277,6 @@ function setDecimalPlaces($decimalPlaces)
 ##### Parameters
 
 - ***int*** `$decimalPlaces`
-
-##### Return Value
-
-- ***void***
 
 ### Class: donatj\MySqlSchema\Columns\Interfaces\MaxDigitsInterface
 
@@ -330,10 +302,6 @@ function setMaxDigits($maxDigits)
 
 - ***int*** `$maxDigits`
 
-##### Return Value
-
-- ***void***
-
 ### Class: donatj\MySqlSchema\Columns\Interfaces\OptionalLengthInterface
 
 #### Method: OptionalLengthInterface->getLength
@@ -357,10 +325,6 @@ function setLength($length = null)
 ##### Parameters
 
 - ***int*** | ***null*** `$length`
-
-##### Return Value
-
-- ***void***
 
 ### Class: donatj\MySqlSchema\Columns\Interfaces\PrecisionInterface
 
@@ -386,10 +350,6 @@ function setPrecision($precision)
 
 - ***int*** `$precision`
 
-##### Return Value
-
-- ***void***
-
 ### Class: donatj\MySqlSchema\Columns\Interfaces\RequiredLengthInterface
 
 #### Method: RequiredLengthInterface->getLength
@@ -414,10 +374,6 @@ function setLength($length)
 
 - ***int*** `$length`
 
-##### Return Value
-
-- ***void***
-
 ### Class: donatj\MySqlSchema\Columns\Interfaces\SignedInterface
 
 #### Method: SignedInterface->isSigned
@@ -441,10 +397,6 @@ function setSigned($signed)
 ##### Parameters
 
 - ***bool*** `$signed`
-
-##### Return Value
-
-- ***void***
 
 ### Class: donatj\MySqlSchema\Columns\Json\JsonColumn
 
@@ -506,10 +458,6 @@ function setComment($comment)
 
 - ***string*** `$comment`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: JsonColumn->isNullable
@@ -534,10 +482,6 @@ function setNullable($nullable)
 
 - ***bool*** `$nullable`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: JsonColumn->getName
@@ -561,10 +505,6 @@ function setName($name)
 ##### Parameters
 
 - ***string*** `$name`
-
-##### Return Value
-
-- ***void***
 
 ---
 
@@ -606,10 +546,6 @@ function setDefault($default)
 
 - ***mixed*** `$default`
 
-##### Return Value
-
-- ***void***
-
 ### Class: donatj\MySqlSchema\Columns\Numeric\AbstractFloatingColumn
 
 #### Method: AbstractFloatingColumn->__construct
@@ -647,10 +583,6 @@ function setPrecision($precision)
 
 - ***int*** `$precision`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: AbstractFloatingColumn->getTables
@@ -687,10 +619,6 @@ function setComment($comment)
 
 - ***string*** `$comment`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: AbstractFloatingColumn->isNullable
@@ -715,10 +643,6 @@ function setNullable($nullable)
 
 - ***bool*** `$nullable`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: AbstractFloatingColumn->getName
@@ -742,10 +666,6 @@ function setName($name)
 ##### Parameters
 
 - ***string*** `$name`
-
-##### Return Value
-
-- ***void***
 
 ---
 
@@ -798,10 +718,6 @@ function setDefault($default)
 ##### Parameters
 
 - ***mixed*** `$default`
-
-##### Return Value
-
-- ***void***
 
 ---
 
@@ -875,10 +791,6 @@ function setComment($comment)
 
 - ***string*** `$comment`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: AbstractIntegerColumn->isNullable
@@ -903,10 +815,6 @@ function setNullable($nullable)
 
 - ***bool*** `$nullable`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: AbstractIntegerColumn->getName
@@ -930,10 +838,6 @@ function setName($name)
 ##### Parameters
 
 - ***string*** `$name`
-
-##### Return Value
-
-- ***void***
 
 ---
 
@@ -986,10 +890,6 @@ function setDefault($default)
 ##### Parameters
 
 - ***mixed*** `$default`
-
-##### Return Value
-
-- ***void***
 
 ---
 
@@ -1087,10 +987,6 @@ function setComment($comment)
 
 - ***string*** `$comment`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: AbstractNumberColumn->isNullable
@@ -1115,10 +1011,6 @@ function setNullable($nullable)
 
 - ***bool*** `$nullable`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: AbstractNumberColumn->getName
@@ -1142,10 +1034,6 @@ function setName($name)
 ##### Parameters
 
 - ***string*** `$name`
-
-##### Return Value
-
-- ***void***
 
 ---
 
@@ -1198,10 +1086,6 @@ function setDefault($default)
 ##### Parameters
 
 - ***mixed*** `$default`
-
-##### Return Value
-
-- ***void***
 
 ---
 
@@ -1277,10 +1161,6 @@ function setMaxDigits($maxDigits)
 
 - ***int*** `$maxDigits`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: DecimalColumn->getDecimalPlaces
@@ -1304,10 +1184,6 @@ function setDecimalPlaces($decimalPlaces)
 ##### Parameters
 
 - ***int*** `$decimalPlaces`
-
-##### Return Value
-
-- ***void***
 
 ---
 
@@ -1345,10 +1221,6 @@ function setComment($comment)
 
 - ***string*** `$comment`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: DecimalColumn->isNullable
@@ -1373,10 +1245,6 @@ function setNullable($nullable)
 
 - ***bool*** `$nullable`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: DecimalColumn->getName
@@ -1400,10 +1268,6 @@ function setName($name)
 ##### Parameters
 
 - ***string*** `$name`
-
-##### Return Value
-
-- ***void***
 
 ---
 
@@ -1444,10 +1308,6 @@ function setDefault($default)
 ##### Parameters
 
 - ***mixed*** `$default`
-
-##### Return Value
-
-- ***void***
 
 ---
 
@@ -1522,10 +1382,6 @@ function setPrecision($precision)
 
 - ***int*** `$precision`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: DoubleColumn->getTables
@@ -1562,10 +1418,6 @@ function setComment($comment)
 
 - ***string*** `$comment`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: DoubleColumn->isNullable
@@ -1590,10 +1442,6 @@ function setNullable($nullable)
 
 - ***bool*** `$nullable`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: DoubleColumn->getName
@@ -1617,10 +1465,6 @@ function setName($name)
 ##### Parameters
 
 - ***string*** `$name`
-
-##### Return Value
-
-- ***void***
 
 ---
 
@@ -1661,10 +1505,6 @@ function setDefault($default)
 ##### Parameters
 
 - ***mixed*** `$default`
-
-##### Return Value
-
-- ***void***
 
 ---
 
@@ -1739,10 +1579,6 @@ function setPrecision($precision)
 
 - ***int*** `$precision`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: FloatColumn->getTables
@@ -1779,10 +1615,6 @@ function setComment($comment)
 
 - ***string*** `$comment`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: FloatColumn->isNullable
@@ -1807,10 +1639,6 @@ function setNullable($nullable)
 
 - ***bool*** `$nullable`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: FloatColumn->getName
@@ -1834,10 +1662,6 @@ function setName($name)
 ##### Parameters
 
 - ***string*** `$name`
-
-##### Return Value
-
-- ***void***
 
 ---
 
@@ -1878,10 +1702,6 @@ function setDefault($default)
 ##### Parameters
 
 - ***mixed*** `$default`
-
-##### Return Value
-
-- ***void***
 
 ---
 
@@ -1967,10 +1787,6 @@ function setComment($comment)
 
 - ***string*** `$comment`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: BigIntColumn->isNullable
@@ -1995,10 +1811,6 @@ function setNullable($nullable)
 
 - ***bool*** `$nullable`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: BigIntColumn->getName
@@ -2022,10 +1834,6 @@ function setName($name)
 ##### Parameters
 
 - ***string*** `$name`
-
-##### Return Value
-
-- ***void***
 
 ---
 
@@ -2066,10 +1874,6 @@ function setDefault($default)
 ##### Parameters
 
 - ***mixed*** `$default`
-
-##### Return Value
-
-- ***void***
 
 ---
 
@@ -2179,10 +1983,6 @@ function setComment($comment)
 
 - ***string*** `$comment`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: IntColumn->isNullable
@@ -2207,10 +2007,6 @@ function setNullable($nullable)
 
 - ***bool*** `$nullable`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: IntColumn->getName
@@ -2234,10 +2030,6 @@ function setName($name)
 ##### Parameters
 
 - ***string*** `$name`
-
-##### Return Value
-
-- ***void***
 
 ---
 
@@ -2278,10 +2070,6 @@ function setDefault($default)
 ##### Parameters
 
 - ***mixed*** `$default`
-
-##### Return Value
-
-- ***void***
 
 ---
 
@@ -2391,10 +2179,6 @@ function setComment($comment)
 
 - ***string*** `$comment`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: MediumIntColumn->isNullable
@@ -2419,10 +2203,6 @@ function setNullable($nullable)
 
 - ***bool*** `$nullable`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: MediumIntColumn->getName
@@ -2446,10 +2226,6 @@ function setName($name)
 ##### Parameters
 
 - ***string*** `$name`
-
-##### Return Value
-
-- ***void***
 
 ---
 
@@ -2490,10 +2266,6 @@ function setDefault($default)
 ##### Parameters
 
 - ***mixed*** `$default`
-
-##### Return Value
-
-- ***void***
 
 ---
 
@@ -2603,10 +2375,6 @@ function setComment($comment)
 
 - ***string*** `$comment`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: SmallIntColumn->isNullable
@@ -2631,10 +2399,6 @@ function setNullable($nullable)
 
 - ***bool*** `$nullable`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: SmallIntColumn->getName
@@ -2658,10 +2422,6 @@ function setName($name)
 ##### Parameters
 
 - ***string*** `$name`
-
-##### Return Value
-
-- ***void***
 
 ---
 
@@ -2702,10 +2462,6 @@ function setDefault($default)
 ##### Parameters
 
 - ***mixed*** `$default`
-
-##### Return Value
-
-- ***void***
 
 ---
 
@@ -2815,10 +2571,6 @@ function setComment($comment)
 
 - ***string*** `$comment`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: TinyIntColumn->isNullable
@@ -2843,10 +2595,6 @@ function setNullable($nullable)
 
 - ***bool*** `$nullable`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: TinyIntColumn->getName
@@ -2870,10 +2618,6 @@ function setName($name)
 ##### Parameters
 
 - ***string*** `$name`
-
-##### Return Value
-
-- ***void***
 
 ---
 
@@ -2914,10 +2658,6 @@ function setDefault($default)
 ##### Parameters
 
 - ***mixed*** `$default`
-
-##### Return Value
-
-- ***void***
 
 ---
 
@@ -3016,10 +2756,6 @@ function setComment($comment)
 
 - ***string*** `$comment`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: AbstractCharacterColumn->isNullable
@@ -3044,10 +2780,6 @@ function setNullable($nullable)
 
 - ***bool*** `$nullable`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: AbstractCharacterColumn->getName
@@ -3071,10 +2803,6 @@ function setName($name)
 ##### Parameters
 
 - ***string*** `$name`
-
-##### Return Value
-
-- ***void***
 
 ---
 
@@ -3128,10 +2856,6 @@ function setDefault($default)
 
 - ***mixed*** `$default`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: AbstractCharacterColumn->getCharset
@@ -3156,10 +2880,6 @@ function setCharset($charset)
 
 - ***string*** | ***null*** `$charset`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: AbstractCharacterColumn->getCollation
@@ -3183,10 +2903,6 @@ function setCollation($collation)
 ##### Parameters
 
 - ***string*** | ***null*** `$collation`
-
-##### Return Value
-
-- ***void***
 
 ---
 
@@ -3260,10 +2976,6 @@ function setComment($comment)
 
 - ***string*** `$comment`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: AbstractStringColumn->isNullable
@@ -3288,10 +3000,6 @@ function setNullable($nullable)
 
 - ***bool*** `$nullable`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: AbstractStringColumn->getName
@@ -3315,10 +3023,6 @@ function setName($name)
 ##### Parameters
 
 - ***string*** `$name`
-
-##### Return Value
-
-- ***void***
 
 ---
 
@@ -3372,10 +3076,6 @@ function setDefault($default)
 
 - ***mixed*** `$default`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: AbstractStringColumn->getCharset
@@ -3400,10 +3100,6 @@ function setCharset($charset)
 
 - ***string*** | ***null*** `$charset`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: AbstractStringColumn->getCollation
@@ -3427,10 +3123,6 @@ function setCollation($collation)
 ##### Parameters
 
 - ***string*** | ***null*** `$collation`
-
-##### Return Value
-
-- ***void***
 
 ### Class: donatj\MySqlSchema\Columns\String\AbstractTextColumn
 
@@ -3480,10 +3172,6 @@ function setComment($comment)
 
 - ***string*** `$comment`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: AbstractTextColumn->isNullable
@@ -3508,10 +3196,6 @@ function setNullable($nullable)
 
 - ***bool*** `$nullable`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: AbstractTextColumn->getName
@@ -3535,10 +3219,6 @@ function setName($name)
 ##### Parameters
 
 - ***string*** `$name`
-
-##### Return Value
-
-- ***void***
 
 ---
 
@@ -3592,10 +3272,6 @@ function setDefault($default)
 
 - ***mixed*** `$default`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: AbstractTextColumn->getCharset
@@ -3620,10 +3296,6 @@ function setCharset($charset)
 
 - ***string*** | ***null*** `$charset`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: AbstractTextColumn->getCollation
@@ -3647,10 +3319,6 @@ function setCollation($collation)
 ##### Parameters
 
 - ***string*** | ***null*** `$collation`
-
-##### Return Value
-
-- ***void***
 
 ### Class: donatj\MySqlSchema\Columns\String\Character\CharColumn
 
@@ -3713,10 +3381,6 @@ function setComment($comment)
 
 - ***string*** `$comment`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: CharColumn->isNullable
@@ -3741,10 +3405,6 @@ function setNullable($nullable)
 
 - ***bool*** `$nullable`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: CharColumn->getName
@@ -3768,10 +3428,6 @@ function setName($name)
 ##### Parameters
 
 - ***string*** `$name`
-
-##### Return Value
-
-- ***void***
 
 ---
 
@@ -3813,10 +3469,6 @@ function setDefault($default)
 
 - ***mixed*** `$default`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: CharColumn->getCharset
@@ -3841,10 +3493,6 @@ function setCharset($charset)
 
 - ***string*** | ***null*** `$charset`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: CharColumn->getCollation
@@ -3868,10 +3516,6 @@ function setCollation($collation)
 ##### Parameters
 
 - ***string*** | ***null*** `$collation`
-
-##### Return Value
-
-- ***void***
 
 ---
 
@@ -3958,10 +3602,6 @@ function setComment($comment)
 
 - ***string*** `$comment`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: VarcharColumn->isNullable
@@ -3986,10 +3626,6 @@ function setNullable($nullable)
 
 - ***bool*** `$nullable`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: VarcharColumn->getName
@@ -4013,10 +3649,6 @@ function setName($name)
 ##### Parameters
 
 - ***string*** `$name`
-
-##### Return Value
-
-- ***void***
 
 ---
 
@@ -4058,10 +3690,6 @@ function setDefault($default)
 
 - ***mixed*** `$default`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: VarcharColumn->getCharset
@@ -4086,10 +3714,6 @@ function setCharset($charset)
 
 - ***string*** | ***null*** `$charset`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: VarcharColumn->getCollation
@@ -4113,10 +3737,6 @@ function setCollation($collation)
 ##### Parameters
 
 - ***string*** | ***null*** `$collation`
-
-##### Return Value
-
-- ***void***
 
 ---
 
@@ -4202,10 +3822,6 @@ function setComment($comment)
 
 - ***string*** `$comment`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: LongTextColumn->isNullable
@@ -4230,10 +3846,6 @@ function setNullable($nullable)
 
 - ***bool*** `$nullable`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: LongTextColumn->getName
@@ -4257,10 +3869,6 @@ function setName($name)
 ##### Parameters
 
 - ***string*** `$name`
-
-##### Return Value
-
-- ***void***
 
 ---
 
@@ -4302,10 +3910,6 @@ function setDefault($default)
 
 - ***mixed*** `$default`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: LongTextColumn->getCharset
@@ -4330,10 +3934,6 @@ function setCharset($charset)
 
 - ***string*** | ***null*** `$charset`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: LongTextColumn->getCollation
@@ -4357,10 +3957,6 @@ function setCollation($collation)
 ##### Parameters
 
 - ***string*** | ***null*** `$collation`
-
-##### Return Value
-
-- ***void***
 
 ### Class: donatj\MySqlSchema\Columns\String\Text\MediumTextColumn
 
@@ -4422,10 +4018,6 @@ function setComment($comment)
 
 - ***string*** `$comment`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: MediumTextColumn->isNullable
@@ -4450,10 +4042,6 @@ function setNullable($nullable)
 
 - ***bool*** `$nullable`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: MediumTextColumn->getName
@@ -4477,10 +4065,6 @@ function setName($name)
 ##### Parameters
 
 - ***string*** `$name`
-
-##### Return Value
-
-- ***void***
 
 ---
 
@@ -4522,10 +4106,6 @@ function setDefault($default)
 
 - ***mixed*** `$default`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: MediumTextColumn->getCharset
@@ -4550,10 +4130,6 @@ function setCharset($charset)
 
 - ***string*** | ***null*** `$charset`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: MediumTextColumn->getCollation
@@ -4577,10 +4153,6 @@ function setCollation($collation)
 ##### Parameters
 
 - ***string*** | ***null*** `$collation`
-
-##### Return Value
-
-- ***void***
 
 ### Class: donatj\MySqlSchema\Columns\String\Text\TextColumn
 
@@ -4642,10 +4214,6 @@ function setComment($comment)
 
 - ***string*** `$comment`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: TextColumn->isNullable
@@ -4670,10 +4238,6 @@ function setNullable($nullable)
 
 - ***bool*** `$nullable`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: TextColumn->getName
@@ -4697,10 +4261,6 @@ function setName($name)
 ##### Parameters
 
 - ***string*** `$name`
-
-##### Return Value
-
-- ***void***
 
 ---
 
@@ -4742,10 +4302,6 @@ function setDefault($default)
 
 - ***mixed*** `$default`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: TextColumn->getCharset
@@ -4770,10 +4326,6 @@ function setCharset($charset)
 
 - ***string*** | ***null*** `$charset`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: TextColumn->getCollation
@@ -4797,10 +4349,6 @@ function setCollation($collation)
 ##### Parameters
 
 - ***string*** | ***null*** `$collation`
-
-##### Return Value
-
-- ***void***
 
 ### Class: donatj\MySqlSchema\Columns\String\Text\TinyTextColumn
 
@@ -4862,10 +4410,6 @@ function setComment($comment)
 
 - ***string*** `$comment`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: TinyTextColumn->isNullable
@@ -4890,10 +4434,6 @@ function setNullable($nullable)
 
 - ***bool*** `$nullable`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: TinyTextColumn->getName
@@ -4917,10 +4457,6 @@ function setName($name)
 ##### Parameters
 
 - ***string*** `$name`
-
-##### Return Value
-
-- ***void***
 
 ---
 
@@ -4962,10 +4498,6 @@ function setDefault($default)
 
 - ***mixed*** `$default`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: TinyTextColumn->getCharset
@@ -4990,10 +4522,6 @@ function setCharset($charset)
 
 - ***string*** | ***null*** `$charset`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: TinyTextColumn->getCollation
@@ -5017,10 +4545,6 @@ function setCollation($collation)
 ##### Parameters
 
 - ***string*** | ***null*** `$collation`
-
-##### Return Value
-
-- ***void***
 
 ### Class: donatj\MySqlSchema\Columns\Temporal\AbstractTemporalColumn
 
@@ -5070,10 +4594,6 @@ function setComment($comment)
 
 - ***string*** `$comment`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: AbstractTemporalColumn->isNullable
@@ -5098,10 +4618,6 @@ function setNullable($nullable)
 
 - ***bool*** `$nullable`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: AbstractTemporalColumn->getName
@@ -5125,10 +4641,6 @@ function setName($name)
 ##### Parameters
 
 - ***string*** `$name`
-
-##### Return Value
-
-- ***void***
 
 ---
 
@@ -5181,10 +4693,6 @@ function setDefault($default)
 ##### Parameters
 
 - ***mixed*** `$default`
-
-##### Return Value
-
-- ***void***
 
 ### Class: donatj\MySqlSchema\Columns\Temporal\DateTimeColumn
 
@@ -5246,10 +4754,6 @@ function setComment($comment)
 
 - ***string*** `$comment`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: DateTimeColumn->isNullable
@@ -5274,10 +4778,6 @@ function setNullable($nullable)
 
 - ***bool*** `$nullable`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: DateTimeColumn->getName
@@ -5301,10 +4801,6 @@ function setName($name)
 ##### Parameters
 
 - ***string*** `$name`
-
-##### Return Value
-
-- ***void***
 
 ---
 
@@ -5345,10 +4841,6 @@ function setDefault($default)
 ##### Parameters
 
 - ***mixed*** `$default`
-
-##### Return Value
-
-- ***void***
 
 ### Class: donatj\MySqlSchema\Columns\Temporal\TimeColumn
 
@@ -5410,10 +4902,6 @@ function setComment($comment)
 
 - ***string*** `$comment`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: TimeColumn->isNullable
@@ -5438,10 +4926,6 @@ function setNullable($nullable)
 
 - ***bool*** `$nullable`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: TimeColumn->getName
@@ -5465,10 +4949,6 @@ function setName($name)
 ##### Parameters
 
 - ***string*** `$name`
-
-##### Return Value
-
-- ***void***
 
 ---
 
@@ -5509,10 +4989,6 @@ function setDefault($default)
 ##### Parameters
 
 - ***mixed*** `$default`
-
-##### Return Value
-
-- ***void***
 
 ### Class: donatj\MySqlSchema\Columns\Temporal\TimestampColumn
 
@@ -5574,10 +5050,6 @@ function setComment($comment)
 
 - ***string*** `$comment`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: TimestampColumn->isNullable
@@ -5602,10 +5074,6 @@ function setNullable($nullable)
 
 - ***bool*** `$nullable`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: TimestampColumn->getName
@@ -5629,10 +5097,6 @@ function setName($name)
 ##### Parameters
 
 - ***string*** `$name`
-
-##### Return Value
-
-- ***void***
 
 ---
 
@@ -5674,10 +5138,6 @@ function setDefault($default)
 
 - ***mixed*** `$default`
 
-##### Return Value
-
-- ***void***
-
 ### Class: donatj\MySqlSchema\Columns\Temporal\YearColumn
 
 #### Method: YearColumn->__construct
@@ -5704,10 +5164,6 @@ function setLength($length)
 - ***int*** `$length` - 2 or 4
 
 **Throws**: `\InvalidArgumentException`
-
-##### Return Value
-
-- ***void***
 
 ---
 
@@ -5757,10 +5213,6 @@ function setComment($comment)
 
 - ***string*** `$comment`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: YearColumn->isNullable
@@ -5785,10 +5237,6 @@ function setNullable($nullable)
 
 - ***bool*** `$nullable`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: YearColumn->getName
@@ -5812,10 +5260,6 @@ function setName($name)
 ##### Parameters
 
 - ***string*** `$name`
-
-##### Return Value
-
-- ***void***
 
 ---
 
@@ -5856,10 +5300,6 @@ function setDefault($default)
 ##### Parameters
 
 - ***mixed*** `$default`
-
-##### Return Value
-
-- ***void***
 
 ---
 
@@ -5995,10 +5435,6 @@ function setComment($comment)
 
 - ***string*** `$comment`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: Table->getEngine
@@ -6022,10 +5458,6 @@ function setEngine($engine)
 ##### Parameters
 
 - ***string*** | ***null*** `$engine`
-
-##### Return Value
-
-- ***void***
 
 ---
 
@@ -6051,21 +5483,15 @@ function setName($name)
 
 - ***string*** `$name`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: Table->addAutoIncrement
 
 ```php
-function addAutoIncrement(\donatj\MySqlSchema\Columns\Numeric\AbstractIntegerColumn $column)
+function addAutoIncrement(
+	\donatj\MySqlSchema\Columns\Numeric\AbstractIntegerColumn $column,
+)
 ```
-
-##### Return Value
-
-- ***void***
 
 ---
 
@@ -6084,7 +5510,9 @@ function getAutoIncrementColumn()
 #### Method: Table->isAutoIncrement
 
 ```php
-function isAutoIncrement(\donatj\MySqlSchema\Columns\Numeric\AbstractIntegerColumn $column)
+function isAutoIncrement(
+	\donatj\MySqlSchema\Columns\Numeric\AbstractIntegerColumn $column,
+)
 ```
 
 ##### Parameters
@@ -6102,10 +5530,6 @@ function isAutoIncrement(\donatj\MySqlSchema\Columns\Numeric\AbstractIntegerColu
 ```php
 function addPrimaryKey(\donatj\MySqlSchema\Columns\AbstractColumn $column)
 ```
-
-##### Return Value
-
-- ***void***
 
 ---
 
@@ -6128,7 +5552,13 @@ function isPrimaryKey(\donatj\MySqlSchema\Columns\AbstractColumn $column)
 #### Method: Table->addKeyColumn
 
 ```php
-function addKeyColumn($keyName, \donatj\MySqlSchema\Columns\AbstractColumn $column, $index = null, $type = 'NORMAL', $method = '')
+function addKeyColumn(
+	$keyName,
+	\donatj\MySqlSchema\Columns\AbstractColumn $column,
+	$index = null,
+	$type = 'NORMAL',
+	$method = '',
+)
 ```
 
 ##### Parameters
@@ -6139,21 +5569,16 @@ function addKeyColumn($keyName, \donatj\MySqlSchema\Columns\AbstractColumn $colu
 - ***string*** `$type`
 - ***string*** `$method`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: Table->addForeignKey
 
 ```php
-function addForeignKey(\donatj\MySqlSchema\Columns\AbstractColumn $local, \donatj\MySqlSchema\Columns\AbstractColumn $remote)
+function addForeignKey(
+	\donatj\MySqlSchema\Columns\AbstractColumn $local,
+	\donatj\MySqlSchema\Columns\AbstractColumn $remote,
+)
 ```
-
-##### Return Value
-
-- ***void***
 
 ---
 
@@ -6162,10 +5587,6 @@ function addForeignKey(\donatj\MySqlSchema\Columns\AbstractColumn $local, \donat
 ```php
 function addColumn(\donatj\MySqlSchema\Columns\AbstractColumn $column)
 ```
-
-##### Return Value
-
-- ***void***
 
 ---
 
@@ -6203,10 +5624,6 @@ function setCharset($charset)
 
 - ***string*** | ***null*** `$charset`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: Table->getCollation
@@ -6230,10 +5647,6 @@ function setCollation($collation)
 ##### Parameters
 
 - ***string*** | ***null*** `$collation`
-
-##### Return Value
-
-- ***void***
 
 ### Class: donatj\MySqlSchema\Traits\CharsetAndCollationTrait
 
@@ -6259,10 +5672,6 @@ function setCharset($charset)
 
 - ***string*** | ***null*** `$charset`
 
-##### Return Value
-
-- ***void***
-
 ---
 
 #### Method: CharsetAndCollationTrait->getCollation
@@ -6286,9 +5695,5 @@ function setCollation($collation)
 ##### Parameters
 
 - ***string*** | ***null*** `$collation`
-
-##### Return Value
-
-- ***void***
 
 ### Class: donatj\MySqlSchema\Traits\EscapeTrait
